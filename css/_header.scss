@@ -6,11 +6,11 @@ body {
 	flex-direction: column;
 	overflow: hidden;
 	header {
-		background-color: rgba(194, 214, 214, .4);
+		background-color: $bg-color;
 		display: flex;
 		justify-content: space-around;
 		width: 100%;
-		height: 250px;
+		height: 200px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
@@ -24,18 +24,50 @@ body {
 			width: 50%;
 			text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%), 4px 4px 0 hsl(22, 68%, 53%), 5px 5px 0 hsl(22, 68%, 53%), 6px 6px 0 hsl(22, 68%, 53%), 7px 7px 0 hsl(22, 68%, 53%);
 		}
-		p {
+		p{
+		 align-self: center;
+		 color: white;
+		 font-family: 'Cookie', cursive;
+		 font-size: 25px;	
+		}
+		.search {
+		align-self: flex-end;
+		width: 20%;
+		position: absolute;
+		margin-top: -12%;
+			input {
+				width: 50%;
+				
+				
+				
+				color: rgba(128, 128, 128, 0.685);
+				background-color: rgba(245, 181, 108, 0.692);
+			}
+			button{
+				height: 25px;
+				border-radius: 60%;
+				border: 1px solid white;
+				background-color: rgba(72, 164, 201, 0.459);
+				.fa-search{
+					color: white;
+				}
+				
+			}
+			button:hover{
+				transform: scale(1.2);
+			}
+		}
+		#by {
 			align-self: flex-end;
-			color:white;
+			color: white;
 			height: 55px;
 			font-size: 30px;
 			font-weight: bold;
 			width: 30%;
 			font-family: 'Londrina Outline', cursive;
-			span{
-				color:rgb(247, 93, 10);
+			span {
+				color: rgb(247, 93, 10);
 				font-size: 45px;
-				
 			}
 		}
 	}
