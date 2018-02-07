@@ -1,0 +1,82 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Alegreya Sans', sans-serif;
+    overflow: hidden;
+}
+main{
+    height: 400px;
+#accordian {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    overflow: hidden;
+    width: 120%;
+    margin-left: -10%;
+    article {
+        display: flex;
+        flex-direction: column;
+        height: 150%;
+        margin-top: -10%;
+        padding: 10% 5%;
+        width: 45%;
+        float: left;
+        color: #ccc;
+        transform: rotate(5deg);
+        h2 {
+            text-align: center;
+            cursor: pointer;
+            transform: rotate(-5deg);
+            font: normal 75px/35px 'Life Savers', cursive;
+            margin-top: 20%;
+        }
+        h2.checked {
+            margin-top: 5% !important;
+            font-size: 45px;
+        }
+        h2.small {
+            font-size: 25px;
+        }
+        div {
+            margin: 10px 5%;
+            transform: rotate(-5deg);
+            display: none;
+            font-size: 18px;
+        }
+    }
+    .about {
+        background: #d8801b79;
+        nav{
+            transform: rotate(-5deg);
+        }
+        
+    }
+    .blog {
+        background: rgba(35, 153, 128, 0.411);
+    
+    }
+}
+.logo {
+    display: block;
+    position: fixed;
+    bottom: 50%;
+    top: 50%;
+    text-align: center;
+    width: 100%;
+    pointer-events: none;
+    img {
+        pointer-events: auto;
+    }
+}
+
+.logo.bottom {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    text-align: center;
+    width: 100%;
+}
+}

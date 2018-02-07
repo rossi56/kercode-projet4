@@ -1,0 +1,45 @@
+footer {
+    background-color: rgba(194, 214, 214, .4);
+    display: flex;
+    justify-content: space-around;
+    height: 250px;
+    display: flex;
+    border-top: 1px solid orange;
+    #copy {
+        color: white;
+        height: 20px;
+        margin-top: 70px;
+        margin-left: 25%;
+        text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%);
+    }
+    #reseaux {
+        display: flex;
+        width: 20%;
+        margin-top: 150px;
+        height: 60px;
+        #fb,
+        #tw,
+        #lk,
+        #goo {
+            position: absolute;
+            display: block;
+            width: 50px;
+            height: 50px;
+        }
+        #fb {
+            background: url("../img/reseaux.png") 0px 0px;
+        }
+        #tw {
+            margin-left: 10%;
+            background: url("../img/reseaux.png") -50px 0px;
+        }
+        #lk {
+            margin-left: 15%;
+            background: url("../img/reseaux.png") 0px -52px;
+        }
+        #goo {
+            margin-left: 5%;
+            background: url("../img/reseaux.png") -50px -52px;
+        }
+    }
+}
