@@ -6,7 +6,10 @@
 @import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:400,300,500);
 @import url(https://fonts.googleapis.com/css?family=Life+Savers:400,700);
 //Style global du site
-@import "grid";
+@import 'grid';
+@import "roman";
+@import "contact";
+@import "preface";
 @import "header";
 @import "contenu";
 @import "footer";

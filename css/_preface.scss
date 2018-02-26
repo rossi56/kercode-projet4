@@ -1,0 +1,24 @@
+#preface {
+    .preface {
+        background-image: url('../img/bg5.jpg');
+        background-attachment: fixed;
+        background-size: cover;
+        h2 {
+            font-size: 65px;
+            
+            font-family: 'Cookie', cursive;
+            color: rgb(112, 109, 109);
+            margin-top: 1.5em;
+        }
+        img {
+            width: 10%;
+        }
+        p {
+            font-size: 1.5em;
+            font-family: 'Alegreya', cursive;
+            color: rgb(112, 109, 109);
+            margin-bottom: 4em;
+            margin-top: 4em;
+        }
+    }
+}

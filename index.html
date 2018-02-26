@@ -9,79 +9,116 @@
     <title>Billet simple pour l'Alaska</title>
 </head>
 
-<body>
+<body id="index">
+
     <header>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="roman.html">Mon Roman</a>
+            <a id="connect" href="#">Connexion</a>
+            <a id="inscription" href="#">Inscription</a>
+            <a href="contact.html">Contact</a>
+        </nav>
         <h1>Billet simple pour l'Alaska</h1>
-        <p class="projet">"Le projet un peu fou d'un écrivain voyageur"</p>
-        <div class="search">
-            <button>
-                <span class="icon">
-                    <i class="fa fa-search"></i>
-                </span>
-            </button>
-            <input type="search" id="search" placeholder="Recherche..." />
-        </div>
+        <p>"Le projet un peu fou d'un écrivain voyageur"</p>
+        <form>
+            <input class="search" type="text" name="search" placeholder="Recherche..">
+        </form>
+
         <p id="by">
             <span> By</span> Jean Forteroche</p>
+        </div>
+        <video loop autoplay muted src="video/Snow - 2509.mp4"></video>
+        <div class="pattern"></div>
+        <div class="pop-inscription">
+            <img class="cross" src="img/cross.svg" alt="croix">
+            <h3>Inscrivez-vous !</h3>
+            <h4>Ne rater pas les derniers articles !</h4>
+            <form action="">
+                <input type="text" placeholder="Votre Prénom">
+                <input type="text" placeholder="Votre Nom">
+                <input type="email" placeholder="Votre e-mail">
+                <input type="text" placeholder="Mot de Passe">
+            </form>
+            <button class="btn-submit" type="submit">S'inscrire</button>
+        </div>
+        <div class="pop-connect">
+            <img class="cross" src="img/cross.svg" alt="croix">
+            <h3>Connectez-vous !</h3>
+            <form action="">
+                <input type="email" placeholder="Identifiant">
+                <input type="text" placeholder="Mot de Passe">
+            </form>
+            <button class="btn-submit" type="submit">Connexion</button>
+        </div>
     </header>
     <main>
         <section id='split'>
-            <article class="about">
-                <h2>Blog</h2>
-               
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="#">Accueil</a>
-                        </li>
-                        <li>
-                            <a href="#">Mon Roman</a>
-                        </li>
-                        <li>
-                            <a href="#">Connexion</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="citation">
-                        <p>"Les plus belles histoires commencent <br> toujours par un naufrage" <br> <span>Jack London</span></p>
-                    </div>
-            </article>
             <article class="blog">
-                <h2>Bio</h2>
-                <div class="who">
-                    <p>"Qui suis-je ?"</p>
-                </div>
-                <div id="bloc">
-                    <div class="polaroid">
-                        <img id="punaise" src="img/punaise.png" alt="">
-                        <img src="img/paul.png" alt="Pulpit rock" width="284" height="213">
-                    </div>
-                    <div class="text">
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                            ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-                            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                            sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                    </div>
-                </div>
+                <h2>Blog</h2>
+                <p>"Les plus belles histoires commencent
+                    <br> toujours par un naufrage"
+                    <br>
+                    <span>Jack London</span>
+                </p>
+                <figure class="book">
+                    <img src="img/blog.png" alt="Book">
+                </figure>
+                <img id="punaise2" src="img/punaise.png" alt="Punaise-2">
+                <a class="enter" href="roman.html">Entrez !</a>
+            </article>
+            <article class="about">
+                <h2 class="projet">Le Projet</h2>
+
+                <h3>"Qui suis-je ?"</h3>
+                <figure class="portrait">
+                    <img src="img/portrait.png" alt="Portrait">
+                </figure>
+                <img id="punaise" src="img/punaise.png" alt="Punaise">
+                <p class="text">
+                    <strong>Jean Forteroche.....</strong>c'est moi! Aventurier avant de devenir écrivain, les grands espaces m'ont
+                    toujours inspirés.
+                    <br> L'aventure et l'écriture, deux mots qui résonnent à mon oreille. Leur murmure est une ode à l'escapade
+                    et à la flânerie.
+                    <br> Mon esprit vagabonde vers de nouveaux espaces que je vais vous faire découvrir par mes écrits.
+                    <br> Cette idée un peu folle, mais qui me ressemble tant; de vous faire découvrir les endroits vers lesquels
+                    mes rêves me portent; au travers de ce blog mis à jour au fur et à mesure de la rédaction de mon roman.
+                    <br> Je vous souhaite une lecture des plus distrayante. Je reste à votre disposition pour communiquer au
+                    travers de ce blog, alors n'hésitez pas.....
+                    <br>
+                    <span>Je vous attends!</span>
+                </p>
+
             </article>
         </section>
+
+        <footer>
+            <div id="adress">
+                Jean Forteroche
+                <br>4050 University Lake Dr,
+                <br> Anchorage,
+                <br> AK 99508-4600
+                <br> Etats Unis
+            </div>
+            <div id="map"></div>
+            <p id="copy">Copyright Kercode 2018 - Site réalisé à des fins pédagogiques</p>
+            <ul id="reseaux">
+                <a href="#" id="fb"></a>
+                <a href="#" id="tw"></a>
+                <a href="#" id="lk"></a>
+                <a href="#" id="inst"></a>
+            </ul>
+        </footer>
     </main>
-    <footer>
-        <p id="copy">Copyright Kercode 2017 - Site réalisé à des fins pédagogiques</p>
-        <div id="reseaux">
-            <a href="#" id="fb"></a>
-            <a href="#" id="tw"></a>
-            <a href="#" id="lk"></a>
-            <a href="#" id="goo"></a>
-        </div>
-    </footer>
+
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQfpft0MIiwF4INGm3uMGrylY7OqBujG4 &callback=initMap">
+    </script>
+    <script src="js/map.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/script.js"></script>
     <script src="js/split.js"></script>
+
 </body>
 
 </html>
