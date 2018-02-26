@@ -24,12 +24,12 @@
         <form>
             <input class="search" type="text" name="search" placeholder="Recherche..">
         </form>
-
         <p id="by">
             <span> By</span> Jean Forteroche</p>
         </div>
-        <video loop autoplay muted src="video/Snow - 2509.mp4"></video>
+        <video id="video" loop autoplay muted src="video/Snow.mp4"></video>
         <div class="pattern"></div>
+        <button id="pause"><i class="far fa-pause-circle fa-3x"></i></button>
         <div class="pop-inscription">
             <img class="cross" src="img/cross.svg" alt="croix">
             <h3>Inscrivez-vous !</h3>
@@ -51,6 +51,14 @@
             </form>
             <button class="btn-submit" type="submit">Connexion</button>
         </div>
+        <div class="burger">
+            <svg width="100px" height="100px">
+                <path class="top" d="M 30 40 L 70 40 C 90 40 90 75 60 85 A 40 40 0 0 1 20 20 L 80 80"></path>
+                <path class="middle" d="M 30 50 L 70 50"></path>
+                <path class="bottom" d="M 70 60 L 30 60 C 10 60 10 20 40 15 A 40 38 0 1 1 20 80 L 80 20"></path>
+            </svg>
+        </div>
+        <div class="mask"></div>
     </header>
     <main>
         <section id='split'>
@@ -91,25 +99,28 @@
 
             </article>
         </section>
-
-        <footer>
-            <div id="adress">
-                Jean Forteroche
-                <br>4050 University Lake Dr,
-                <br> Anchorage,
-                <br> AK 99508-4600
-                <br> Etats Unis
-            </div>
-            <div id="map"></div>
-            <p id="copy">Copyright Kercode 2018 - Site réalisé à des fins pédagogiques</p>
-            <ul id="reseaux">
-                <a href="#" id="fb"></a>
-                <a href="#" id="tw"></a>
-                <a href="#" id="lk"></a>
-                <a href="#" id="inst"></a>
-            </ul>
-        </footer>
     </main>
+    <footer>
+        <div id="adress">
+            Jean Forteroche
+            <br>4050 University Lake Dr,
+            <br> Anchorage,
+            <br> AK 99508-4600
+            <br> Etats Unis
+        </div>
+       
+
+        <div id="reseaux">
+            <img id="fb" src="img/facebook.png" alt="facebook">
+            <img src="img/twitter.png" alt="twitter" id="tw">
+            <a href="#" id="tw"></a>
+            <a href="#" id="lk"></a>
+            <a href="#" id="inst"></a>
+        </div>
+        <p id="copy">Copyright Kercode 2018 - Site réalisé à des fins pédagogiques</p>
+        <div class="patternFooter"></div>
+    </footer>
+
 
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQfpft0MIiwF4INGm3uMGrylY7OqBujG4 &callback=initMap">

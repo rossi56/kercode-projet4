@@ -1,57 +1,88 @@
 footer {
+    box-shadow: 0 -23px 60px 8px rgba(0, 0, 0, 0.788);
+    z-index: 200;
+    width: 100%;
     position: relative;
-    background-image: url('../img/footer.jpg');
+    background-image: url('../img/footer2.jpg');
+    display: flex;
+    flex-direction: column;
     background-size: cover;
     height: 300px;
     border-top: 1px solid orange;
     #adress {
-        position: absolute;
-        top: 40px;
-        right: 5%;
+        z-index: 200;
+        align-self: flex-end;
         color: #D97136;
         text-align: center;
         font-size: 20px;
     }
-    #map {
-        height: 250px;
-        width: 20%;
-        position: absolute;
-        left: 40%;
-        top: 15px;
-        opacity: .5;
-    }
+  
     #copy {
+        z-index: 200;
+        align-self: center;
         color: white;
         height: 20px;
-        margin-top: 70px;
         text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%);
     }
     #reseaux {
-        margin-top: 50px;
-        height: 60px;
-        #fb,
-        #tw,
-        #lk,
-        #inst {
+       position: relative;
+        display: flex;
+        width: 50%;
+        #fb{
+            left: 50%;
             position: absolute;
-            display: block;
             width: 50px;
-            height: 50px;
+            transition: transform 0.35s ease-in-out;
+            opacity: 0.7;
+        
         }
-        #fb {
-            background: url("../img/reseaux.png") 0px -50px;
+        #fb:hover{
+            transform: rotate(360deg) scale(1.3);
+            filter: drop-shadow( 0px 0px 10px  rgb(0, 0, 0));
         }
-        #tw {
-            margin-left: 5%;
-            background: url("../img/reseaux.png") 50px 0px;
+        #tw{
+          position: absolute;
+            width: 20%;
+            transition: transform 0.35s ease-in-out;
         }
-        #lk {
-            margin-left: 15%;
-            background: url("../img/reseaux.png") 50px 50px;
+        #tw:hover{
+            transform: rotate(-360deg) scale(0.7);
+        
         }
-        #inst {
-            margin-left: 10%;
-            background: url("../img/reseaux.png") 0px 0px;
-        }
+        // #fb,
+        // #tw,
+        // #lk,
+        // #inst {
+        //     position: absolute;
+        //     display: block;
+        //     width: 50px;
+        //     height: 50px;
+        //     @media screen and (max-width:48em){
+        //         align-self: center;
+                
+             
+        //     }
+        // }
+      
+        // #tw {
+        //     margin-left: 5%;
+        //     background: url("../img/reseaux.png") 50px 0px;
+        // }
+        // #lk {
+        //     margin-left: 15%;
+        //     background: url("../img/reseaux.png") 50px 50px;
+        // }
+        // #inst {
+        //     margin-left: 10%;
+        //     background: url("../img/reseaux.png") 0px 0px;
+        // }
     }
+    // .patternFooter{
+    //     background-image: url('../img/pattern.png');
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    // }
 }

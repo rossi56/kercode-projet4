@@ -10,7 +10,7 @@
 </head>
 
 <body id="index">
-    <header id="roman">
+    <header>
         <h1>Billet simple pour l'Alaska</h1>
         <p>"Le projet un peu fou d'un écrivain voyageur"</p>
         <form>
@@ -25,8 +25,9 @@
             <a id="inscription" href="#">Inscription</a>
             <a href="contact.html">Contact</a>
         </nav>
-        <video autoplay loop src="video/Letters - 5157.mp4"></video>
+        <video autoplay loop src="video/lettres.mp4"></video>
         <div class="pattern"></div>
+        <button id="pause"><i class="far fa-pause-circle fa-3x"></i></button>
         <div class="pop-inscription">
             <img class="cross" src="img/cross.svg" alt="croix">
             <h3>Inscrivez-vous !</h3>
@@ -48,10 +49,17 @@
             </form>
             <button class="btn-submit" type="submit">Connexion</button>
         </div>
+        <div class="burger">
+            <svg width="100px" height="100px">
+                <path class="top" d="M 30 40 L 70 40 C 90 40 90 75 60 85 A 40 40 0 0 1 20 20 L 80 80"></path>
+                <path class="middle" d="M 30 50 L 70 50"></path>
+                <path class="bottom" d="M 70 60 L 30 60 C 10 60 10 20 40 15 A 40 38 0 1 1 20 80 L 80 20"></path>
+            </svg>
+        </div>
+        <div class="mask"></div>
     </header>
     <section class="container">
-        <div class="row">
-            <article class="col-12 col-sm-12 col-md-6">
+            <article>
                 <figure>
                     <img src="img/article-1.png" alt="">
                     <figcaption>
@@ -60,77 +68,76 @@
                         <p class="extrait">Vous me direz, POURQUOI ? Et là je vous répondrai…
                         </p>
                     </figcaption>
-                      <a href="preface.html">Lire la suite</a>
+                    <a href="preface.html"></a>
                     <div class="pattern-2"></div>
                 </figure>
             </article>
-            <article class="col-12 col-sm-12 col-md-6">
-                    <figure>
-                        <img src="img/seul2.png" alt="">
-                        <figcaption>
-                            <h3>Le retour</h3>
-                            <p class="date">Publié le 08/02/2018 à 15h50</p>
-                            <p class="extrait">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                        </figcaption>
-                        <a href="preface.html">Lire la suite</a>
-                        <div class="pattern-2"></div>
-                    </figure>
-                </article>
-                <article class="col-12 col-sm-12 col-md-6">
-                        <figure>
-                            <img src="img/rencontre.png" alt="">
-                            <figcaption>
-                                <h3>Préface</h3>
-                                <p class="date">Publié le 08/02/2018 à 15h50</p>
-                                <p class="extrait">Vous me direz, POURQUOI ? Et là je vous répondrai…. Pourquoi pas ?.........
-                                </p>
-                            </figcaption>
-                            <a href="preface.html">Lire la suite</a>
-                            <div class="pattern-2"></div>
-                        </figure>
-                    </article>
-                    <article class="col-12 col-sm-12 col-md-6">
-                            <figure>
-                                <img src="img/seul.png" alt="">
-                                <figcaption>
-                                    <h3>Préface</h3>
-                                    <p class="date">Publié le 08/02/2018 à 15h50</p>
-                                    <p class="extrait">Vous me direz, POURQUOI ? Et là je vous répondrai…. Pourquoi pas ?.........
-                                    </p>
-                                </figcaption>
-                                <a href="preface.html">Lire la suite</a>
-                                <div class="pattern-2"></div>
-                            </figure>
-                        </article>
-                        <article class="col-12 col-sm-12 col-md-6">
-                                <figure>
-                                    <img src="img/paysage2.png" alt="">
-                                    <figcaption>
-                                        <h3>Préface</h3>
-                                        <p class="date">Publié le 08/02/2018 à 15h50</p>
-                                        <p class="extrait">Vous me direz, POURQUOI ? Et là je vous répondrai…. Pourquoi pas ?.........
-                                        </p>
-                                    </figcaption>
-                                    <a href="preface.html">Lire la suite</a>
-                                    <div class="pattern-2"></div>
-                                </figure>
-                            </article>
-                            <article class="col-12 col-sm-12 col-md-6">
-                                    <figure>
-                                        <img src="img/voiture.png" alt="">
-                                        <figcaption>
-                                            <h3>Préface</h3>
-                                            <p class="date">Publié le 08/02/2018 à 15h50</p>
-                                            <p class="extrait">Vous me direz, POURQUOI ? Et là je vous répondrai…. Pourquoi pas ?.........
-                                            </p>
-                                        </figcaption>
-                                        <a href="preface.html">Lire la suite</a>
-                                        <div class="pattern-2"></div>
-                                    </figure>
-                                </article>
-        </div>
-        <div id="bg"></div>
+            <article>
+                <figure>
+                    <img src="img/seul.png" alt="Seul">
+                    <figcaption>
+                        <h3>Le retour</h3>
+                        <p class="date">Publié le 08/02/2018 à 15h50</p>
+                        <p class="extrait">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </figcaption>
+                    <a href="article1.html"></a>
+                    <div class="pattern-2"></div>
+                </figure>
+            </article>
+            <article>
+                <figure>
+                    <img src="img/rencontre.png" alt="Rencontre">
+                    <figcaption>
+                        <h3>La rencontre</h3>
+                        <p class="date">Publié le 08/02/2018 à 15h50</p>
+                        <p class="extrait">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </figcaption>
+                    <a href="article2.html"></a>
+                    <div class="pattern-2"></div>
+                </figure>
+            </article>
+            <article>
+                <figure>
+                    <img src="img/ensemble.png" alt="Ensemble">
+                    <figcaption>
+                        <h3>Ensemble</h3>
+                        <p class="date">Publié le 08/02/2018 à 15h50</p>
+                        <p class="extrait">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </figcaption>
+                    <a href="article3.html"></a>
+                    <div class="pattern-2"></div>
+                </figure>
+            </article>
+            <article>
+                <figure>
+                    <img src="img/depart.png" alt="Le départ">
+                    <figcaption>
+                        <h3>Le départ</h3>
+                        <p class="date">Publié le 08/02/2018 à 15h50</p>
+                        <p class="extrait">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </figcaption>
+                    <a href="article4.html"></a>
+                    <div class="pattern-2"></div>
+                </figure>
+            </article>
+            <article>
+                <figure>
+                    <img src="img/retrouvailles.png" alt="Retrouvailles">
+                    <figcaption>
+                        <h3>Retrouvailles</h3>
+                        <p class="date">Publié le 08/02/2018 à 15h50</p>
+                        <p class="extrait">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </figcaption>
+                    <a href="article5.html"></a>
+                    <div class="pattern-2"></div>
+                </figure>
+            </article>
+        <div class="bg"></div>
     </section>
     <footer>
         <div id="adress">
@@ -140,7 +147,6 @@
             <br> AK 99508-4600
             <br> Etats Unis
         </div>
-        <div id="map"></div>
         <p id="copy">Copyright Kercode 2018 - Site réalisé à des fins pédagogiques</p>
         <ul id="reseaux">
             <a href="#" id="fb"></a>

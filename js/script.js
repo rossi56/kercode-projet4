@@ -1,23 +1,36 @@
+
+
+
+/*----------------------POP-UP-CONTACT -------------*/
 $(document).ready(function(){
-    $('.contact,.submit').on('click', function(){
-        $('.nom,.mail,.prenom, .message, .submit').toggleClass('slide');
-        $('.contact,.titre-contact').toggleClass('hide');
+    $('.contact').on('click', function(){
+        $('.pop-contact').removeClass('close');
+        $('.pop-contact').addClass('open');
+        $('.contact').hide();
+        $('.titre-contact').hide();
     });
-    
 });
 
-/*$(document).ready(function(){
-    $('.submit').on('click',function(){
-        $('.nom,.mail,.prenom, .message, .submit').toggleClass('go');
-        
+$(document).ready(function(){
+    $('.cross').on('click', function(){
+        $('.pop-contact').removeClass('open');
+        $('.pop-contact').addClass('close');
+        $('.contact').show();
+        $('.titre-contact').show();
     });
-});*/
+});
 
-/*---------------------POP-UP-INSCRIPTION-------------------------*/
+$(document).ready(function(){
+    $('.btn-submit').on('click', function(){
+        $('.pop-contact').addClass('close');
+        setTimeout(  $('#envoi').css('display','block'),3000);
+    });
+});
+/*----------------------POP-UP-INSCRIPTION-------------*/
 $(document).ready(function(){
     $('#inscription').on('click', function(){
         $('.pop-inscription').removeClass('close');
-        $('.pop-inscription').addClass('open');
+        $('.pop-inscription').toggleClass('open');
     });
 });
 
@@ -42,4 +55,29 @@ $(document).ready(function(){
         $('.pop-connect').removeClass('open');
         $('.pop-connect').addClass('close');
     });
+});
+/*----------------------BURGER-------------*/
+
+
+
+$(document).ready(function(){
+    $('.mask ,.burger').click(function(){
+        $('.mask').toggleClass('closed');
+        $('nav').toggleClass('nav-mobil');
+        $('.burger').toggleClass('active');
+
+    });
+});
+
+/*-----------------PAUSE VIDEO------------------*/
+
+var pause = document.getElementById('pause');
+var video = document.getElementById('video');
+
+pause.addEventListener('click', function(){
+    if(video.paused){
+        video.play();
+    } else{
+        video.pause();
+    }
 });

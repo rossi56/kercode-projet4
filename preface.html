@@ -9,42 +9,60 @@
     <title>Billet simple pour l'Alaska</title>
 </head>
 
-<body id="index">
-    <header class="container">
-        <div class="row">
-            <h1 class="col-12 col-md-8 col-lg-8">Billet simple pour l'Alaska</h1>
-            <p class="projet col-xs-12 col-md-8 col-lg-9">"Le projet un peu fou d'un écrivain voyageur"</p>
-
-            <form class="col-lg-3 offset-9">
-                <input type="text" name="search" placeholder="Recherche..">
-            </form>
-            <p id="by" class="projet col-12 col-md-8 col-lg-4 offset-6">
-                <span> By</span> Jean Forteroche</p>
-                <ul id="nav-2">
-                    <li>
-                        <a href="index.html">Accueil</a>
-                    </li>
-                    <li>
-                        <a href="roman.html">Mon Roman</a>
-                    </li>
-                    <li>
-                        <a href="connexion.html">Connexion</a>
-                    </li>
-                    <li>
-                        <a href="#">Inscription</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                </ul>
-        </div>
-    </header>
-    <section class="container" id="preface">
-        <div class="row">
+<body>
+        <header>
+                <h1>Billet simple pour l'Alaska</h1>
+                <p>"Le projet un peu fou d'un écrivain voyageur"</p>
+                <form>
+                    <input class="search" type="text" name="search" placeholder="Recherche..">
+                </form>
+                <p id="by">
+                    <span> By</span> Jean Forteroche</p>
+                <nav>
+                    <a href="index.html">Accueil</a>
+                    <a href="roman.html">Roman</a>
+                    <a id="connect" href="#">Connexion</a>
+                    <a id="inscription" href="#">Inscription</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <img class="pref-img" src="img/book.png" alt="Préface">
+                <div class="pattern"></div>
+                <div class="pop-inscription">
+                    <img class="cross" src="img/cross.svg" alt="croix">
+                    <h3>Inscrivez-vous !</h3>
+                    <h4>Ne rater pas les derniers articles !</h4>
+                    <form action="">
+                        <input type="text" placeholder="Votre Prénom">
+                        <input type="text" placeholder="Votre Nom">
+                        <input type="email" placeholder="Votre e-mail">
+                        <input type="text" placeholder="Mot de Passe">
+                    </form>
+                    <button class="btn-submit" type="submit">S'inscrire</button>
+                </div>
+                <div class="pop-connect">
+                    <img class="cross" src="img/cross.svg" alt="croix">
+                    <h3>Connectez-vous !</h3>
+                    <form action="">
+                        <input type="email" placeholder="Identifiant">
+                        <input type="text" placeholder="Mot de Passe">
+                    </form>
+                    <button class="btn-submit" type="submit">Connexion</button>
+                </div>
+                <div class="burger">
+                    <svg width="100px" height="100px">
+                        <path class="top" d="M 30 40 L 70 40 C 90 40 90 75 60 85 A 40 40 0 0 1 20 20 L 80 80"></path>
+                        <path class="middle" d="M 30 50 L 70 50"></path>
+                        <path class="bottom" d="M 70 60 L 30 60 C 10 60 10 20 40 15 A 40 38 0 1 1 20 80 L 80 20"></path>
+                    </svg>
+                </div>
+                <div class="mask"></div>
+            </header>
+    <section class="container">
+        
             <article class="preface">
-                <h2 class="col-lg-3 offset-lg-3">Préface</h2>
-                <img  src="img/moi.jpg" alt="">
-                <p class="col-lg-12">Vous me direz, POURQUOI ? Et là je vous répondrai…. Pourquoi pas ?......... <br> Pourquoi ne pas sortir des sentiers
+                <h2>Préface</h2>
+                <img src="img/falaise.png" alt="Falaise">
+                <p>Vous me direz, POURQUOI ? Et là je vous répondrai…. Pourquoi pas ?......... <br> Pourquoi ne pas sortir des sentiers
                     battus, pourquoi être sans cesse à la recherche d’un éditeur, pourquoi être à la recherche de gloire,
                     de succès. <br> Moi je n’en suis pas là et je vais vous l’expliquer au travers de ces quelques lignes de préface. <br>
                     Je suis amoureux, amoureux de la vie, de la terre, de tout ce qui m’entoure.<br> Je me qualifierai de contemplatif,
@@ -60,13 +78,13 @@
                     tout de suite……………
                 </p>
             </article>
-        </div>
+        <div class="bg1"></div>
     </section>
     <footer>
             <div id="adress">
                 Jean Forteroche <br>4050 University Lake Dr, <br> Anchorage, <br> AK 99508-4600 <br> Etats Unis
             </div>
-            <div id="map"></div>
+         
             <p id="copy">Copyright Kercode 2018 - Site réalisé à des fins pédagogiques</p>
             <ul id="reseaux">
                 <a href="#" id="fb"></a>
