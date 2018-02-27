@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE php>
+<php lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -13,11 +13,11 @@
 
     <header>
         <nav>
-            <a href="index.html">Accueil</a>
-            <a href="roman.html">Mon Roman</a>
+            <a href="index.php">Accueil</a>
+            <a href="roman.php">Mon Roman</a>
             <a id="connect" href="#">Connexion</a>
             <a id="inscription" href="#">Inscription</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.php">Contact</a>
         </nav>
         <h1>Billet simple pour l'Alaska</h1>
         <p>"Le projet un peu fou d'un écrivain voyageur"</p>
@@ -73,7 +73,7 @@
                     <img src="img/blog.png" alt="Book">
                 </figure>
                 <img id="punaise2" src="img/punaise.png" alt="Punaise-2">
-                <a class="enter" href="roman.html">Entrez !</a>
+                <a class="enter" href="roman.php">Entrez !</a>
             </article>
             <article class="about">
                 <h2 class="projet">Le Projet</h2>
@@ -132,4 +132,4 @@
 
 </body>
 
-</html>
+</php>

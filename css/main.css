@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Cookie|Londrina+Outline|Yellowtail);
 @import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:400,300,500);
 @import url(https://fonts.googleapis.com/css?family=Life+Savers:400,700);
-html, body, div, span, applet, object, iframe,
+php, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -81,6 +81,9 @@ table {
     @media screen and (max-width: 48em) {
       .container article {
         width: 60%; } }
+    @media screen and (max-width: 22.5em) {
+      .container article {
+        width: 95%; } }
     .container article figure {
       -webkit-box-shadow: 30px 0 50px 15px #030303;
       box-shadow: 30px 0 50px 15px #030303;
@@ -130,6 +133,9 @@ table {
           color: white;
           -ms-flex-item-align: auto;
           align-self: auto; }
+          @media screen and (max-width: 22.5em) {
+            .container article figure figcaption h3 {
+              font-size: 22px; } }
         .container article figure figcaption .date {
           font-size: 16px;
           position: absolute;
@@ -150,6 +156,9 @@ table {
           -o-transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
           transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
           transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out; }
+          @media screen and (max-width: 22.5em) {
+            .container article figure figcaption .extrait {
+              font-size: 14px; } }
       .container article figure a {
         position: absolute;
         top: 0;

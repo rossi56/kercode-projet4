@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE php>
+<php lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -19,11 +19,11 @@
                 <p id="by">
                     <span> By</span> Jean Forteroche</p>
                 <nav>
-                    <a href="index.html">Accueil</a>
-                    <a href="roman.html">Roman</a>
+                    <a href="index.php">Accueil</a>
+                    <a href="roman.php">Roman</a>
                     <a id="connect" href="#">Connexion</a>
                     <a id="inscription" href="#">Inscription</a>
-                    <a href="contact.html">Contact</a>
+                    <a href="contact.php">Contact</a>
                 </nav>
                 <img class="pref-img" src="img/book.png" alt="Préface">
                 <div class="pattern"></div>
@@ -106,4 +106,4 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQfpft0MIiwF4INGm3uMGrylY
 
 </body>
 
-</html>
+</php>

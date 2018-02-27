@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE php>
+<php lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -13,11 +13,11 @@
     <body>
         <header >
             <nav>
-                <a href="index.html">Accueil</a>
-                <a href="roman.html">Roman</a>     
+                <a href="index.php">Accueil</a>
+                <a href="roman.php">Roman</a>     
                 <a id="connect" href="#">Connexion</a>
                 <a id="inscription" href="#">Inscription</a>       
-                <a href="contact.html">Contact</a> 
+                <a href="contact.php">Contact</a> 
             </nav>
            
             <video id="video" loop autoplay muted src="video/aircraft - 7180.mp4"></video>
@@ -114,4 +114,4 @@
    
 </body>
 
-</html>
+</php>

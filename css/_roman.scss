@@ -27,6 +27,9 @@
         @media screen and (max-width:48em){
             width: 60%;
         }
+        @media screen and (max-width:22.5em){
+            width: 95%;
+        }
         figure {
             box-shadow: 30px 0 50px 15px rgb(3, 3, 3);
             overflow: hidden;
@@ -55,6 +58,9 @@
                     font-size: 40px;
                     color: white;
                     align-self: auto;
+                    @media screen and (max-width:22.5em){
+                        font-size: 22px;;
+                    }
                 }
                 .date {
                     font-size: 16px;
@@ -70,6 +76,9 @@
                     transform: translateY(50px);
                     opacity: 0;
                     transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
+                    @media screen and (max-width:22.5em){
+                        font-size: 14px;;
+                    }
                 }
             }
             a {

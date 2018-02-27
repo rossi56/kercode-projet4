@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE php>
+<php lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -19,11 +19,11 @@
                 <p id="by">
                     <span> By</span> Jean Forteroche</p>
                 <nav>
-                    <a href="index.html">Accueil</a>
-                    <a href="roman.html">Roman</a>
+                    <a href="index.php">Accueil</a>
+                    <a href="roman.php">Roman</a>
                     <a id="connect" href="#">Connexion</a>
                     <a id="inscription" href="#">Inscription</a>
-                    <a href="contact.html">Contact</a>
+                    <a href="contact.php">Contact</a>
                 </nav>
                 <img class="pref-img" src="img/book.png" alt="Préface">
                 <div class="pattern"></div>
@@ -58,10 +58,10 @@
                 <div class="mask"></div>
             </header>
     <section class="container">
-        
+   
             <article class="preface">
-                <h2>Le départ</h2>
-                <img src="img/boussole.png" alt="Boussole">
+                <h2>Le retour</h2>
+                <img src="img/retour.png" alt="Le retour">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis itaque, eius reiciendis doloremque obcaecati repudiandae, illum magnam rerum sint veritatis delectus ad! Officia amet nostrum facere suscipit quisquam itaque architecto.
                 Quo ipsa maxime laboriosam animi, perspiciatis nihil reiciendis ea dicta sit sed repellat, natus eum optio odit quidem saepe veritatis iste odio magnam eligendi est libero. Possimus praesentium aspernatur veniam.
                 Quis eveniet asperiores sunt quae consequuntur beatae quasi perspiciatis, amet ex vero dolor voluptate, cum officia repudiandae. Iusto veritatis at culpa nemo dolorem, numquam incidunt quas quaerat recusandae qui provident.
@@ -84,14 +84,14 @@
                 Velit dolore deserunt, ipsam inventore accusantium ab alias quidem vel necessitatibus nostrum provident animi? Optio, omnis qui delectus ratione tempora officiis enim officia nisi voluptatibus laborum quia autem est tenetur.
                 </p>
             </article>
-      
-        <div class="bg1"></div>
+    
+        <div class="bg"></div>
     </section>
     <footer>
             <div id="adress">
                 Jean Forteroche <br>4050 University Lake Dr, <br> Anchorage, <br> AK 99508-4600 <br> Etats Unis
             </div>
-           
+          
             <p id="copy">Copyright Kercode 2018 - Site réalisé à des fins pédagogiques</p>
             <ul id="reseaux">
                 <a href="#" id="fb"></a>
@@ -113,4 +113,4 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQfpft0MIiwF4INGm3uMGrylY
 
 </body>
 
-</html>
+</php>

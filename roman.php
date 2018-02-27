@@ -1,5 +1,55 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php
+    $articles = [
+        [
+            "id" => 1,
+            "titre" => "Article 1",
+            "extrait" => "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "publication" => "2018-02-27 11:00 ",
+            "image"=> "img/article-1.png"
+        ],
+        [
+            "id" => 2,
+            "titre" => "Article 2",
+            "extrait" => "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "publication" => "2018-02-27 11:02 ",
+            "image"=> "img/article-1.png"
+        ],
+        [
+            "id" => 3,
+            "titre" => "Article 3",
+            "extrait" => "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "publication" => "2018-02-27 11:03 ",
+            "image"=> "img/article-1.png"
+        ],
+        [
+            "id" => 4,
+            "titre" => "Article 4",
+            "extrait" => "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "publication" => "2018-02-27 11:04 ",
+            "image"=> "img/article-1.png"
+        ],
+        [
+            "id" => 5,
+            "titre" => "Article 5",
+            "extrait" => "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "publication" => "2018-02-27 11:05 ",
+            "image"=> "img/article-1.png"
+        ],
+        [
+            "id" => 6,
+            "titre" => "Article 6",
+            "extrait" => "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "publication" => "2018-02-27 11:06 ",
+            "image"=> "img/article-1.png"
+        ],
+    ]
+?>
+
+
+
+
+<!DOCTYPE php>
+<php lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -19,13 +69,13 @@
         <p id="by">
             <span> By</span> Jean Forteroche</p>
         <nav>
-            <a href="index.html">Accueil</a>
-            <a href="roman.html">Roman</a>
+            <a href="index.php">Accueil</a>
+            <a href="roman.php">Roman</a>
             <a id="connect" href="#">Connexion</a>
             <a id="inscription" href="#">Inscription</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.php">Contact</a>
         </nav>
-        <video autoplay loop src="video/lettres.mp4"></video>
+        <video id="video" autoplay loop src="video/lettres.mp4"></video>
         <div class="pattern"></div>
         <button id="pause"><i class="far fa-pause-circle fa-3x"></i></button>
         <div class="pop-inscription">
@@ -61,82 +111,83 @@
     <section class="container">
             <article>
                 <figure>
-                    <img src="img/article-1.png" alt="">
+                    <img src="<?= $articles[0] ["image"]; ?>" alt="<?= $articles[0] ["image"]; ?>">
                     <figcaption>
-                        <h3>Préface</h3>
-                        <p class="date">Publié le 08/02/2018 à 15h50</p>
-                        <p class="extrait">Vous me direz, POURQUOI ? Et là je vous répondrai…
+                        <h3><?= $articles[0] ["titre"]; ?></h3>
+                        <p class="date"><time datetime="<?= $articles[0] ["publication"]; ?>"><?= $articles[0] ["publication"]; ?> </time></p>
+                        <p class="extrait"><?= $articles[0] ["extrait"]; ?>
                         </p>
                     </figcaption>
-                    <a href="preface.html"></a>
+                    <a href="article.php?id=<?=$articles[0] ["id"];  ?>"></a>
                     <div class="pattern-2"></div>
                 </figure>
             </article>
             <article>
                 <figure>
-                    <img src="img/seul.png" alt="Seul">
+                    <img src="<?= $articles[1] ["image"]; ?>" alt="<?= $articles[1] ["image"]; ?>">
                     <figcaption>
-                        <h3>Le retour</h3>
-                        <p class="date">Publié le 08/02/2018 à 15h50</p>
-                        <p class="extrait">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <h3><?= $articles[1] ["titre"]; ?></h3>
+                        <p class="date"><time datetime="<?= $articles[1] ["publication"]; ?>"><?= $articles[1] ["publication"]; ?> </time></p>
+                        <p class="extrait"><?= $articles[1] ["extrait"]; ?>
                         </p>
                     </figcaption>
-                    <a href="article1.html"></a>
+                    <a href="article.php?id=<?=$articles[1] ["id"];  ?>"></a>
                     <div class="pattern-2"></div>
                 </figure>
             </article>
             <article>
                 <figure>
-                    <img src="img/rencontre.png" alt="Rencontre">
+                    <img src="<?= $articles[2] ["image"]; ?>" alt="<?= $articles[2] ["image"]; ?>">
                     <figcaption>
-                        <h3>La rencontre</h3>
-                        <p class="date">Publié le 08/02/2018 à 15h50</p>
-                        <p class="extrait">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <h3><?= $articles[2] ["titre"]; ?></h3>
+                        <p class="date"><time datetime="<?= $articles[2] ["publication"]; ?>"><?= $articles[2] ["publication"]; ?> </time></p>
+                        <p class="extrait"><?= $articles[2] ["extrait"]; ?>
                         </p>
                     </figcaption>
-                    <a href="article2.html"></a>
+                    <a href="article.php?id=<?=$articles[2] ["id"];  ?>"></a>
                     <div class="pattern-2"></div>
                 </figure>
             </article>
             <article>
                 <figure>
-                    <img src="img/ensemble.png" alt="Ensemble">
+                    <img src="<?= $articles[3] ["image"]; ?>" alt="<?= $articles[3] ["image"]; ?>">
                     <figcaption>
-                        <h3>Ensemble</h3>
-                        <p class="date">Publié le 08/02/2018 à 15h50</p>
-                        <p class="extrait">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <h3><?= $articles[3] ["titre"]; ?></h3>
+                        <p class="date"><time datetime="<?= $articles[3] ["publication"]; ?>"><?= $articles[3] ["publication"]; ?> </time></p>
+                        <p class="extrait"><?= $articles[3] ["extrait"]; ?>
                         </p>
                     </figcaption>
-                    <a href="article3.html"></a>
+                    <a href="article.php?id=<?=$articles[3] ["id"];  ?>"></a>
                     <div class="pattern-2"></div>
                 </figure>
             </article>
             <article>
                 <figure>
-                    <img src="img/depart.png" alt="Le départ">
+                    <img src="<?= $articles[4] ["image"]; ?>" alt="<?= $articles[4] ["image"]; ?>">
                     <figcaption>
-                        <h3>Le départ</h3>
-                        <p class="date">Publié le 08/02/2018 à 15h50</p>
-                        <p class="extrait">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <h3><?= $articles[4] ["titre"]; ?></h3>
+                        <p class="date"><time datetime="<?= $articles[4] ["publication"]; ?>"><?= $articles[4] ["publication"]; ?> </time></p>
+                        <p class="extrait"><?= $articles[4] ["extrait"]; ?>
                         </p>
                     </figcaption>
-                    <a href="article4.html"></a>
+                    <a href="article.php?id=<?=$articles[4] ["id"];  ?>"></a>
                     <div class="pattern-2"></div>
                 </figure>
             </article>
             <article>
                 <figure>
-                    <img src="img/retrouvailles.png" alt="Retrouvailles">
+                    <img src="<?= $articles[5] ["image"]; ?>" alt="<?= $articles[5] ["image"]; ?>">
                     <figcaption>
-                        <h3>Retrouvailles</h3>
-                        <p class="date">Publié le 08/02/2018 à 15h50</p>
-                        <p class="extrait">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <h3><?= $articles[5] ["titre"]; ?></h3>
+                        <p class="date"><time datetime="<?= $articles[5] ["publication"]; ?>"><?= $articles[5] ["publication"]; ?> </time></p>
+                        <p class="extrait"><?= $articles[5] ["extrait"]; ?>
                         </p>
                     </figcaption>
-                    <a href="article5.html"></a>
+                    <a href="article.php?id=<?=$articles[5] ["id"];  ?>"></a>
                     <div class="pattern-2"></div>
                 </figure>
             </article>
+            
         <div class="bg"></div>
     </section>
     <footer>
@@ -167,4 +218,4 @@
 
 </body>
 
-</html>
+</php>
