@@ -20,12 +20,12 @@ $(document).ready(function(){
     });
 });
 
-$(document).ready(function(){
-    $('.btn-submit').on('click', function(){
-        $('.pop-contact').addClass('close');
-        setTimeout(  $('#envoi').css('display','block'),3000);
-    });
-});
+// $(document).ready(function(){
+//     $('.btn-submit').on('click', function(){
+//         $('.pop-contact').addClass('close');
+//         setTimeout(  $('#envoi').css('display','block'),3000);
+//     });
+// });
 /*----------------------POP-UP-INSCRIPTION-------------*/
 $(document).ready(function(){
     $('#inscription').on('click', function(){

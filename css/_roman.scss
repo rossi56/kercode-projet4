@@ -6,6 +6,13 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    p{
+        text-align: center;
+        color: orangered;
+        font-size: 35px;
+        margin-top: 25px;
+        width: 100%;
+    }
     .bg {
         position: absolute;
         top: 0;

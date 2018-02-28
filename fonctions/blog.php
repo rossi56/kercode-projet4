@@ -18,7 +18,7 @@
 
 /*Récupération d'un article unique*/
 
-    function article($id){
+    function article(){
         global $bdd;
         /*Sécurisation id de l'url, faille de sécurité*/
         $id=(int)$_GET["id"];//conversion obligatoire en entier avec (int)
@@ -35,9 +35,9 @@
 
     /*Gestion du nombre de commentaires*/
     
-    function nb_commentaires($id_article) {
+    function nb_commentaires() {
         global $bdd;
-        $id_article = (int)$id_article;
+        $id_article = (int)$_GET["id"];;
 
         $nb_commentaires = $bdd->prepare("SELECT COUNT(*) FROM commentaires WHERE id_article = ?");
         $nb_commentaires->execute([$id_article]);
@@ -45,10 +45,10 @@
         return $nb_commentaires;
     }
 /*   Gestion des commentaires             */
-    function commentaires($id_article){
+    function commentaires(){
         global $bdd;
 
-        $id_article = (int)$id_article;
+        $id_article = (int)$_GET["id"];;
         $commentaires = $bdd->prepare("SELECT commentaires.*, membres.pseudo FROM commentaires INNER JOIN membres ON commentaires.id_membre = membres.id AND commentaires.id_article = ?");
         $commentaires->execute([$id_article]);
         $commentaires = $commentaires->fetchAll();
@@ -56,4 +56,18 @@
 
         return $commentaires;
 
+    }
+
+    /*Fonction recherche */
+
+    function recherche(){
+        global $bdd;
+
+        extract($_POST);
+        $recherche = $bdd->prepare("SELECT id, titre, extrait, publication, img, imageArt FROM articles WHERE titre LIKE :query OR contenu LIKE :query ORDER BY id DESC");
+        $recherche->execute([
+            "query" => '%' . $query . '%' //il peut y avoir du contenu avant ou après le terme de recherche
+        ]);
+        $recherche = $recherche->fetchAll();
+        return $recherche;
     }

@@ -1,7 +1,15 @@
 <?php
+//appel fonctions
  require_once "fonctions/bdd.php";
  include_once "fonctions/blog.php";
+ //Connexion base de données
  $bdd = bdd();
+ //affichage des articles
+ $articles = articles();
+ //recherche
+ if(!empty($_POST))
+ $articles = recherche();
+else
  $articles = articles();
 ?>
 <!DOCTYPE html>
@@ -19,8 +27,8 @@
             <header>
                 <h1>Billet simple pour l'Alaska</h1>
                 <p>"Le projet un peu fou d'un écrivain voyageur"</p>
-                <form>
-                    <input class="search" type="text" name="search" placeholder="Recherche..">
+                <form method="post" action="roman.php">
+                    <input class="search" type="text" name="query" placeholder="Recherche.." value="<?php if(isset($_POST["query"])) echo $_POST["query"]//laisser champs de recherche rempli ?>">
                 </form>
                 <p id="by">
                     <span> By</span> Jean Forteroche</p>
@@ -68,7 +76,14 @@
             </header>
             <section class="container">
                 <?php
-                foreach($articles as $article) :
+                    if(isset($_POST["query"])) : //affichage du résultat de recherche s'il y a un résultat
+                ?>
+                    <p>Voici le résultat de votre recherche avec "<?= $_POST["query"] ?>"</p>
+                <?php
+                    endif;
+                ?>
+                <?php
+                foreach($articles as $article) ://boucle d'affichage des articles
                  ?>
                     <article>
                         <figure>

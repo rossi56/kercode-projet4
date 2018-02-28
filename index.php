@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -21,8 +22,8 @@
         </nav>
         <h1>Billet simple pour l'Alaska</h1>
         <p>"Le projet un peu fou d'un écrivain voyageur"</p>
-        <form>
-            <input class="search" type="text" name="search" placeholder="Recherche..">
+        <form method="post" action="roman.php">
+                    <input class="search" type="text" name="query" placeholder="Recherche.." value="<?php if(isset($_POST["query"])) echo $_POST["query"]//laisser champs de recherche rempli ?>">
         </form>
         <p id="by">
             <span> By</span> Jean Forteroche</p>
