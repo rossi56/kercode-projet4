@@ -27,35 +27,35 @@ $(document).ready(function(){
 //     });
 // });
 /*----------------------POP-UP-INSCRIPTION-------------*/
-$(document).ready(function(){
-    $('#inscription').on('click', function(){
-        $('.pop-inscription').removeClass('close');
-        $('.pop-inscription').toggleClass('open');
-    });
-});
+// $(document).ready(function(){
+//     $('#inscription').on('click', function(){
+//         $('.pop-inscription').removeClass('close');
+//         $('.pop-inscription').toggleClass('open');
+//     });
+// });
 
-$(document).ready(function(){
-    $('.cross').on('click', function(){
-        $('.pop-inscription').removeClass('open');
-        $('.pop-inscription').addClass('close');
-    });
-});
+// $(document).ready(function(){
+//     $('.cross').on('click', function(){
+//         $('.pop-inscription').removeClass('open');
+//         $('.pop-inscription').addClass('close');
+//     });
+// });
 
 
 /*----------------------POP-UP-CONNEXION-------------*/
-$(document).ready(function(){
-    $('#connect').on('click', function(){
-        $('.pop-connect').removeClass('close');
-        $('.pop-connect').addClass('open');
-    });
-});
+// $(document).ready(function(){
+//     $('#connect').on('click', function(){
+//         $('.pop-connect').removeClass('close');
+//         $('.pop-connect').addClass('open');
+//     });
+// });
 
-$(document).ready(function(){
-    $('.cross').on('click', function(){
-        $('.pop-connect').removeClass('open');
-        $('.pop-connect').addClass('close');
-    });
-});
+// $(document).ready(function(){
+//     $('.cross').on('click', function(){
+//         $('.pop-connect').removeClass('open');
+//         $('.pop-connect').addClass('close');
+//     });
+// });
 /*----------------------BURGER-------------*/
 
 

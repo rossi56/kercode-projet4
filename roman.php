@@ -35,8 +35,8 @@ else
                 <nav>
                     <a href="index.php">Accueil</a>
                     <a href="roman.php">Roman</a>
-                    <a id="connect" href="#">Connexion</a>
-                    <a id="inscription" href="#">Inscription</a>
+                    <a id="connect" href="connexion.php">Connexion</a>
+                    <a id="inscription" href="inscription.php">Inscription</a>
                     <a href="contact.php">Contact</a>
                 </nav>
                 <video id="video" autoplay loop src="video/lettres.mp4"></video>

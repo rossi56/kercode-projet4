@@ -60,10 +60,20 @@ function inscription(){// gestion des erreurs d'entrées dans les champs du form
 
  function connexion(){
      global $bdd;
+     
+     $erreur = "Les identifiants sont erronés !";
      //extraire donnée de ma table membre
      extract($_POST);
 
-     
+     $connexion = $bdd->prepare("SELECT id, password FROM membres WHERE pseudo = ?");
+     $connexion->execute([$pseudo]);
+     $connexion = $connexion->fetch();
+
+     if(password_verify($password, $connexion["password"])){
+        $_SESSION["membre"] = $connexion["id"];
+        header("Location: compte.php");
+     }else
+        return $erreur;
 
  }
 

@@ -2,7 +2,7 @@
 /*Fonction récupération articles*/
     function articles(){
         global $bdd;
-        $articles = $bdd->query("SELECT id, titre, extrait, publication, img, imageArt FROM articles ORDER BY id DESC ");
+        $articles = $bdd->query("SELECT id, titre, extrait, publication, img, imageArt FROM articles ORDER BY id DESC");
         $articles = $articles = $articles->fetchAll();
         return $articles;
     }

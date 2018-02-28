@@ -1,5 +1,11 @@
-
-
+<?php
+session_start();
+ require_once "fonctions/bdd.php";
+ include_once "fonctions/membre.php";
+ $bdd = bdd();
+ if(!empty($_POST))
+ $erreur = connexion();
+ ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -13,7 +19,7 @@
 
 <body>
         <header>
-                <h1>Billet simple pour l'Alaska</h1>
+                <h3>Connectez-vous !</h3>
                 <p>"Le projet un peu fou d'un écrivain voyageur"</p>
                 <form method="post" action="roman.php">
                     <input class="search" type="text" name="query" placeholder="Recherche.." value="<?php if(isset($_POST["query"])) echo $_POST["query"]//laisser champs de recherche rempli ?>">
@@ -27,10 +33,29 @@
                     <a id="inscription" href="inscription.php">Inscription</a>
                     <a href="contact.php">Contact</a>
                 </nav>
-                <img class="pref-img" src="img/book.png" alt="Préface">
+                <img class="pref-img" src="img/connexion.png" alt="Préface">
                 <div class="pattern"></div>
                
+                <div class="connexion">
+                 
+                 
+                 <form method="post" action="">
+                 <?php
+                     if(isset($erreur)) : 
+                 ?>
+                         <!-- affichage de ce message en cas d'erreur -->
+                     <div class="erreur"><?= $erreur ?></div>
+                 <?php
+                 ?>                      
+                 <?php
+                     endif;
+                 ?>
+                     <input type="text" name="pseudo" placeholder="Pseudo" value="<?php if(isset($_POST["pseudo"])) echo ($_POST["pseudo"]) ?>">
+                     <input type="password" name="password" placeholder="Mot de Passe">
+                     <input class="btn-submit" type="submit" value="Connexion">
+                 </form>
                 
+             </div>
                
                 <div class="burger">
                     <svg width="100px" height="100px">
@@ -41,3 +66,5 @@
                 </div>
                 <div class="mask"></div>
             </header>
+
+
