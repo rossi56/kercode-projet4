@@ -1,5 +1,17 @@
-<!DOCTYPE php>
-<php lang="fr">
+<?php
+ require_once "fonctions/bdd.php";
+ include_once "fonctions/blog.php";
+ $bdd = bdd();
+ $article = article($_GET["id"]);
+ $nb_commentaires = nb_commentaires($_GET["id"]);
+ $commentaires = commentaires($_GET["id"]);
+?>
+
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -60,25 +72,27 @@
     <section class="container">
         
             <article class="preface">
-                <h2>Préface</h2>
-                <img src="img/falaise.png" alt="Falaise">
-                <p>Vous me direz, POURQUOI ? Et là je vous répondrai…. Pourquoi pas ?......... <br> Pourquoi ne pas sortir des sentiers
-                    battus, pourquoi être sans cesse à la recherche d’un éditeur, pourquoi être à la recherche de gloire,
-                    de succès. <br> Moi je n’en suis pas là et je vais vous l’expliquer au travers de ces quelques lignes de préface. <br>
-                    Je suis amoureux, amoureux de la vie, de la terre, de tout ce qui m’entoure.<br> Je me qualifierai de contemplatif,
-                    j’aime apprendre en observant dans le silence, seul, avec pour seul bruit le murmure de la nature.<br> Du
-                    vent qui fait frémir les feuilles des arbres dans ce petit bruissement si caractéristique, du petit oiseau
-                    cherchant à communiquer avec ses congénères. <br>Voilà ce que j’aimerai vous faire partager. Pourquoi alors
-                    le faire au travers d’un blog et non d’un livre ?<br> Je ne dis pas que je n’éditerai pas ce livre en version
-                    papier, bien au contraire ; mais je veux de l’interactivité avec mes lecteurs.<br> J’aimerai avoir des retours
-                    tout au long de mes écrits et de mes publications, une participation solidaire à l’écriture de mon roman.<br>
-                    Je peux également me qualifier d’écrivain des temps modernes, me servant des outils numériques ; mais
-                    également amoureux de la langue française et très attaché à ses valeurs.<br> Alors pourquoi ne pas allier
-                    les deux ?<br> Suivez-moi, inscrivez-vous, connectez-vous et partageons.<br> Partageons ensemble ce récit. A
-                    tout de suite……………
+                <h2><?= $article["titre"] ?></h2>
+                <p class="date">Posté le <time datetime="<?= $article["publication"] ?> "><?= formatage_date($article["publication"]) ?></time> </p>
+                <img src="img/<?= $article["imageArt"] ?>" alt="<?= $article["imageArt"] ?>">
+                <p><?= $article["contenu"] ?>
                 </p>
             </article>
         <div class="bg1"></div>
+       
+        <section class="comments">
+            
+            <h2>Commentaires (<?= $nb_commentaires ?>)</h2>
+            
+            <?php
+            foreach($commentaires as $commentaire) :
+            ?>
+            <p class="date">Posté par <?= $commentaire["pseudo"] ?> le <time datetime="<?= $commentaire["publication"] ?>" ><?= formatage_date($commentaire["publication"]) ?></time> </p>
+            <p><?= $commentaire["commentaire"] ?></p>
+        </section>
+        <?php
+        endforeach;
+        ?>
     </section>
     <footer>
             <div id="adress">
@@ -106,4 +120,4 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQfpft0MIiwF4INGm3uMGrylY
 
 </body>
 
-</php>
+</html>
