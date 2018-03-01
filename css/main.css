@@ -245,6 +245,40 @@ table {
   transform: scale(1, 1);
 }
 
+#index h2 {
+  position: absolute;
+  z-index: 200;
+  top: 20%;
+  left: 35%;
+  color: white;
+  font-family: 'Cookie', cursive;
+  font-size: 85px;
+  height: 80px;
+  width: 100%;
+  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
+}
+
+#index .avatar {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  z-index: 200;
+}
+
+#index .email {
+  position: absolute;
+  top: 45%;
+  left: 40%;
+  z-index: 1500;
+}
+
+#index h3 {
+  font-size: 35px;
+  margin-top: 35%;
+}
+
 header h3 {
   color: white;
   font-size: 75px;
@@ -355,15 +389,6 @@ header .mail form input[type=submit]:hover {
   }
 }
 
-#find #map {
-  align-self: flex-start;
-  opacity: .7;
-  height: 400px;
-  width: 100%;
-  position: absolute;
-  z-index: 1500;
-}
-
 header h3 {
   color: white;
   font-size: 75px;
@@ -426,6 +451,7 @@ header .connexion form input[type=submit] {
   border: 1px solid white;
   padding: 15px 35px;
   width: 50%;
+  transition: transform 0.35s ease-in-out;
 }
 
 header .connexion form input[type=submit]:hover:hover {
@@ -439,7 +465,7 @@ header h3 {
   font-size: 75px;
   text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
   left: 50%;
-  top: 150px;
+  top: 100px;
   transform: translateX(-50%);
   position: absolute;
   z-index: 1000;
@@ -450,7 +476,7 @@ header h4 {
   font-size: 45px;
   text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
   left: 50%;
-  top: 250px;
+  top: 200px;
   transform: translateX(-50%);
   position: absolute;
   z-index: 1000;
@@ -467,7 +493,7 @@ header .inscription {
 header .inscription form {
   position: absolute;
   z-index: 1000;
-  top: 300px;
+  top: 250px;
   align-self: center;
   display: flex;
   flex-direction: column;
@@ -507,6 +533,7 @@ header .inscription form input[type=submit] {
   border: 1px solid white;
   padding: 15px 35px;
   width: 50%;
+  transition: transform 0.35s ease-in-out;
 }
 
 header .inscription form input[type=submit]:hover:hover {
@@ -569,24 +596,83 @@ header .inscription form input[type=submit]:hover:hover {
 }
 
 .container .comments {
-  background: rgba(165, 42, 42, 0.541);
-  height: 600px;
-  width: 100%;
+  margin-top: 175px;
+  z-index: 1500;
+  margin-bottom: 200px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 80%;
 }
 
 .container .comments h2 {
-  font-size: 45px;
-  color: white;
-  text-align: center;
+  color: #ff4400;
+  font-size: 30px;
 }
 
 .container .comments .date {
+  text-align: left;
   color: white;
+  font-size: 18px;
 }
 
 .container .comments p {
+  width: 50%;
+  text-align: left;
   color: white;
-  background: rgba(233, 92, 36, 0.582);
+  font-size: 20px;
+}
+
+.container .comments img {
+  width: 50px;
+  margin-top: 20px;
+}
+
+.container .comments .message-erreur {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 35px;
+  color: orangered;
+}
+
+.container .comments form {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-self: center;
+  width: 70%;
+}
+
+.container .comments form input {
+  align-self: center;
+  height: 50px;
+  color: white;
+  width: 40%;
+  border: none;
+  outline: none;
+  background: transparent;
+  border: 1px solid white;
+  transition: transform 0.35s ease-in-out;
+  margin-top: 25px;
+}
+
+.container .comments form input:hover {
+  border: 1px solid orangered;
+  transform: scaleX(1.2);
+  color: orangered;
+}
+
+.container .comments form #commentaire {
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'Alegreya', cursive;
+  font-size: 20px;
+}
+
+.container .comments form #commentaire:focus {
+  color: orangered;
 }
 
 header {
@@ -832,18 +918,18 @@ header nav a {
   transition: transform 0.5s ease-in-out, opacity 0.25s ease-in-out;
 }
 
+header nav a:hover {
+  color: #ee840a;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  text-shadow: 5px 5px black;
+}
+
 @media screen and (max-width: 48em) {
   header nav a {
     opacity: 0;
   }
-}
-
-header nav a:hover {
-  color: #0aeebc;
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2);
-  text-shadow: 5px 5px black;
 }
 
 @media screen and (max-width: 48em) {
@@ -910,6 +996,10 @@ header .search {
   padding: 10px 20px 10px 50px;
   -webkit-transition: width 1s ease-in-out;
   transition: 1s ease-in-out width;
+}
+
+header .search:focus {
+  color: orangered;
 }
 
 @media screen and (max-width: 48em) {

@@ -49,7 +49,7 @@
         global $bdd;
 
         $id_article = (int)$_GET["id"];;
-        $commentaires = $bdd->prepare("SELECT commentaires.*, membres.pseudo FROM commentaires INNER JOIN membres ON commentaires.id_membre = membres.id AND commentaires.id_article = ?");
+        $commentaires = $bdd->prepare("SELECT commentaires.*, membres.pseudo, membres.avatar FROM commentaires INNER JOIN membres ON commentaires.id_membre = membres.id AND commentaires.id_article = ?");
         $commentaires->execute([$id_article]);
         $commentaires = $commentaires->fetchAll();
 
@@ -71,3 +71,47 @@
         $recherche = $recherche->fetchAll();
         return $recherche;
     }
+
+    // FONCTION COMMENTAIRES UTILISATEUR
+
+function commentaires_user(){
+    global $bdd;
+
+    $commentaires = $bdd->prepare("SELECT commentaires.*, articles.titre FROM commentaires INNER JOIN articles ON commentaires.id_article = articles.id AND commentaires.id_membre = ? ");
+    $commentaires->execute([$_SESSION["membre"]]);
+    $commentaires = $commentaires->fetchAll();
+
+    return $commentaires;
+
+}
+
+//Laisser un commentaire dans les articles
+
+function commenter() {
+    if(isset($_SESSION["membre"])) {
+        global $bdd;
+    
+        $erreur = "";
+
+        extract($_POST);
+
+        if(!empty($commentaire)) {
+            $id_article = (int)$_GET["id"];//On vérifie l'intégrité de id_article
+            
+            $commenter = $bdd->prepare("INSERT INTO commentaires(id_membre, id_article, commentaire) VALUES(:id_membre, :id_article, :commentaire)");
+            $commenter->execute([
+                "id_membre" => $_SESSION["membre"],
+                "id_article" => $id_article,
+                "commentaire" => nl2br(htmlentities($commentaire))
+                
+            ]);
+            header("Location: article.php?id=" . $id_article);
+        }
+        else
+            $erreur .= "Vous devez écrire du texte !";
+        
+        return $erreur;
+        
+    }
+   
+}

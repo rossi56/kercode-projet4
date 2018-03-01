@@ -2,23 +2,23 @@
 
 
 /*----------------------POP-UP-CONTACT -------------*/
-$(document).ready(function(){
-    $('.contact').on('click', function(){
-        $('.pop-contact').removeClass('close');
-        $('.pop-contact').addClass('open');
-        $('.contact').hide();
-        $('.titre-contact').hide();
-    });
-});
+// $(document).ready(function(){
+//     $('.contact').on('click', function(){
+//         $('.pop-contact').removeClass('close');
+//         $('.pop-contact').addClass('open');
+//         $('.contact').hide();
+//         $('.titre-contact').hide();
+//     });
+// });
 
-$(document).ready(function(){
-    $('.cross').on('click', function(){
-        $('.pop-contact').removeClass('open');
-        $('.pop-contact').addClass('close');
-        $('.contact').show();
-        $('.titre-contact').show();
-    });
-});
+// $(document).ready(function(){
+//     $('.cross').on('click', function(){
+//         $('.pop-contact').removeClass('open');
+//         $('.pop-contact').addClass('close');
+//         $('.contact').show();
+//         $('.titre-contact').show();
+//     });
+// });
 
 // $(document).ready(function(){
 //     $('.btn-submit').on('click', function(){

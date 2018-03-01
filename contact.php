@@ -1,4 +1,5 @@
 <?php
+session_start();
  require_once "fonctions/bdd.php";
  include_once "fonctions/contact.php";
  $bdd = bdd();
@@ -26,19 +27,32 @@
 
         <body>
             <header>
-                <nav>
-                    <a href="index.php">Accueil</a>
-                    <a href="roman.php">Roman</a>
-                    <a id="connect" href="connexion.php">Connexion</a>
-                    <a id="inscription" href="inscription.php">Inscription</a>
-                    <a href="contact">Contact</a>
-                </nav>
+            <nav>
+            <a href="index.php">Accueil</a>
+            <a href="roman.php">Mon Roman</a>
+            <?php
+                if(isset($_SESSION["membre"])) :
+            ?>
+           <a href="compte.php">Mon compte</a>
+            <a href="deconnexion.php">Deconnexion</a>
+            <?php
+                else :
+            ?>
+             <a href="connexion.php">Connexion</a>
+            <a href="inscription.php">Inscription</a>
+            
+            <?php
+                endif;
+            ?>
+            <a href="contact.php">Contact</a>
+        </nav>
 
-                <video id="video" loop autoplay muted src="video/aircraft - 7180.mp4"></video>
+               
                 <div id="contenu">
                 <h3>Contactez-moi !</h3>
                 <h4>Je vous réponds rapidement !</h4>
                 </div>
+                <video id="video" loop autoplay muted src="video/aircraft - 7180.mp4"></video>
                 <div class="pattern"></div>
                 <button id="pause">
                     <i class="far fa-pause-circle fa-3x"></i>

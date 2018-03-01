@@ -5,65 +5,113 @@
     width: 100%;
     height: 100%;
     opacity: .7;
-    
 }
-.container{
+
+.container {
     height: auto;
     width: 100%;
-.preface {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    position: relative;
-    width: 100%;
-    
-    img {
-        width: 35%;
-        align-self: center;
-        transform: rotate(5deg);
+    .preface {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        img {
+            width: 35%;
+            align-self: center;
+            transform: rotate(5deg);
+        }
+        h2 {
+            align-self: center;
+            color: white;
+            font-size: 45px;
+            text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%), 4px 4px 0 hsl(22, 68%, 53%), 5px 5px 0 hsl(22, 68%, 53%), 6px 6px 0 hsl(22, 68%, 53%), 7px 7px 0 hsl(22, 68%, 53%);
+        }
+        p {
+            text-align: center;
+            color: white;
+            font-size: 22px;
+            line-height: 1.5em;
+        }
     }
-    h2 {
-        align-self: center;
-        color: white;
-        font-size: 45px;
-        text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%), 4px 4px 0 hsl(22, 68%, 53%), 5px 5px 0 hsl(22, 68%, 53%), 6px 6px 0 hsl(22, 68%, 53%), 7px 7px 0 hsl(22, 68%, 53%);
+    .bg1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url('../img/blog-background1.jpg');
+        width: 100%;
+        height: 100%;
+        opacity: .4;
+        z-index: 2;
     }
-    p {
-        text-align: center;
-        color: white;
-        font-size: 22px;
-        line-height: 1.5em;
-
-        
+    .comments {
+        margin-top: 175px;
+        z-index: 1500;
+        margin-bottom: 200px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 80%;
+        h2 {
+            color: rgb(255, 68, 0);
+            font-size: 30px;
+        }
+        .date {
+            text-align: left;
+            color: white;
+            font-size: 18px;
+        }
+        p {
+            width: 50%;
+            text-align: left;
+            color: white;
+            font-size: 20px;
+        }
+        img{
+            width: 50px;
+            margin-top: 20px;;
+        }
+        .message-erreur{
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 35px;
+            color: orangered;
+        }
+        form {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-self: center;
+            width: 70%;
+            input {
+                align-self: center;
+                height: 50px;
+                color: white;
+                width: 40%;
+                border: none;
+                outline: none;
+                background: transparent;
+                border: 1px solid white;
+                transition: transform 0.35s ease-in-out;
+                margin-top: 25px;
+                &:hover {
+                    border: 1px solid orangered;
+                    transform: scaleX(1.2);
+                    color: orangered;
+                }
+                
+            }
+            #commentaire{
+                border-radius: 10px;
+                text-align: center;
+                font-family: 'Alegreya', cursive;
+                font-size: 20px;
+                &:focus{
+                    color: orangered;
+                }
+            }
+        }
     }
-}
-.bg1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: url('../img/blog-background1.jpg');
-    width: 100%;
-    height: 100%;
-    opacity: .4;
-    z-index:2 ;
-  
-  }
-  .comments{
-      background: rgba(165, 42, 42, 0.541);
-      height: 600px;
-      width: 100%;
-      h2{
-          font-size: 45px;
-          color: white;
-          text-align: center;
-
-      }
-      .date{
-        color: white;
-      }
-      p{
-          color:white;
-          background: rgba(233, 92, 36, 0.582);
-      }
-  }
 }

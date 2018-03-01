@@ -194,17 +194,18 @@ header {
             text-decoration: none;
             font-size: 20px;
             transition: transform 0.5s ease-in-out, opacity 0.25s ease-in-out;
+            &:hover {
+                color: rgb(238, 132, 10);
+                -webkit-transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                transform: scale(1.1);
+                text-shadow: 5px 5px black;
+            }
             @media screen and (max-width: 48em) {
                 opacity: 0;
             }
         }
-        a:hover {
-            color: rgb(10, 238, 188);
-            -webkit-transform: scale(1.2);
-            -ms-transform: scale(1.2);
-            transform: scale(1.2);
-            text-shadow: 5px 5px black;
-        }
+      
         @media screen and (max-width: 48em) {
             display: flex;
             flex-direction: column;
@@ -264,6 +265,9 @@ header {
         padding: 10px 20px 10px 50px;
         -webkit-transition: width 1s ease-in-out;
         transition: 1s ease-in-out width;
+        &:focus{
+            color: orangered;
+        }
         @media screen and (max-width: 48em) {
             left: 60%;
             top: 10%;

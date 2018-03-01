@@ -1,8 +1,9 @@
 <?php
-function inscription(){// gestion des erreurs d'entrées dans les champs du formulaire d'inscription
+// gestion des erreurs d'entrées dans les champs du formulaire d'inscription
+function inscription(){
     global $bdd;
-
-    extract($_POST);
+//extraire donnée de ma table membre
+    extract($_POST); 
 
     $validation = true;
     $erreurs = [];
@@ -29,16 +30,17 @@ function inscription(){// gestion des erreurs d'entrées dans les champs du form
         $erreur = "Le mot de passe de confirmation est incorrect !";
     }
     if($validation) {
-        $inscription = $bdd->prepare("INSERT INTO membres(pseudo, email, password) VALUES(:pseudo, :email, :password)");
+        $inscription = $bdd->prepare("INSERT INTO membres (pseudo, email, `password`, avatar) VALUES(:pseudo, :email, :password, :avatar)");
         $inscription->execute([
             "pseudo" => htmlentities($pseudo),
             "email" => htmlentities($email),
-            "password" => password_hash($password, PASSWORD_DEFAULT)
+            "password" => password_hash($password, PASSWORD_DEFAULT),
+            "avatar" => "user.png"
         ]);
         unset($_POST["pseudo"]);
         unset($_POST["email"]);
         unset($_POST["emailconf"]);
-     
+        //Vider les champs après validation
     }
 
     return $erreurs;
@@ -62,7 +64,7 @@ function inscription(){// gestion des erreurs d'entrées dans les champs du form
      global $bdd;
      
      $erreur = "Les identifiants sont erronés !";
-     //extraire donnée de ma table membre
+//extraire donnée de ma table membre
      extract($_POST);
 
      $connexion = $bdd->prepare("SELECT id, password FROM membres WHERE pseudo = ?");
@@ -77,4 +79,23 @@ function inscription(){// gestion des erreurs d'entrées dans les champs du form
 
  }
 
- 
+ //Fonction déconnexion
+
+ function deconnexion() {
+    unset($_SESSION["membre"]);
+    session_destroy();
+    header("Location: connexion.php");
+ }
+
+ //FONCTION COMPTE MEMBRE
+
+ function infos(){
+    global $bdd;
+    
+    $membre = $bdd->prepare("SELECT pseudo, email, avatar FROM membres WHERE id = ?");
+    $membre->execute([$_SESSION["membre"]]);
+    $membre = $membre->fetch();
+
+    return $membre;
+
+ }

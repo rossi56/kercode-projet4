@@ -1,3 +1,9 @@
+<?php
+session_start();
+ require_once "fonctions/bdd.php";
+ include_once "fonctions/blog.php";
+ $bdd = bdd();
+ ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -13,11 +19,23 @@
 <body id="index">
 
     <header>
-        <nav>
+    <nav>
             <a href="index.php">Accueil</a>
             <a href="roman.php">Mon Roman</a>
-            <a id="connect" href="#">Connexion</a>
-            <a id="inscription" href="#">Inscription</a>
+            <?php
+                if(isset($_SESSION["membre"])) :
+            ?>
+           <a href="compte.php">Mon compte</a>
+            <a href="deconnexion.php">Deconnexion</a>
+            <?php
+                else :
+            ?>
+             <a href="connexion.php">Connexion</a>
+            <a href="inscription.php">Inscription</a>
+            
+            <?php
+                endif;
+            ?>
             <a href="contact.php">Contact</a>
         </nav>
         <h1>Billet simple pour l'Alaska</h1>
@@ -31,27 +49,6 @@
         <video id="video" loop autoplay muted src="video/Snow.mp4"></video>
         <div class="pattern"></div>
         <button id="pause"><i class="far fa-pause-circle fa-3x"></i></button>
-        <div class="pop-inscription">
-            <img class="cross" src="img/cross.svg" alt="croix">
-            <h3>Inscrivez-vous !</h3>
-            <h4>Ne rater pas les derniers articles !</h4>
-            <form action="">
-                <input type="text" placeholder="Votre Prénom">
-                <input type="text" placeholder="Votre Nom">
-                <input type="email" placeholder="Votre e-mail">
-                <input type="text" placeholder="Mot de Passe">
-            </form>
-            <button class="btn-submit" type="submit">S'inscrire</button>
-        </div>
-        <div class="pop-connect">
-            <img class="cross" src="img/cross.svg" alt="croix">
-            <h3>Connectez-vous !</h3>
-            <form action="">
-                <input type="email" placeholder="Identifiant">
-                <input type="text" placeholder="Mot de Passe">
-            </form>
-            <button class="btn-submit" type="submit">Connexion</button>
-        </div>
         <div class="burger">
             <svg width="100px" height="100px">
                 <path class="top" d="M 30 40 L 70 40 C 90 40 90 75 60 85 A 40 40 0 0 1 20 20 L 80 80"></path>

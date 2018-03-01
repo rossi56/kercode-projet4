@@ -1,5 +1,8 @@
 
 <?php
+session_start();
+if(isset($_SESSION["membre"]))
+    header("Location: connexion.php");////redirection d'un membre connecté vers compte.php
  require_once "fonctions/bdd.php";
  include_once "fonctions/membre.php";
  $bdd = bdd();
@@ -28,13 +31,25 @@
                 </form>
                 <p id="by">
                     <span> By</span> Jean Forteroche</p>
-                <nav>
-                    <a href="index.php">Accueil</a>
-                    <a href="roman.php">Roman</a>
-                    <a id="connect" href="connexion.php">Connexion</a>
-                    <a id="inscription" href="inscription.php">Inscription</a>
-                    <a href="contact.php">Contact</a>
-                </nav>
+                    <nav>
+            <a href="index.php">Accueil</a>
+            <a href="roman.php">Mon Roman</a>
+            <?php
+                if(isset($_SESSION["membre"])) :
+            ?>
+           <a href="compte.php">Mon compte</a>
+            <a href="deconnexion.php">Deconnexion</a>
+            <?php
+                else :
+            ?>
+             <a href="connexion.php">Connexion</a>
+            <a href="inscription.php">Inscription</a>
+            
+            <?php
+                endif;
+            ?>
+            <a href="contact.php">Contact</a>
+        </nav>
                 <img class="pref-img" src="img/book.png" alt="Préface">
                 <div class="pattern"></div>
                
