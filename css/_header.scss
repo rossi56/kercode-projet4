@@ -195,11 +195,7 @@ header {
             font-size: 20px;
             transition: transform 0.5s ease-in-out, opacity 0.25s ease-in-out;
             &:hover {
-                color: rgb(238, 132, 10);
-                -webkit-transform: scale(1.1);
-                -ms-transform: scale(1.1);
-                transform: scale(1.1);
-                text-shadow: 5px 5px black;
+                color: orangered;
             }
             @media screen and (max-width: 48em) {
                 opacity: 0;

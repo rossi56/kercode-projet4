@@ -3,7 +3,7 @@
     function articles(){
         global $bdd;
         $articles = $bdd->query("SELECT id, titre, extrait, publication, img, imageArt FROM articles ORDER BY id DESC");
-        $articles = $articles = $articles->fetchAll();
+        $articles = $articles->fetchAll();
         return $articles;
     }
 /*Formatage de la date de publication*/

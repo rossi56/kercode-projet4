@@ -1,9 +1,12 @@
 #index{
+    .pref-img{
+        opacity: 0.6;
+    }
     h2{
         position: absolute;
         z-index: 200;
         top: 20%;
-        left: 35%;
+        text-align: center;
         color: white;
         font-family: 'Cookie', cursive;
         font-size: 85px;
@@ -28,8 +31,25 @@
     h3{
         
         font-size: 35px;
-        margin-top: 35%;
+        margin-top: 30%;
     }
-    
+    .comments{
+       
+        .date{
+            font-family: "Life", cursive;
+            font-size: 20px;
+            position: absolute;
+            top:65%;
+            left: 10%;
+            color:white;
+        }
+        .historique{
+            font-family: "Life", cursive;
+            font-size: 18px;
+            position: absolute;
+            top: 70%;
+            left: 10%;
+        }
+    }
   
 }

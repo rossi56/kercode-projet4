@@ -43,7 +43,7 @@ $commentaires = commentaires_user();
             ?>
             <a href="contact.php">Contact</a>
         </nav>
-        <h2>Bienvenue <?= $infos["pseudo"] ?></h2>
+        <h2>Bienvenue "<?= $infos["pseudo"] ?>"</h2>
         <h3>Vos derniers commentaires</h3>
         <img class="avatar" src="img/<?= $infos["avatar"] ?>" alt="Avatar">
         <p class="email">Adresse e-mail : <?= $infos["email"] ?></p>
@@ -52,7 +52,7 @@ $commentaires = commentaires_user();
         </form>
         </div>
         <img class="pref-img" src="img/compte.png" alt="Préface">
-        <div class="pattern"></div>
+    
        
         <div class="burger">
             <svg width="100px" height="100px">
@@ -69,7 +69,7 @@ $commentaires = commentaires_user();
         foreach($commentaires as $commentaire) :
     ?>
    <p class="date">Posté sur l'article "<?= $commentaire["titre"] ?>" le <time datetime="<?= $commentaire["publication"] ?>"><?= formatage_date($commentaire["publication"]) ?></time> :</p>
-    <p><?= $commentaire["commentaire"] ?></p>
+    <p class="historique"><?= $commentaire["commentaire"] ?></p>
     <?php
         endforeach;
     ?>

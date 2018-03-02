@@ -111,15 +111,11 @@ session_start();
                     </svg>
                 </div>
                 <div class="mask"></div>
-                <div id="find">
-                    <h2>Me Trouver</h2>
-                    <div id="map"></div>
             </header>
          
                 
             
 
         
-                
-            </section>
+ 
            

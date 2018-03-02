@@ -1,0 +1,63 @@
+header{
+    .lien-admin{
+        display: block;
+        position: absolute;
+        top: 10%;
+        left: 40%;
+        font-size: 20px;
+        font-family: 'Life', cursive;
+        color: white;
+        z-index: 2000;
+        font-weight: bold;
+
+    }
+    .posts {
+        text-align: center;
+       
+        margin-top: 15%;
+        .titre-admin{
+            position: absolute;
+            
+           z-index: 2000;
+            color: white;
+            font-family: 'Cookie', cursive;
+            font-size: 85px;
+            height: 80px;
+            width: 100%;
+            text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%), 4px 4px 0 hsl(22, 68%, 53%), 5px 5px 0 hsl(22, 68%, 53%), 6px 6px 0 hsl(22, 68%, 53%), 7px 7px 0 hsl(22, 68%, 53%);
+        }
+        table {
+            position: absolute;
+            z-index: 1000;;
+            width: 30%;
+            left: 35%;
+            top: 40%;
+            border-radius: 5px;
+            background: white
+        }
+        table tr td {
+            width: 10%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            color: #999
+        }
+        table tr td:first-child {
+            width: 80%;
+            padding-left: 20px;
+            text-align: left;
+            color: #fa6400
+        }
+        table tr td a {
+            color: #999;
+            text-decoration: none
+        }
+        table tr td a:hover {
+            color: #999;
+            text-decoration: none
+        }
+        table tr+tr {
+            border-top: 1px solid #efefef
+        }
+    }
+}
