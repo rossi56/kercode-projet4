@@ -121,6 +121,7 @@ session_start();
 
 
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQfpft0MIiwF4INGm3uMGrylY7OqBujG4 &callback=initMap">
     </script>
     <script src="js/map.js"></script>
