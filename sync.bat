@@ -1,1 +1,1 @@
-browser-sync start --proxy "localhost/Projet-4" --files "*.php, *.html, css/*.css, js/*.js, admin/*.php"
+browser-sync start --proxy "localhost/Projet-4.0" --files "controllers/*.php, models/*.php, views/*.php, public/css/*.css, public/js/*.js, admin/*.php"

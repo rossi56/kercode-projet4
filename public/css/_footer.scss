@@ -1,0 +1,63 @@
+footer {
+    box-shadow: 0 -23px 60px 8px rgba(0, 0, 0, 0.788);
+    z-index: 200;
+    width: 100%;
+    position: relative;
+    background-image: url('../img/enveloppe.png');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    border-top: 1px solid orange;
+    opacity: 1;
+   
+   
+    #adress {
+        z-index: 200;
+        margin-top: 75px;
+        align-self: center;
+        color: #D97136;
+        text-align: center;
+        font-size: 25px;
+        font-family: 'Satisfy', cursive;
+    }
+    #copy {
+        margin-top: 100px;
+        z-index: 200;
+        align-self: center;
+        font-size: 16px;
+        color: white;
+        text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%);
+    }
+    #reseaux {
+        top: 20px;
+        right: 5%;
+        position: absolute;
+        z-index: 205;
+        display: flex;
+        width: 50%;
+        #fb {
+            right: 2%;
+            position: absolute;
+            width: 80px;
+            transition: transform 0.35s ease-in-out;
+            opacity: 0.7;
+            transform: rotate(15deg);
+            &:hover {
+                transform: scale(1.3);
+            }
+        }
+        #tw {
+            right:15%;
+            position: absolute;
+            width: 80px;
+            transition: transform 0.35s ease-in-out;
+            opacity: 0.7;
+            transform: rotate(-10deg);
+            &:hover {
+                transform: scale(1.3);
+            } 
+        }
+    } 
+
+}

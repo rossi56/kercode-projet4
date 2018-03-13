@@ -1,0 +1,81 @@
+header{
+    .pref-img{
+        opacity: 0.4;
+    }
+    .portrait{
+        width: 20%;
+        position: absolute;
+        right: 0;
+        border-radius: 50%;
+    }
+
+.admin {
+   
+    .admin-post {
+        font-size: 40px;
+        top: 10%;
+        left: 40%;
+    }
+    form {
+        position: absolute;
+        z-index: 1000;
+        top: 25%;
+        left: 25%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 700px;
+        width: 50%;
+        .insert-pres{
+            top: 17%;
+            left: 30%;
+        }
+        .insert-art{
+            top: 32%;
+            left: 30%;
+        }
+        .erreur {
+            align-self: center;
+            color: red;
+            font-size: 30px;
+        }
+        input[type=file]{
+           color: rgb(255, 145, 0);
+        }
+        input,
+        textarea {
+            border-radius: 10px;
+            font-family: 'Alegreya', cursive;
+            font-size: 20px;
+            text-align: center;
+            width: 70%;
+            height: 50px;
+            margin-top: 50px;
+            align-self: center;
+            &:focus {
+                color: orangered;
+            }
+        }
+        textarea {
+            height: 200px;
+        }
+        input[type=submit] {
+            font-size: 15px;
+            height: 50px;
+            color: white;
+            align-self: center;
+            border: none;
+            outline: none;
+            background: transparent;
+            border: 1px solid rgb(255, 255, 255);
+            transition: transform 0.25s ease-in-out;
+            width: 30%;
+            &:hover {
+                color: rgb(238, 53, 7);
+                transform: scaleX(1.2);
+                border: 1px solid rgb(238, 53, 7);
+            }
+        }
+    }
+}
+}

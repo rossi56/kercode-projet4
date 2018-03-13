@@ -1,4 +1,0 @@
-Authname "Espace administrateur"
-Authtype Basic
-AuthUserFile "C:\xampp\htdocs\Projet-4\admin\.htpasswd"
-Require valid-user
