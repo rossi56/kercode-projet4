@@ -1,4 +1,8 @@
-<?php $title = "Billet simple pour l'Alaska;" ?>
+<?php
+$title = "Billet simple pour l'Alaska";
+$video = "public/video/lettres.mp4";
+$image = ''
+?>
 
 
 <?php ob_start(); ?>
@@ -29,7 +33,7 @@
                                     <?= $article["extrait"]; ?>
                                 </p>
                             </figcaption>
-                            <a href="article.php?id=<?=$article["id"];  ?>"></a>
+                            <a href="index.php?action=article&id=<?= $article["id"];  ?>"></a>
                             <div class="pattern-2"></div>
                         </figure>
                     </article>

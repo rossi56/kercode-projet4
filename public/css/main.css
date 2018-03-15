@@ -249,57 +249,54 @@ table {
   transform: scale(1, 1);
 }
 
-header .pref-img {
-  opacity: 0.4;
-}
-
-header .portrait {
+.portrait {
   width: 20%;
   position: absolute;
   right: 0;
   border-radius: 50%;
 }
 
-header .admin .admin-post {
-  font-size: 40px;
-  top: 10%;
-  left: 40%;
+.admin {
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-header .admin form {
-  position: absolute;
-  z-index: 1000;
-  top: 25%;
-  left: 25%;
+.admin .admin-post {
+  font-size: 40px;
+}
+
+.admin form {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 700px;
-  width: 50%;
+  width: 60%;
 }
 
-header .admin form .insert-pres {
+.admin form .insert-pres {
   top: 17%;
   left: 30%;
 }
 
-header .admin form .insert-art {
+.admin form .insert-art {
   top: 32%;
   left: 30%;
 }
 
-header .admin form .erreur {
+.admin form .erreur {
   align-self: center;
   color: red;
   font-size: 30px;
 }
 
-header .admin form input[type=file] {
+.admin form input[type=file] {
   color: #ff9100;
 }
 
-header .admin form input,
-header .admin form textarea {
+.admin form input,
+.admin form textarea {
   border-radius: 10px;
   font-family: 'Alegreya', cursive;
   font-size: 20px;
@@ -310,17 +307,18 @@ header .admin form textarea {
   align-self: center;
 }
 
-header .admin form input:focus,
-header .admin form textarea:focus {
+.admin form input:focus,
+.admin form textarea:focus {
   color: orangered;
 }
 
-header .admin form textarea {
+.admin form textarea {
   height: 200px;
 }
 
-header .admin form input[type=submit] {
+.admin form input[type=submit] {
   font-size: 15px;
+  margin-bottom: 50px;
   height: 50px;
   color: white;
   align-self: center;
@@ -332,7 +330,7 @@ header .admin form input[type=submit] {
   width: 30%;
 }
 
-header .admin form input[type=submit]:hover {
+.admin form input[type=submit]:hover {
   color: #ee3507;
   transform: scaleX(1.2);
   border: 1px solid #ee3507;
@@ -413,11 +411,7 @@ header .posts table tr + tr {
   border-top: 1px solid #efefef;
 }
 
-#index .pref-img {
-  opacity: 0.6;
-}
-
-#index h2 {
+h2 {
   position: absolute;
   z-index: 200;
   top: 20%;
@@ -430,7 +424,7 @@ header .posts table tr + tr {
   text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
 }
 
-#index .avatar {
+.avatar {
   position: absolute;
   top: 35%;
   left: 50%;
@@ -439,19 +433,18 @@ header .posts table tr + tr {
   z-index: 200;
 }
 
-#index .email {
+.email {
   position: absolute;
   top: 45%;
-  left: 40%;
   z-index: 1500;
 }
 
-#index h3 {
+h3 {
   font-size: 35px;
   margin-top: 30%;
 }
 
-#index .comments .date {
+.comments .date {
   font-family: "Life", cursive;
   font-size: 20px;
   position: absolute;
@@ -460,7 +453,7 @@ header .posts table tr + tr {
   color: white;
 }
 
-#index .comments .historique {
+.comments .historique {
   font-family: "Life", cursive;
   font-size: 18px;
   position: absolute;
@@ -468,29 +461,7 @@ header .posts table tr + tr {
   left: 10%;
 }
 
-header h3 {
-  color: white;
-  font-size: 75px;
-  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
-  left: 50%;
-  top: 150px;
-  transform: translateX(-50%);
-  position: absolute;
-  z-index: 1000;
-}
-
-header h4 {
-  color: white;
-  font-size: 45px;
-  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
-  left: 50%;
-  top: 250px;
-  transform: translateX(-50%);
-  position: absolute;
-  z-index: 1000;
-}
-
-header .mail {
+.mail {
   width: 100%;
   height: 100%;
   display: flex;
@@ -498,10 +469,20 @@ header .mail {
   flex-wrap: wrap;
 }
 
-header .mail form {
-  position: absolute;
-  z-index: 1500;
-  top: 300px;
+.mail h3 {
+  color: white;
+  font-size: 75px;
+  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
+}
+
+.mail h4 {
+  color: white;
+  font-size: 45px;
+  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
+}
+
+.mail form {
+  z-index: 1000;
   align-self: center;
   display: flex;
   flex-direction: column;
@@ -510,13 +491,14 @@ header .mail form {
   width: 50%;
 }
 
-header .mail form .erreur {
+.mail form .erreur {
   align-self: center;
   color: red;
   font-size: 30px;
 }
 
-header .mail form input, header .mail form textarea {
+.mail form input,
+.mail form textarea {
   border-radius: 10px;
   font-family: 'Alegreya', cursive;
   font-size: 20px;
@@ -527,11 +509,12 @@ header .mail form input, header .mail form textarea {
   align-self: center;
 }
 
-header .mail form input:focus, header .mail form textarea:focus {
+.mail form input:focus,
+.mail form textarea:focus {
   color: orangered;
 }
 
-header .mail form input[type=submit] {
+.mail form input[type=submit] {
   font-size: 15px;
   height: 50px;
   color: white;
@@ -544,13 +527,13 @@ header .mail form input[type=submit] {
   width: 30%;
 }
 
-header .mail form input[type=submit]:hover {
+.mail form input[type=submit]:hover {
   color: #ee3507;
   transform: scaleX(1.2);
   border: 1px solid #ee3507;
 }
 
-header h3 {
+h3 {
   color: white;
   font-size: 75px;
   text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
@@ -561,7 +544,7 @@ header h3 {
   z-index: 1000;
 }
 
-header .connexion {
+.connexion {
   width: 100%;
   height: 100%;
   display: flex;
@@ -569,7 +552,18 @@ header .connexion {
   flex-wrap: wrap;
 }
 
-header .connexion form {
+.connexion h3 {
+  color: white;
+  font-size: 75px;
+  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
+  left: 50%;
+  top: 150px;
+  transform: translateX(-50%);
+  position: absolute;
+  z-index: 1000;
+}
+
+.connexion form {
   position: absolute;
   z-index: 1000;
   top: 300px;
@@ -581,13 +575,13 @@ header .connexion form {
   width: 50%;
 }
 
-header .connexion form .erreur {
+.connexion form .erreur {
   align-self: center;
   color: red;
   font-size: 30px;
 }
 
-header .connexion form input {
+.connexion form input {
   border-radius: 10px;
   font-family: 'Alegreya', cursive;
   font-size: 20px;
@@ -598,11 +592,11 @@ header .connexion form input {
   align-self: center;
 }
 
-header .connexion form input:focus {
+.connexion form input:focus {
   color: orangered;
 }
 
-header .connexion form input[type=submit] {
+.connexion form input[type=submit] {
   font-size: 15px;
   color: white;
   align-self: center;
@@ -615,35 +609,29 @@ header .connexion form input[type=submit] {
   transition: transform 0.35s ease-in-out;
 }
 
-header .connexion form input[type=submit]:hover:hover {
+.connexion form input[type=submit]:hover:hover {
   color: #ee3507;
   transform: scaleX(1.2);
   border: 1px solid #ee3507;
 }
 
-header h3 {
+h3 {
+  text-align: center;
   color: white;
   font-size: 75px;
   text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
-  left: 50%;
-  top: 100px;
-  transform: translateX(-50%);
-  position: absolute;
   z-index: 1000;
 }
 
-header h4 {
+h4 {
   color: white;
   font-size: 45px;
   text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
-  left: 50%;
-  top: 200px;
-  transform: translateX(-50%);
-  position: absolute;
   z-index: 1000;
 }
 
-header .inscription {
+.inscription {
+  margin-top: 50px;
   width: 100%;
   height: 100%;
   display: flex;
@@ -651,10 +639,21 @@ header .inscription {
   flex-wrap: wrap;
 }
 
-header .inscription form {
-  position: absolute;
+.inscription h3 {
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
+}
+
+.inscription h4 {
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
+}
+
+.inscription form {
   z-index: 1000;
-  top: 250px;
+  top: 150px;
   align-self: center;
   display: flex;
   flex-direction: column;
@@ -663,13 +662,13 @@ header .inscription form {
   width: 50%;
 }
 
-header .inscription form .erreur {
+.inscription form .erreur {
   align-self: center;
   color: red;
   font-size: 30px;
 }
 
-header .inscription form input {
+.inscription form input {
   border-radius: 10px;
   font-family: 'Alegreya', cursive;
   font-size: 20px;
@@ -680,11 +679,11 @@ header .inscription form input {
   align-self: center;
 }
 
-header .inscription form input:focus {
+.inscription form input:focus {
   color: orangered;
 }
 
-header .inscription form input[type=submit] {
+.inscription form input[type=submit] {
   font-size: 15px;
   color: white;
   align-self: center;
@@ -697,7 +696,7 @@ header .inscription form input[type=submit] {
   transition: transform 0.35s ease-in-out;
 }
 
-header .inscription form input[type=submit]:hover:hover {
+.inscription form input[type=submit]:hover:hover {
   color: #ee3507;
   transform: scaleX(1.2);
   border: 1px solid #ee3507;
@@ -844,6 +843,15 @@ header {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9cd5c', endColorstr='#7db9e8', GradientType=1);
   /* IE6-9 fallback on horizontal gradient */
   border-bottom: 1px solid orange;
+}
+
+header .pref-img {
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 header .burger {
@@ -1596,6 +1604,7 @@ footer #reseaux {
 }
 
 footer #reseaux #fb {
+  cursor: pointer;
   right: 2%;
   position: absolute;
   width: 80px;
@@ -1609,6 +1618,7 @@ footer #reseaux #fb:hover {
 }
 
 footer #reseaux #tw {
+  cursor: pointer;
   right: 15%;
   position: absolute;
   width: 80px;

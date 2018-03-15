@@ -37,6 +37,7 @@ footer {
         display: flex;
         width: 50%;
         #fb {
+            cursor: pointer;
             right: 2%;
             position: absolute;
             width: 80px;
@@ -48,6 +49,7 @@ footer {
             }
         }
         #tw {
+            cursor: pointer;
             right:15%;
             position: absolute;
             width: 80px;

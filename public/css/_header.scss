@@ -7,6 +7,14 @@ header {
     z-index: 200;
     @include deg;
     border-bottom: 1px solid orange;
+    .pref-img{
+        opacity: 0.5;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
     // ANIMATION MENU BURGER
 .burger {
     transform: translateY(-150px);

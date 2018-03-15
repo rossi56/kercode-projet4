@@ -1,13 +1,14 @@
-<?php $title = "Billet simple pour l'Alaska;" ?>
+<?php
+$title = "Billet simple pour l'Alaska";
+$video = "public/video/aircraft.mp4";
+$image = ''
+?>
 <?php ob_start(); ?>
-<h3>Contactez-moi !</h3>
-    <h4>Je vous réponds rapidement !</h4>
-        <div class="inscription"></div>
-            <form method="post" action="roman.php">
-                <input class="search" type="text" name="query" placeholder="Recherche.." value="<?php if(isset($_POST[" query
-                        "])) echo $_POST["query "]//laisser champs de recherche rempli ?>">
-            </form>
-        <div class="mail">                  
+
+    <div class="mail"> 
+        
+    <h3>Contactez-moi !</h3>
+        <h4>Je vous réponds rapidement !</h4>                 
             <form method="post" action="">
 <?php
     if(isset($erreurs)) :
@@ -42,5 +43,6 @@
         </textarea>
         <input type="submit" value="Envoyer">
                 </form>
+                </div>
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php'); ?>

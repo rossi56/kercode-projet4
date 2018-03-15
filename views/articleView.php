@@ -1,4 +1,8 @@
-<?php $title = "Billet simple pour l'Alaska;" ?>
+<?php
+$title = "Les Chapitres"; 
+$video = '';
+$image = 'public/img/book2.png'
+?>
 <?php ob_start(); ?>
     <article class="preface">
         <h2><?= $article["titre"] ?></h2>

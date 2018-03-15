@@ -1,106 +1,62 @@
-header {
+.mail {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     h3 {
         color: white;
         font-size: 75px;
         text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%), 4px 4px 0 hsl(22, 68%, 53%), 5px 5px 0 hsl(22, 68%, 53%), 6px 6px 0 hsl(22, 68%, 53%), 7px 7px 0 hsl(22, 68%, 53%);
-        left: 50%;
-        top: 150px;
-        transform: translateX(-50%);
-        position: absolute;
-        z-index: 1000;
     }
     h4 {
         color: white;
         font-size: 45px;
         text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%), 4px 4px 0 hsl(22, 68%, 53%), 5px 5px 0 hsl(22, 68%, 53%), 6px 6px 0 hsl(22, 68%, 53%), 7px 7px 0 hsl(22, 68%, 53%);
-        left: 50%;
-        top: 250px;
-        transform: translateX(-50%);
-        position: absolute;
-        z-index: 1000;
     }
-    .mail {
-        width: 100%;
-        height: 100%;
+    form {
+        z-index: 1000;
+        align-self: center;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        form {
-            position: absolute;
-            z-index: 1500;
-            top: 300px;
+        height: 500px;
+        width: 50%;
+        .erreur {
             align-self: center;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            height: 500px;
-            width: 50%;
-            .erreur {
-                align-self: center;
-                color: red;
-                font-size: 30px;
+            color: red;
+            font-size: 30px;
+        }
+        input,
+        textarea {
+            border-radius: 10px;
+            font-family: 'Alegreya', cursive;
+            font-size: 20px;
+            text-align: center;
+            width: 70%;
+            height: 50px;
+            margin-top: 20px;
+            align-self: center;
+            &:focus {
+                color: orangered;
             }
-            input, textarea {
-                border-radius: 10px;
-                font-family: 'Alegreya', cursive;
-                font-size: 20px;
-                text-align: center;
-                width: 70%;
-                height: 50px;
-                margin-top: 20px;
-                align-self: center;
-                &:focus {
-                    color: orangered;
-                }
-            }
-            input[type=submit] {
-                font-size: 15px;
-                height: 50px;
-                color: white;
-                align-self: center;
-                border: none;
-                outline: none;
-                background: transparent;
-                border: 1px solid rgb(255, 255, 255);
-                transition: transform 0.25s ease-in-out;
-                width: 30%;
-                &:hover {
-                    color: rgb(238, 53, 7);
-                    transform: scaleX(1.2);
-                    border: 1px solid rgb(238, 53, 7);
-                }
+        }
+        input[type=submit] {
+            font-size: 15px;
+            height: 50px;
+            color: white;
+            align-self: center;
+            border: none;
+            outline: none;
+            background: transparent;
+            border: 1px solid rgb(255, 255, 255);
+            transition: transform 0.25s ease-in-out;
+            width: 30%;
+            &:hover {
+                color: rgb(238, 53, 7);
+                transform: scaleX(1.2);
+                border: 1px solid rgb(238, 53, 7);
             }
         }
     }
 }
-
-// #find {
-//     position: relative;
-//     width: 100%;
-//     height: 400px;
-//     display: flex;
-//     flex-direction: column;
-//     h2 {
-//         text-align: center;
-//         position: absolute;
-//         z-index: 200;
-//         top: 5%;
-//         color: white;
-//         font-family: 'Cookie', cursive;
-//         font-size: 85px;
-//         height: 80px;
-//         width: 100%;
-//         text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%), 4px 4px 0 hsl(22, 68%, 53%), 5px 5px 0 hsl(22, 68%, 53%), 6px 6px 0 hsl(22, 68%, 53%), 7px 7px 0 hsl(22, 68%, 53%);
-//         @media screen and (max-width: 48em) {
-//             left: 15%;
-//             font-size: 60px;
-//         }
-//     }
-    // #map {
-    //     align-self: flex-start;
-    //     opacity: .7;
-    //     height: 400px;
-    //     width: 100%;
-    //     position: absolute;
-    //     z-index: 1500;
-    // }

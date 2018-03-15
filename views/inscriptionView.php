@@ -1,7 +1,14 @@
-<?php $title = "Billet simple pour l'Alaska;" ?>
+<?php
+$title = "Inscription";
+$image = "public/img/book.png"
+?>
 <?php ob_start(); ?>
+
     <div class="inscription">
-        <form method="post" action="">
+    <h3>Inscrivez-vous !</h3>
+                    <h4>Ne rater pas les derniers articles !</h4>
+    
+        <form method="post" action="index.php?action=inscription">
 <?php
     if(isset($erreurs)) :
     if($erreurs) :

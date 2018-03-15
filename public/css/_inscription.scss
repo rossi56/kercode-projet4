@@ -1,36 +1,48 @@
-header{
+
     h3{
+        text-align: center;
         color: white;
         font-size: 75px;
         text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%), 4px 4px 0 hsl(22, 68%, 53%), 5px 5px 0 hsl(22, 68%, 53%), 6px 6px 0 hsl(22, 68%, 53%), 7px 7px 0 hsl(22, 68%, 53%);
-        left: 50%;
-        top: 100px;
-        transform: translateX(-50%);
-        position: absolute;
+        // left: 50%;
+        // top: 100px;
+        // transform: translateX(-50%);
+        // position: absolute;
         z-index: 1000;
     }
     h4{
         color: white;
         font-size: 45px;
         text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%), 4px 4px 0 hsl(22, 68%, 53%), 5px 5px 0 hsl(22, 68%, 53%), 6px 6px 0 hsl(22, 68%, 53%), 7px 7px 0 hsl(22, 68%, 53%);
-        left: 50%;
-        top: 200px;
-        transform: translateX(-50%);
-        position: absolute;
+        // left: 50%;
+        // top: 200px;
+        // transform: translateX(-50%);
+        // position: absolute;
         z-index: 1000;
     }
     
     .inscription {
+        margin-top: 50px;
         width: 100%;
         height: 100%;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+        h3{
+            text-align: center;
+            color: white;
+            text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%), 4px 4px 0 hsl(22, 68%, 53%), 5px 5px 0 hsl(22, 68%, 53%), 6px 6px 0 hsl(22, 68%, 53%), 7px 7px 0 hsl(22, 68%, 53%);
+        }
+        h4{
+            text-align: center;
+            color: white;
+
+            text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%), 4px 4px 0 hsl(22, 68%, 53%), 5px 5px 0 hsl(22, 68%, 53%), 6px 6px 0 hsl(22, 68%, 53%), 7px 7px 0 hsl(22, 68%, 53%);
+        }
       
         form {
-            position: absolute;
             z-index: 1000;
-            top: 250px;
+            top: 150px;
             align-self: center;
             display: flex;
             flex-direction: column;
@@ -78,4 +90,4 @@ header{
             }
         }
     }
-    }
+
