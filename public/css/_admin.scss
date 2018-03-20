@@ -1,11 +1,13 @@
+.portrait {
+    width: 20%;
+    position: absolute;
+    right: 0;
+    border-radius: 50%;
+}
 
-   
-    .portrait{
-        width: 20%;
-        position: absolute;
-        right: 0;
-        border-radius: 50%;
-    }
+.bg1 {
+    background-image: url("../img/blog-background1.png");
+}
 
 .admin {
     z-index: 1000;
@@ -15,18 +17,17 @@
     align-items: center;
     .admin-post {
         font-size: 40px;
-      
     }
-    form {      
+    form {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         width: 60%;
-        .insert-pres{
+        .insert-pres {
             top: 17%;
             left: 30%;
         }
-        .insert-art{
+        .insert-art {
             top: 32%;
             left: 30%;
         }
@@ -35,8 +36,8 @@
             color: red;
             font-size: 30px;
         }
-        input[type=file]{
-           color: rgb(255, 145, 0);
+        input[type=file] {
+            color: rgb(255, 145, 0);
         }
         input,
         textarea {

@@ -10,16 +10,10 @@ class MembresController
        
         $membres = $membresManager->inscription($pseudo, $email, $emailconf, $password, $passwordconf);
         
-        require('views/inscriptionView.php');
+        require('views/connexionView.php');
     }
 
-    public function pseudoExist($pseudo)
-    {
-        $membresManager = new MembresManager;
-        $membres = $membresManager->existe($pseudo);
-        require('views/inscriptionView.php');
-    }
-   
+  
     public function connect($pseudo)
     {
         $membresManager = new MembresManager;

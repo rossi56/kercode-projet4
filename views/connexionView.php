@@ -1,5 +1,6 @@
 <?php 
 $title = "Billet simple pour l'Alaska";
+$titleHeader = "Connexion";
 $image = "public/img/connexion.png"
 ?>
 <?php ob_start(); ?>
@@ -20,4 +21,4 @@ $image = "public/img/connexion.png"
     </form>
 </div>
 <?php $content = ob_get_clean(); ?>
-<?php require('template.php'); ?>
+<?php require('templates/template.php'); ?>

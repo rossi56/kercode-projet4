@@ -1,5 +1,6 @@
 <?php
 $title = "Les Chapitres"; 
+$titleHeader = "Bonne lecture";
 $video = '';
 $image = 'public/img/book2.png'
 ?>
@@ -10,19 +11,22 @@ $image = 'public/img/book2.png'
                 <img src="public/img/<?= $article["imageArt"] ?>" alt="<?= $article["imageArt"] ?>">
             <p><?= $article["contenu"] ?></p>
     </article>
+    
     <section class="comments">
-        <h3><?= $nb_commentaires ?> commentaire(s)</h3>
-<?php
+    <?php
     foreach($commentaires as $commentaire) :
 ?>
-        <p class="date">Posté par <?= $commentaire["pseudo"] ?> le <time datetime="<?= $commentaire["publication"] ?>" ><?= $commentaire["publication"] ?></time> </p>
-            <img src="public/img/<?= $commentaire["avatar"] ?>" alt="Avatar">
-        <p>"<?= $commentaire["commentaire"] ?>"</p>
+        <h3><?= $nb_commentaires ?> commentaire(s)</h3>
+
+       <article>
+       <p class="date"><img src="public/img/<?= $commentaire["avatar"] ?>" alt="Avatar">Posté par <?= $commentaire["pseudo"] ?> le <time datetime="<?= $commentaire["publication"] ?>" ><?= $commentaire["publication"] ?></time>  </p>    
+        <p class="comment">"<?= $commentaire["commentaire"] ?>"</p>
+        </article>
 <?php
     endforeach;
     if(isset($_SESSION["membre"])) :
 ?>
-    <form method="post" action="">
+    <form method="post" action="index.php?action=commenter&amp;id_article=<?= $commentaire['id_article']; ?>">
 <?php
     if(isset($erreur)) :
     if($erreur) :  
@@ -51,5 +55,5 @@ $image = 'public/img/book2.png'
 ?>  
 </section>   
 <?php $content = ob_get_clean(); ?>
-<?php require('template.php'); ?>
+<?php require('templates/template.php'); ?>
     

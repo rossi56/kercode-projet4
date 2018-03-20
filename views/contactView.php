@@ -1,5 +1,6 @@
 <?php
 $title = "Billet simple pour l'Alaska";
+$titleHeader = "Contact";
 $video = "public/video/aircraft.mp4";
 $image = ''
 ?>
@@ -9,7 +10,7 @@ $image = ''
         
     <h3>Contactez-moi !</h3>
         <h4>Je vous réponds rapidement !</h4>                 
-            <form method="post" action="">
+            <form method="post" action="index.php?action=contact">
 <?php
     if(isset($erreurs)) :
     if($erreurs) :
@@ -45,4 +46,4 @@ $image = ''
                 </form>
                 </div>
 <?php $content = ob_get_clean(); ?>
-<?php require('template.php'); ?>
+<?php require('templates/template.php'); ?>

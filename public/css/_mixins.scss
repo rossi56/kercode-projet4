@@ -20,3 +20,20 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9cd5c', endColorstr='#7db9e8', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
 }
+
+
+//Titres h3 
+@mixin h3{
+    color: white;
+    font-size: 75px;
+    text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%), 4px 4px 0 hsl(22, 68%, 53%), 5px 5px 0 hsl(22, 68%, 53%), 6px 6px 0 hsl(22, 68%, 53%), 7px 7px 0 hsl(22, 68%, 53%);
+    z-index: 1200;
+}
+
+//Titres h4 
+@mixin h4{
+    color: white;
+    font-size: 35px;
+    text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%), 4px 4px 0 hsl(22, 68%, 53%), 5px 5px 0 hsl(22, 68%, 53%), 6px 6px 0 hsl(22, 68%, 53%), 7px 7px 0 hsl(22, 68%, 53%);
+    z-index: 1000;
+}

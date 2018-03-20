@@ -7,89 +7,82 @@ header {
     z-index: 200;
     @include deg;
     border-bottom: 1px solid orange;
-    .pref-img{
+    .pref-img {
         opacity: 0.5;
         height: 100%;
         width: 100%;
         position: absolute;
         top: 0;
         left: 0;
+    } // ANIMATION MENU BURGER
+    .burger {
+        transform: translateY(-150px);
+        left: 15%;
+        opacity: 0;
+        visibility: hidden;
+        cursor: pointer;
+        position: absolute;
+        z-index: 1000;
+        @media screen and (max-width: 48em) {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+        svg {
+            fill: transparent;
+            stroke: rgb(255, 255, 255);
+            stroke-width: 4px;
+            stroke-linecap: round;
+        }
+        .top {
+            stroke-dasharray: 40 250;
+            transition: 1s cubic-bezier(0.7, 0, 0.3, 1);
+        }
+        .middle {
+            stroke-dasharray: 40, 0;
+            stroke-dashoffset: 40;
+            transition: 1s cubic-bezier(0.7, 0, 0.3, 1);
+        }
+        .bottom {
+            stroke-dasharray: 40 310;
+            transition: 1s cubic-bezier(0.7, 0, 0.3, 1);
+        }
     }
-    // ANIMATION MENU BURGER
-.burger {
-    transform: translateY(-150px);
-    left: 15%;
-    opacity: 0;
-    visibility: hidden;
-    cursor: pointer;
-    position: absolute;
-    z-index: 1000;
-    @media screen and (max-width: 48em) {
-        transform: translateY(0);
+    .active .top {
+        stroke-dashoffset: -227;
+    }
+    .active .middle {
+        stroke-dasharray: 0, 40;
+        stroke-dashoffset: 20;
+    }
+    .active .bottom {
+        stroke-dashoffset: -287;
+    }
+    .nav-mobil {
+        z-index: 1000;
+        height: 100%;
+        width: 40%;
+        background-color: rgba(255, 68, 0, 0.5);
+        visibility: visible;
+        opacity: 1;
+        padding-top: 45px;
+        transform: translateX(0);
+        transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+        @media screen and (min-width: 48em) {
+            display: flex;
+            background: transparent;
+        }
+        a {
+            @media screen and (max-width: 48em) {
+                opacity: 1;
+                font-size: 16px;
+            }
+        }
+    }
+    .mask.closed {
         opacity: 1;
         visibility: visible;
     }
-    svg {
-        fill: transparent;
-        stroke: rgb(255, 255, 255);
-        stroke-width: 4px;
-        stroke-linecap: round;
-    }
-    .top {
-        stroke-dasharray: 40 250;
-        transition: 1s cubic-bezier(0.7, 0, 0.3, 1);
-    }
-    .middle {
-        stroke-dasharray: 40, 0;
-        stroke-dashoffset: 40;
-        transition: 1s cubic-bezier(0.7, 0, 0.3, 1);
-    }
-    .bottom {
-        stroke-dasharray: 40 310;
-        transition: 1s cubic-bezier(0.7, 0, 0.3, 1);
-    }
-}
-
-.active .top {
-    stroke-dashoffset: -227;
-
-}
-
-.active .middle {
-    stroke-dasharray: 0, 40;
-    stroke-dashoffset: 20;
-}
-
-.active .bottom {
-    stroke-dashoffset: -287;
-}
-
-.nav-mobil {
-    z-index: 1000;
-    height: 100%;
-    width: 40%;
-    background-color: rgba(255, 68, 0, 0.5);
-    visibility: visible;
-    opacity: 1;
-    padding-top: 45px;
-    transform: translateX(0);
-    transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
-    @media screen and (min-width: 48em) {
-        display: flex;
-        background: transparent;
-    }
-    a {
-        @media screen and (max-width: 48em) {
-            opacity: 1;
-            font-size: 16px;
-        }
-    }
-}
-
-.mask.closed {
-    opacity: 1;
-    visibility: visible;
-}
     .mask {
         position: absolute;
         visibility: hidden;
@@ -166,7 +159,6 @@ header {
                 transition: box-shadow 0.25s ease-in-out;
                 font-family: 'Cookie', cursive;
                 font-size: 25px;
-                
             }
             input:focus {
                 outline: none;
@@ -192,15 +184,17 @@ header {
     }
     nav {
         position: absolute;
+        display: flex;
         z-index: 999;
         a {
-            display: inline-block;
+            display: block;
             text-transform: uppercase;
             font-weight: bold;
             padding: 20px;
             color: rgb(255, 255, 255);
             text-decoration: none;
             font-size: 20px;
+            font-family: 'Archivo', cursive;
             transition: transform 0.5s ease-in-out, opacity 0.25s ease-in-out;
             &:hover {
                 color: orangered;
@@ -209,7 +203,6 @@ header {
                 opacity: 0;
             }
         }
-      
         @media screen and (max-width: 48em) {
             display: flex;
             flex-direction: column;
@@ -238,7 +231,7 @@ header {
         top: 0;
         left: 0;
     }
-    #pause{
+    #pause {
         position: absolute;
         z-index: 1000;
         background: transparent;
@@ -253,7 +246,7 @@ header {
         z-index: 200;
         position: absolute;
         display: block;
-        top: 5%;
+        top: 10%;
         left: 75%;
         color: white;
         width: 10px;
@@ -269,7 +262,7 @@ header {
         padding: 10px 20px 10px 50px;
         -webkit-transition: width 1s ease-in-out;
         transition: 1s ease-in-out width;
-        &:focus{
+        &:focus {
             color: orangered;
         }
         @media screen and (max-width: 48em) {
@@ -363,7 +356,6 @@ header {
 
 .active .top {
     stroke-dashoffset: -227;
-
 }
 
 .active .middle {
@@ -393,9 +385,7 @@ header {
         @media screen and (max-width: 48em) {
             opacity: 1;
             font-size: 16px;
-
         }
-      
     }
 }
 
@@ -406,12 +396,14 @@ header {
 
 //FIN MENU BURGER
 .pop-inscription.open,
-.pop-connect.open,.pop-contact.open {
+.pop-connect.open,
+.pop-contact.open {
     animation-play-state: running;
 }
 
 .pop-inscription.close,
-.pop-connect.close,.pop-contact.close {
+.pop-connect.close,
+.pop-contact.close {
     animation: close 1s ease-in-out forwards;
 }
 

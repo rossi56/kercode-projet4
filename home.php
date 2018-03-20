@@ -1,6 +1,7 @@
 <?php 
  $video = 'public/video/snow.mp4';
  $title = "Billet simple pour l'Alaska";
+ $titleHeader = "Billet simple pour l'Alaska";
  $image = '';
  include 'views/header.php';
 

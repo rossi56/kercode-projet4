@@ -30,11 +30,9 @@ class ArticlesManager extends Model
 
       /*Fonction recherche */
 
-    public  function recherche()
+    public  function recherche($query)
     {
         $bdd =$this->getBdd();
-
-        extract($_POST);
         $recherche = $bdd->prepare("SELECT id, titre, extrait, publication, img, imageArt FROM articles WHERE titre LIKE :query OR contenu LIKE :query ORDER BY id DESC");
         $recherche->execute([
             "query" => '%' . $query . '%' //il peut y avoir du contenu avant ou après le terme de recherche
@@ -42,5 +40,33 @@ class ArticlesManager extends Model
         $recherche = $recherche->fetchAll();
         return $recherche;
     }
+
+
+    function commenter($id_membre, $id_article, $commentaire ) {
+        if(isset($_SESSION["membre"])) {
+            $bdd =$this->getBdd();
+        
+            $erreur = "";
+    
+            extract($_POST);
+    
+            if(!empty($commentaire)) {
+               // $id_article = (int)$_GET["id"];//On vérifie l'intégrité de id_article
+                $commenter = $bdd->prepare("INSERT INTO commentaires(id_membre, id_article, commentaire) VALUES(:id_membre, :id_article, :commentaire)");
+                $commenter->execute([
+                    "id_membre" => $_SESSION["membre"],
+                    "id_article" => $id_article,
+                    "commentaire" => nl2br(htmlentities($commentaire))
+                    
+                ]);
+                
+            }
+            else
+                $erreur .= "Vous devez écrire du texte !";
+            
+            return $erreur;
+            
+            }
+        }
 
 }

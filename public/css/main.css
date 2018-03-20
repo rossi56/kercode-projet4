@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Archivo+Narrow|Julius+Sans+One|Schoolbell);
 @import url(https://fonts.googleapis.com/css?family=Satisfy);
 @import url(https://fonts.googleapis.com/css?family=Cookie|Londrina+Outline|Yellowtail);
 @import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:400,300,500);
@@ -64,7 +65,7 @@ table {
   position: relative;
   background-color: #5a5151;
   width: 100%;
-  min-height: 600px;
+  min-height: 500px;
   margin: auto;
   display: flex;
   justify-content: space-around;
@@ -75,7 +76,7 @@ table {
   text-align: center;
   color: orangered;
   font-size: 35px;
-  margin-top: 25px;
+  margin-top: 55px;
   width: 100%;
 }
 
@@ -152,6 +153,8 @@ table {
 }
 
 .container article figure figcaption h3 {
+  margin-top: -120px;
+  width: 100%;
   font-size: 40px;
   color: white;
   align-self: auto;
@@ -254,6 +257,10 @@ table {
   position: absolute;
   right: 0;
   border-radius: 50%;
+}
+
+.bg1 {
+  background-image: url("../img/blog-background1.png");
 }
 
 .admin {
@@ -412,7 +419,6 @@ header .posts table tr + tr {
 }
 
 h2 {
-  position: absolute;
   z-index: 200;
   top: 20%;
   text-align: center;
@@ -425,23 +431,20 @@ h2 {
 }
 
 .avatar {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  height: 100px;
   width: 100px;
   z-index: 200;
 }
 
 .email {
-  position: absolute;
-  top: 45%;
   z-index: 1500;
 }
 
 h3 {
-  font-size: 35px;
-  margin-top: 30%;
+  color: white;
+  font-size: 75px;
+  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
+  z-index: 1200;
 }
 
 .comments .date {
@@ -469,18 +472,6 @@ h3 {
   flex-wrap: wrap;
 }
 
-.mail h3 {
-  color: white;
-  font-size: 75px;
-  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
-}
-
-.mail h4 {
-  color: white;
-  font-size: 45px;
-  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
-}
-
 .mail form {
   z-index: 1000;
   align-self: center;
@@ -488,6 +479,7 @@ h3 {
   flex-direction: column;
   flex-wrap: wrap;
   height: 500px;
+  margin-top: 250px;
   width: 50%;
 }
 
@@ -553,20 +545,17 @@ h3 {
 }
 
 .connexion h3 {
+  margin-top: -120px;
   color: white;
   font-size: 75px;
   text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
-  left: 50%;
-  top: 150px;
-  transform: translateX(-50%);
-  position: absolute;
-  z-index: 1000;
+  z-index: 1200;
 }
 
 .connexion form {
   position: absolute;
   z-index: 1000;
-  top: 300px;
+  top: 200px;
   align-self: center;
   display: flex;
   flex-direction: column;
@@ -615,21 +604,6 @@ h3 {
   border: 1px solid #ee3507;
 }
 
-h3 {
-  text-align: center;
-  color: white;
-  font-size: 75px;
-  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
-  z-index: 1000;
-}
-
-h4 {
-  color: white;
-  font-size: 45px;
-  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
-  z-index: 1000;
-}
-
 .inscription {
   margin-top: 50px;
   width: 100%;
@@ -640,20 +614,24 @@ h4 {
 }
 
 .inscription h3 {
-  text-align: center;
+  margin-top: -120px;
   color: white;
+  font-size: 75px;
   text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
+  z-index: 1200;
 }
 
 .inscription h4 {
-  text-align: center;
+  margin-top: 120px;
   color: white;
+  font-size: 35px;
   text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
+  z-index: 1000;
 }
 
 .inscription form {
   z-index: 1000;
-  top: 150px;
+  margin-top: 100px;
   align-self: center;
   display: flex;
   flex-direction: column;
@@ -702,40 +680,34 @@ h4 {
   border: 1px solid #ee3507;
 }
 
-.container {
-  height: auto;
-  width: 100%;
-}
-
-.container .preface {
+.preface {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  position: relative;
   width: 100%;
 }
 
-.container .preface img {
-  width: 35%;
+.preface img {
+  width: 100%;
   align-self: center;
   transform: rotate(5deg);
 }
 
-.container .preface h2 {
-  align-self: center;
+.preface h2 {
+  margin-top: 50px;
   color: white;
-  font-size: 45px;
+  font-size: 75px;
   text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
 }
 
-.container .preface p {
+.preface p {
   text-align: center;
   color: white;
   font-size: 22px;
-  line-height: 1.5em;
+  margin-top: 100px;
 }
 
-.container .bg1 {
+.bg1 {
   position: absolute;
   top: 0;
   left: 0;
@@ -746,7 +718,7 @@ h4 {
   z-index: 2;
 }
 
-.container .comments {
+.comments {
   margin-top: 175px;
   z-index: 1500;
   margin-bottom: 200px;
@@ -754,41 +726,49 @@ h4 {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  align-content: center;
   width: 80%;
 }
 
-.container .comments h2 {
-  color: #ff4400;
-  font-size: 30px;
-}
-
-.container .comments .date {
-  text-align: left;
+.comments h3 {
   color: white;
-  font-size: 18px;
-}
-
-.container .comments p {
-  width: 50%;
+  font-size: 75px;
+  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
+  z-index: 1200;
+  font-size: 25px;
   text-align: left;
-  color: white;
-  font-size: 20px;
+  margin-top: 30%;
 }
 
-.container .comments img {
-  width: 50px;
-  margin-top: 20px;
+.comments article {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-.container .comments .message-erreur {
-  text-align: center;
+.comments article .date {
+  margin-left: -30%;
+  margin-top: -170px;
+  align-content: flex-start;
+}
+
+.comments article .date img {
+  margin-right: 50px;
+  width: 60px;
+}
+
+.comments article .comment {
+  margin-left: -20%;
+}
+
+.comments .message-erreur {
   margin-bottom: 25px;
   font-size: 35px;
   color: orangered;
 }
 
-.container .comments form {
-  margin-top: 50px;
+.comments form {
+  margin-top: 170px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -796,7 +776,7 @@ h4 {
   width: 70%;
 }
 
-.container .comments form input {
+.comments form input {
   align-self: center;
   height: 50px;
   color: white;
@@ -809,20 +789,20 @@ h4 {
   margin-top: 25px;
 }
 
-.container .comments form input:hover {
+.comments form input:hover {
   border: 1px solid orangered;
   transform: scaleX(1.2);
   color: orangered;
 }
 
-.container .comments form #commentaire {
+.comments form #commentaire {
   border-radius: 10px;
   text-align: center;
   font-family: 'Alegreya', cursive;
   font-size: 20px;
 }
 
-.container .comments form #commentaire:focus {
+.comments form #commentaire:focus {
   color: orangered;
 }
 
@@ -1064,17 +1044,19 @@ header .pop-connect .btn-submit:hover {
 
 header nav {
   position: absolute;
+  display: flex;
   z-index: 999;
 }
 
 header nav a {
-  display: inline-block;
+  display: block;
   text-transform: uppercase;
   font-weight: bold;
   padding: 20px;
   color: white;
   text-decoration: none;
   font-size: 20px;
+  font-family: 'Archivo', cursive;
   transition: transform 0.5s ease-in-out, opacity 0.25s ease-in-out;
 }
 
@@ -1136,7 +1118,7 @@ header .search {
   z-index: 200;
   position: absolute;
   display: block;
-  top: 5%;
+  top: 10%;
   left: 75%;
   color: white;
   width: 10px;
@@ -1309,12 +1291,14 @@ header #by span {
 }
 
 .pop-inscription.open,
-.pop-connect.open, .pop-contact.open {
+.pop-connect.open,
+.pop-contact.open {
   animation-play-state: running;
 }
 
 .pop-inscription.close,
-.pop-connect.close, .pop-contact.close {
+.pop-connect.close,
+.pop-contact.close {
   animation: close 1s ease-in-out forwards;
 }
 

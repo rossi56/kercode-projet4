@@ -43,4 +43,4 @@ $image = "public/img/book.png"
             <input class="btn-submit" type="submit" value="S'inscrire">
         </form>
 <?php $content = ob_get_clean(); ?>
-<?php require('template.php'); ?>
+<?php require('templates/template.php'); ?>

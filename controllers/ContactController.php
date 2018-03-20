@@ -4,10 +4,10 @@ require_once ('models/ContactManager.php');
 class ContactController
 {
     //AFFICHAGE DE PLUSIEURS ARTICLES
-    public function contact()
+    public function contact($email, $nom, $prenom, $texte)
     {
         $contactManager = new ContactManager;
-        $contact = $contactManager->contact();
+        $contactManager->contact($email, $nom, $prenom, $texte);
         require('views/contactView.php');
     }
 }

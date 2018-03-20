@@ -1,5 +1,6 @@
 <?php
 $title = "Billet simple pour l'Alaska";
+$titleHeader = "Les Chapitres";
 $video = "public/video/lettres.mp4";
 $image = ''
 ?>
@@ -41,6 +42,6 @@ $image = ''
                  endforeach;
                 ?>
 <?php $content = ob_get_clean(); ?>
-<?php require('template.php'); ?>
+<?php require('templates/template.php'); ?>
 
                         

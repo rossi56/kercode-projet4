@@ -3,17 +3,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    h3 {
-        color: white;
-        font-size: 75px;
-        text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%), 4px 4px 0 hsl(22, 68%, 53%), 5px 5px 0 hsl(22, 68%, 53%), 6px 6px 0 hsl(22, 68%, 53%), 7px 7px 0 hsl(22, 68%, 53%);
-    }
-    h4 {
-        color: white;
-        font-size: 45px;
-        text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%), 4px 4px 0 hsl(22, 68%, 53%), 5px 5px 0 hsl(22, 68%, 53%), 6px 6px 0 hsl(22, 68%, 53%), 7px 7px 0 hsl(22, 68%, 53%);
-    }
+    flex-wrap: wrap;    
     form {
         z-index: 1000;
         align-self: center;
@@ -21,6 +11,7 @@
         flex-direction: column;
         flex-wrap: wrap;
         height: 500px;
+        margin-top: 250px;
         width: 50%;
         .erreur {
             align-self: center;

@@ -17,20 +17,14 @@ h3{
     flex-direction: column;
     flex-wrap: wrap;
     h3{
-        color: white;
-        font-size: 75px;
-        text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%), 4px 4px 0 hsl(22, 68%, 53%), 5px 5px 0 hsl(22, 68%, 53%), 6px 6px 0 hsl(22, 68%, 53%), 7px 7px 0 hsl(22, 68%, 53%);
-        left: 50%;
-        top: 150px;
-        transform: translateX(-50%);
-        position: absolute;
-        z-index: 1000;
+        margin-top: -120px;
+        @include h3;
     }
   
     form {
         position: absolute;
         z-index: 1000;
-        top: 300px;
+        top: 200px;
         align-self: center;
         display: flex;
         flex-direction: column;

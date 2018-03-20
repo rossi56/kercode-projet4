@@ -1,5 +1,6 @@
 <?php
-$title = "Billet simple pour l'Alaska";
+$title = "Mon profil";
+$titleHeader = "Mon Profil";
 $image = 'public/img/compte.png'
 ?>
 <?php
@@ -20,4 +21,4 @@ $image = 'public/img/compte.png'
 ?>
     </div>
 <?php $content = ob_get_clean(); ?>
-<?php require('template.php'); ?>
+<?php require('templates/template.php'); ?>

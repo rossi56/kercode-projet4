@@ -11,10 +11,10 @@
 
         <body id="index">
             <header>
-                <h1>Billet simple pour l'Alaska</h1>
+                <h1><?= $titleHeader ?></h1>
                 <p>"Le projet un peu fou d'un écrivain voyageur"</p>
-                <form method="post" action="">
-                    <input class="search" type="text" name="query" placeholder="Recherche.." value="<?php if(isset($_POST["query"])) echo $_POST["query"]//laisser champs de recherche rempli ?>">
+                <form method="post" action="index.php?action=query">
+                    <input class="search" type="search" name="query" placeholder="Recherche.." value="<?php if(isset($_POST["query"])) echo $_POST["query"]//laisser champs de recherche rempli ?>">
                 </form>
                 <p id="by">
                     <span> By</span> Jean Forteroche</p>
@@ -22,7 +22,7 @@
                     include 'views/navigationView.php';
                 ?>
                 <video id="video" autoplay loop src="<?= $video  ?>"></video>
-                <img class="pref-img" src= "<?= $image  ?>"></img>
+                <img class="pref-img" src= "<?= $image?>"></img>
                 <div class="pattern"></div>
                 <button id="pause">
                     <i class="far fa-pause-circle fa-3x"></i>

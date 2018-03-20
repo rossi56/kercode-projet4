@@ -27,10 +27,10 @@ public function inscription($pseudo, $email, $emailconf, $password, $passwordcon
         $validation = false;
         $erreurs[] = "Tous les champs sont obligatoires !";
     }
-    // if(existe($pseudo)){
-    //     $validation = false;
-    //     $erreurs[] = "Ce pseudo n'est pas disponible !";
-    // }
+    if($this->existe($pseudo)){
+        $validation = false;
+        $erreurs[] = "Ce pseudo n'est pas disponible !";
+    }
 
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $validation = false;
