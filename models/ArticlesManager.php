@@ -1,9 +1,17 @@
 <?php
 require_once ('models/Model.php');
+
+/**
+ * Gestion des articles
+ */
 class ArticlesManager extends Model
 {
 
-    //AFFICHAGE DE PLUSIEURS ARTICLES
+    /**
+     * AFFICHAGE DE PLUSIEURS ARTICLES
+     *
+     * @return void
+     */
     public function getArticles()
     {
         $bdd = $this->getBdd();
@@ -12,7 +20,14 @@ class ArticlesManager extends Model
         $articles = $articles->fetchAll();
         return $articles;
     }
-    //AFFICHAGE D'UN SEUL ARTICLE
+
+
+    /**
+     * AFFICHAGE D'UN SEUL ARTICLE
+     *
+     * @param [type] $id
+     * @return void
+     */
     public function getArticle($id)
     {
         $bdd = $this->getBdd();
@@ -28,8 +43,12 @@ class ArticlesManager extends Model
     return $article;
     }
 
-      /*Fonction recherche */
-
+    /**
+     * Fonction pour la barre de recherche
+     *
+     * @param [type] $query
+     * @return void
+     */
     public  function recherche($query)
     {
         $bdd =$this->getBdd();
@@ -41,8 +60,17 @@ class ArticlesManager extends Model
         return $recherche;
     }
 
+   
 
-    function commenter($id_membre, $id_article, $commentaire ) {
+    /**
+     * Fonction commenter Article
+     *
+     * @param [type] $id_membre
+     * @param [type] $id_article
+     * @param [type] $commentaire
+     * @return void
+     */
+    public function commenter($id_membre, $id_article, $commentaire ) {
         if(isset($_SESSION["membre"])) {
             $bdd =$this->getBdd();
         
@@ -51,7 +79,7 @@ class ArticlesManager extends Model
             extract($_POST);
     
             if(!empty($commentaire)) {
-               // $id_article = (int)$_GET["id"];//On vérifie l'intégrité de id_article
+               $id_article = (int)$_GET["id"];//On vérifie l'intégrité de id_article
                 $commenter = $bdd->prepare("INSERT INTO commentaires(id_membre, id_article, commentaire) VALUES(:id_membre, :id_article, :commentaire)");
                 $commenter->execute([
                     "id_membre" => $_SESSION["membre"],

@@ -256,6 +256,7 @@ table {
   width: 20%;
   position: absolute;
   right: 0;
+  top: 150px;
   border-radius: 50%;
 }
 
@@ -351,11 +352,8 @@ table {
   top: 80%;
 }
 
-header .lien-admin {
+.lien-admin {
   display: block;
-  position: absolute;
-  top: 10%;
-  left: 40%;
   font-size: 20px;
   font-family: 'Life', cursive;
   color: white;
@@ -363,14 +361,13 @@ header .lien-admin {
   font-weight: bold;
 }
 
-header .posts {
+.posts {
   text-align: center;
   margin-top: 15%;
 }
 
-header .posts .titre-admin {
-  position: absolute;
-  z-index: 2000;
+.posts h2 {
+  z-index: 5000;
   color: white;
   font-family: 'Cookie', cursive;
   font-size: 85px;
@@ -379,7 +376,7 @@ header .posts .titre-admin {
   text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
 }
 
-header .posts table {
+.posts table {
   position: absolute;
   z-index: 1000;
   width: 30%;
@@ -389,7 +386,7 @@ header .posts table {
   background: white;
 }
 
-header .posts table tr td {
+.posts table tr td {
   width: 10%;
   height: 50px;
   line-height: 50px;
@@ -397,71 +394,147 @@ header .posts table tr td {
   color: #999;
 }
 
-header .posts table tr td:first-child {
+.posts table tr td:first-child {
   width: 80%;
   padding-left: 20px;
   text-align: left;
   color: #fa6400;
 }
 
-header .posts table tr td a {
+.posts table tr td a {
   color: #999;
   text-decoration: none;
 }
 
-header .posts table tr td a:hover {
+.posts table tr td a:hover {
   color: #999;
   text-decoration: none;
 }
 
-header .posts table tr + tr {
+.posts table tr + tr {
   border-top: 1px solid #efefef;
 }
 
-h2 {
-  z-index: 200;
-  top: 20%;
+.articles {
+  margin-top: 250px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.articles h3 {
+  color: white;
+  font-family: 'Cookie', cursive;
+  font-size: 75px;
+  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
+  z-index: 1200;
+  z-index: 1200;
   text-align: center;
   color: white;
   font-family: 'Cookie', cursive;
-  font-size: 85px;
+  font-size: 65px;
   height: 80px;
   width: 100%;
   text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
 }
 
-.avatar {
+.articles p {
+  color: white;
+  font-family: 'Satisfy', cursive;
+}
+
+.articles .avatar {
+  margin-bottom: 100px;
+  align-self: center;
   height: 100px;
   width: 100px;
-  z-index: 200;
-}
-
-.email {
-  z-index: 1500;
-}
-
-h3 {
-  color: white;
-  font-size: 75px;
-  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
   z-index: 1200;
 }
 
-.comments .date {
-  font-family: "Life", cursive;
+.articles p {
+  z-index: 2000;
+}
+
+.articles p a {
+  font-family: 'Life', cursive;
   font-size: 20px;
-  position: absolute;
-  top: 65%;
-  left: 10%;
+  border-radius: 15px;
+  color: white;
+  border: 1px solid white;
+  padding: 15px 20px;
+}
+
+.articles p a:hover {
+  border: 1px solid #D97136;
+  color: #D97136;
+}
+
+.edit {
+  width: 100%;
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+}
+
+.edit form {
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  width: 50%;
+}
+
+.edit form label {
+  font-size: 25px;
+  text-align: center;
+  font-family: 'Satisfy', cursive;
   color: white;
 }
 
-.comments .historique {
-  font-family: "Life", cursive;
-  font-size: 18px;
-  position: absolute;
-  top: 70%;
-  left: 10%;
+.edit form .erreur {
+  align-self: center;
+  color: red;
+  font-size: 30px;
+}
+
+.edit form input,
+.edit form textarea {
+  color: #d97136;
+  border-radius: 10px;
+  font-family: 'Alegreya', cursive;
+  font-size: 20px;
+  text-align: center;
+  width: 70%;
+  height: 50px;
+  margin-top: 20px;
+  align-self: center;
+  margin-bottom: 30px;
+  background-color: rgba(255, 255, 255, 0.699);
+}
+
+.edit form input:focus,
+.edit form textarea:focus {
+  color: orangered;
+}
+
+.edit form input[type=submit] {
+  font-size: 15px;
+  height: 50px;
+  color: white;
+  align-self: center;
+  border: none;
+  outline: none;
+  background: transparent;
+  border: 1px solid white;
+  transition: transform 0.25s ease-in-out;
+  width: 30%;
+}
+
+.edit form input[type=submit]:hover {
+  color: #ee3507;
+  transform: scaleX(1.2);
+  border: 1px solid #ee3507;
 }
 
 .mail {
@@ -547,6 +620,7 @@ h3 {
 .connexion h3 {
   margin-top: -120px;
   color: white;
+  font-family: 'Cookie', cursive;
   font-size: 75px;
   text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
   z-index: 1200;
@@ -616,6 +690,7 @@ h3 {
 .inscription h3 {
   margin-top: -120px;
   color: white;
+  font-family: 'Cookie', cursive;
   font-size: 75px;
   text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
   z-index: 1200;
@@ -680,27 +755,26 @@ h3 {
   border: 1px solid #ee3507;
 }
 
-.preface {
+.article {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  width: 100%;
 }
 
-.preface img {
+.article img {
   width: 100%;
   align-self: center;
   transform: rotate(5deg);
 }
 
-.preface h2 {
+.article h2 {
   margin-top: 50px;
   color: white;
   font-size: 75px;
   text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
 }
 
-.preface p {
+.article p {
   text-align: center;
   color: white;
   font-size: 22px;
@@ -726,39 +800,89 @@ h3 {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  align-content: center;
-  width: 80%;
-}
-
-.comments h3 {
-  color: white;
-  font-size: 75px;
-  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
-  z-index: 1200;
-  font-size: 25px;
-  text-align: left;
-  margin-top: 30%;
-}
-
-.comments article {
-  display: flex;
-  flex-direction: column;
+  align-items: center;
   width: 100%;
 }
 
-.comments article .date {
-  margin-left: -30%;
-  margin-top: -170px;
+.comments ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+}
+
+.comments ul li {
+  color: white;
+  font-family: 'Satisfy', cursive;
+  font-size: 20px;
+}
+
+.comments ul li img {
+  width: 60px;
+  opacity: 0.7;
+  margin-bottom: 30px;
+}
+
+.comments ul li a {
+  font-family: 'Satisfy', cursive;
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 50px;
+  margin-top: 25px;
+  border: 1px solid white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  transition: transform 0.25s ease-in-out;
+}
+
+.comments ul li a:hover {
+  transform: scaleX(1.2);
+  border: 1px solid rgba(217, 114, 54, 0.808);
+  color: rgba(217, 114, 54, 0.877);
+}
+
+.comments h2 {
+  font-size: 55px;
+}
+
+.comments h3 {
+  margin-top: 35%;
+  color: white;
+  font-family: 'Cookie', cursive;
+  font-size: 75px;
+  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
+  z-index: 1200;
+  font-size: 35px;
+}
+
+.comments .commentaires {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.comments .commentaires .date {
+  font-family: 'Satisfy', cursive;
+  font-size: 30px;
   align-content: flex-start;
 }
 
-.comments article .date img {
+.comments .commentaires .date img {
   margin-right: 50px;
   width: 60px;
 }
 
-.comments article .comment {
-  margin-left: -20%;
+.comments .commentaires .comment {
+  background-color: rgba(255, 255, 255, 0.466);
+  border-radius: 15px;
+  min-height: 150px;
+  width: 50%;
+  border: 1px solid white;
+  font-size: 25px;
+  font-family: 'Satisfy', cursive;
+  color: #d97136;
 }
 
 .comments .message-erreur {
@@ -1045,7 +1169,11 @@ header .pop-connect .btn-submit:hover {
 header nav {
   position: absolute;
   display: flex;
+  justify-content: space-around;
   z-index: 999;
+  height: 70px;
+  background-color: rgba(217, 114, 54, 0.336);
+  width: 100%;
 }
 
 header nav a {
@@ -1056,12 +1184,12 @@ header nav a {
   color: white;
   text-decoration: none;
   font-size: 20px;
-  font-family: 'Archivo', cursive;
+  font-family: 'Life', cursive;
   transition: transform 0.5s ease-in-out, opacity 0.25s ease-in-out;
 }
 
 header nav a:hover {
-  color: orangered;
+  color: #f09263;
 }
 
 @media screen and (max-width: 48em) {

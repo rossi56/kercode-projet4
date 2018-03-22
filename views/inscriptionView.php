@@ -1,5 +1,6 @@
 <?php
 $title = "Inscription";
+$titleHeader = "Inscription";
 $image = "public/img/book.png"
 ?>
 <?php ob_start(); ?>

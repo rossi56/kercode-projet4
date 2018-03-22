@@ -1,9 +1,21 @@
 <?php
 require_once ('models/Model.php');
+
+/**
+ * Gestion de la partie administration
+ */
 class AdminManager extends Model
 {
 
-            //fonction publier un article (administrateur)
+    /**
+     * fonction publier un article (administrateur)
+     *
+     * @param [type] $image2
+     * @param [type] $image
+     * @param [type] $contenu
+     * @param [type] $titre
+     * @return void
+     */
     public function poster($image2, $image, $contenu, $titre)
     {
         $bdd =$this->getBdd();
@@ -50,9 +62,13 @@ class AdminManager extends Model
         return $erreurs;
     }
 
-    // fonction anciens articles
-
-    public function posts(){
+    
+    /**
+     * Anciens Chapitres publiés
+     *
+     * @return void
+     */
+    public function oldPosts(){
         $bdd =$this->getBdd();
 
         $posts =$bdd->query("SELECT id, titre FROM articles ORDER BY id DESC");
@@ -62,8 +78,12 @@ class AdminManager extends Model
     }
 
 
-    //fonction supression des articles
-
+    /**
+     * fonction supression des articles
+     *
+     * @param [type] $id
+     * @return void
+     */
     public function supprimer($id){
         $bdd =$this->getBdd();
 
@@ -80,8 +100,11 @@ class AdminManager extends Model
     }
 
 
-    //FONCTIONs MODIFIER ARTICLE ADMIN
-
+    /**
+     * Affichage des anciens chapitres
+     *
+     * @return void
+     */
     public function post(){
         $bdd =$this->getBdd();
 
@@ -93,6 +116,11 @@ class AdminManager extends Model
         return $post;
     }
 
+    /**
+     * Fonction modification des articles
+     *
+     * @return void
+     */
     public function modifier(){
         $bdd =$this->getBdd();
         
@@ -115,8 +143,22 @@ class AdminManager extends Model
             $erreur .= "Les champs ne doivent pas être vides !";
         
         return $erreur;
-
-
     }
+
+        /**
+         * Supression d'un membre
+         *
+         * @return void
+         */
+        public function eraseMember($id)
+        {
+            $bdd = $this->getBdd();
+            $id = (int)$_GET['id'];
+            $req = $bdd->prepare('DELETE FROM membres WHERE id = ?');
+            $req->execute([$id]);
+
+            return $req;
+        }
+
 
 }

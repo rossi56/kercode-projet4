@@ -1,42 +1,104 @@
-
-    h2{
-        z-index: 200;
-        top: 20%;
+.articles {
+    margin-top: 250px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    h3 {
+        @include h3;
+        z-index: 1200;
         text-align: center;
         color: white;
         font-family: 'Cookie', cursive;
-        font-size: 85px;
+        font-size: 65px;
         height: 80px;
         width: 100%;
         text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%), 4px 4px 0 hsl(22, 68%, 53%), 5px 5px 0 hsl(22, 68%, 53%), 6px 6px 0 hsl(22, 68%, 53%), 7px 7px 0 hsl(22, 68%, 53%);
     }
-    .avatar{
-       height: 100px;
-        width: 100px;
-        z-index: 200;
-    }
-    .email{
-        z-index: 1500;
-    }
-    h3{
-       @include h3;
-    }
-    .comments{
-       
-        .date{
-            font-family: "Life", cursive;
-            font-size: 20px;
-            position: absolute;
-            top:65%;
-            left: 10%;
-            color:white;
-        }
-        .historique{
-            font-family: "Life", cursive;
-            font-size: 18px;
-            position: absolute;
-            top: 70%;
-            left: 10%;
-        }
+    p{
+        color: white;
+        font-family: 'Satisfy', cursive;
     }
   
+    .avatar {
+        margin-bottom: 100px;
+        align-self: center;
+        height: 100px;
+        width: 100px;
+        z-index: 1200;
+    }
+    p{
+        z-index: 2000;
+        a{
+            font-family: 'Life', cursive;
+            font-size: 20px;
+            border-radius: 15px;
+            color: white;
+            border: 1px solid white;
+            padding: 15px 20px;
+            &:hover{
+                border: 1px solid #D97136;
+                color: #D97136;
+            }
+        }
+    }
+}
+
+.edit {
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    form {
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: 50px;
+        width: 50%;
+        label{
+            font-size: 25px;
+            text-align: center;
+            font-family: 'Satisfy', cursive;
+            color: white;
+        }
+        .erreur {
+            align-self: center;
+            color: red;
+            font-size: 30px;
+        }
+        input,
+        textarea {
+            color: rgb(217, 113, 54);
+            border-radius: 10px;
+            font-family: 'Alegreya', cursive;
+            font-size: 20px;
+            text-align: center;
+            width: 70%;
+            height: 50px;
+            margin-top: 20px;
+            align-self: center;
+            margin-bottom: 30px;
+            background-color: rgba(255, 255, 255, 0.699);
+            &:focus {
+                color: orangered;
+            }
+        }
+        input[type=submit] {
+            font-size: 15px;
+            height: 50px;
+            color: white;
+            align-self: center;
+            border: none;
+            outline: none;
+            background: transparent;
+            border: 1px solid rgb(255, 255, 255);
+            transition: transform 0.25s ease-in-out;
+            width: 30%;
+            &:hover {
+                color: rgb(238, 53, 7);
+                transform: scaleX(1.2);
+                border: 1px solid rgb(238, 53, 7);
+            }
+        }
+    }
+}

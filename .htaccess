@@ -1,6 +1,8 @@
+
 <FilesMatch "admin.php">
 Authname "Espace administrateur"
 Authtype Basic
 AuthUserFile "C:\xampp\htdocs\Projet-4.2\admin\.htpasswd"
 Require valid-user
 </FilesMatch>
+

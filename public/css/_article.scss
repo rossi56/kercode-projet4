@@ -1,8 +1,7 @@
-.preface {
+.article {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    width: 100%;
     img {
         width: 100%;
         align-self: center;
@@ -41,29 +40,72 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-content: center;
-    width: 80%;
-    h3 {
-        @include h3;
-        font-size: 25px;
-        text-align: left;
-        margin-top: 30%;
-    }
-    article {
+    align-items: center;
+    width: 100%;
+    ul {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        width: 30%;
+        li {
+            color: white;
+            font-family: 'Satisfy', cursive;
+            font-size: 20px;
+            img {
+                width: 60px;
+                opacity: 0.7;
+                margin-bottom: 30px;
+            }
+            a {
+                font-family: 'Satisfy', cursive;
+                display: block;
+                color: white;
+                text-decoration: none;
+                margin-bottom: 50px;
+                margin-top: 25px;
+                border: 1px solid white;
+                padding: 15px 25px;
+                border-radius: 10px;
+                transition: transform 0.25s ease-in-out;
+                &:hover {
+                    transform: scaleX(1.2);
+                    border: 1px solid rgba(217, 114, 54, 0.808);
+                    color: rgba(217, 114, 54, 0.877)
+                }
+            }
+        }
+    }
+    h2 {
+        font-size: 55px;
+    }
+    h3 {
+        margin-top: 35%;
+        @include h3;
+        font-size: 35px;
+    }
+    .commentaires {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
         .date {
-            margin-left: -30%;
-            margin-top: -170px;
+            font-family: 'Satisfy', cursive;
+            font-size: 30px;
             align-content: flex-start;
-          img{
-              margin-right: 50px;
-              width: 60px;
-          }
+            img {
+                margin-right: 50px;
+                width: 60px;
+            }
         }
         .comment {
-            margin-left: -20%;
+            background-color: rgba(255, 255, 255, 0.466);
+            border-radius: 15px;
+            min-height: 150px;
+            width: 50%;
+            border: 1px solid white;
+            font-size: 25px;
+            font-family: 'Satisfy', cursive;
+            color: rgb(217, 113, 54);
         }
     }
     .message-erreur {
