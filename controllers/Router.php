@@ -68,13 +68,14 @@ class Router {
         }
         elseif ($_GET['action'] == 'pageConnexion') 
         {
-            new ControllerMembres;
+            // new ControllerMembres;
             require('views/connexionView.php');             
         }
 
         elseif ($_GET['action'] == 'connexion') 
         {
-            $this->ctrlMembres->connect($_POST['pseudo']);              
+            $this->ctrlMembres->connect($_POST['pseudo']);
+            require ('views/connexionView.php');              
         }
 
         elseif ($_GET['action'] == 'deconnexion') 
@@ -107,8 +108,7 @@ class Router {
         }
         elseif ($_GET['action'] == 'editProfil')
         {
-            
-            $this->ctrlMembres->update();
+            $this->ctrlMembres->update($_GET['id']);
             require ('views/editProfilView.php');
         }
     }

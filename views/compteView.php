@@ -12,16 +12,15 @@ $image = 'public/img/compte.png'
         <img class="avatar" src="public/img/<?= $compte["avatar"] ?>" alt="Avatar">
             <p>Votre pseudo : <?= $compte["pseudo"] ?></p>
             <p>Votre adresse e-mail : <?= $compte["email"] ?></p>
-            <p><a href="index.php?action=editProfil">Editer mon profil</a></p>
+            <p><a href="index.php?action=editProfil&id=<?= $_SESSION['membre'] ?>">Editer mon profil</a></p>
 </div> 
-         
+    <h3>Vos derniers commentaires</h3>     
 <?php
     foreach($commentaires as $commentaire) :
 ?>
-<div class="comments">
-<h3>Vos derniers commentaires</h3>
-    <p class="date">Posté sur l'article "<?= $commentaire["titre"] ?>" le <time datetime="<?= $commentaire["publication"] ?>"><?= $commentaire["publication"] ?></time> :</p>
-    <p class="historique"><?= $commentaire["commentaire"] ?></p> 
+<div class="commentaires">
+
+    <p class="date">Posté sur l'article "<?= $commentaire["titre"] ?>" le <time datetime="<?= $commentaire["publication"] ?>"><?= $commentaire["publication"] ?></time> <br> <br><?= $commentaire["commentaire"] ?></p> 
 </div>
 <?php
     endforeach;

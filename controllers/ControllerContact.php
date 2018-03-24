@@ -35,18 +35,20 @@ class ControllerContact
     
         if(empty($prenom) || empty($nom) || empty($email) || empty($texte)) {
             $validation = false;
-            array_push(self::$erreurs,'Tous les champs sont obligatoires !' );
+            array_push(self::$erreurs," <i class='fas fa-exclamation-triangle'></i> <br> Tous les champs sont obligatoires !" );
         //    $erreur = throw new Exception('Tous les champs sont obligatoires !');
         }
     
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $validation = false;
-            array_push(self::$erreurs, "L'adresse e-mail n'est pas valide !");
+            array_push(self::$erreurs, " <i class='fas fa-exclamation-triangle'></i> <br> L'adresse e-mail n'est pas valide !
+           ");
     
         }
     
         if($validation) {
-            array_push(self::$erreurs, 'Votre message a été envoyé !
+            array_push(self::$erreurs, '<h2>Votre Message a bien été envoyé !</h2>
+            <i class="far fa-check-circle"></i>
              ');
             //envoyer 
             $to = "rossi56@hotmail.fr";  
@@ -64,7 +66,7 @@ class ControllerContact
     
             mail($to, $sujet, $message, $headers);
            
-            self::resetErreur();
+            // self::resetErreur();
 
             //Destruction des champs après envoi du formulaire, éviter qu'il soit envoyé plusieurs fois
             unset($_POST["nom"]);

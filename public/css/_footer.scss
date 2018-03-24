@@ -3,13 +3,13 @@ footer {
     z-index: 200;
     width: 100%;
     position: relative;
+    background-color: black;
     background-image: url('../img/enveloppe.png');
     background-size: cover;
     display: flex;
     flex-direction: column;
     height: 300px;
     border-top: 1px solid orange;
-    opacity: 1;
     #adress {
         z-index: 200;
         margin-top: 75px;

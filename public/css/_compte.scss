@@ -42,63 +42,88 @@
         }
     }
 }
-
-.edit {
-    width: 100%;
-    min-height: 600px;
+.commentaires {
     display: flex;
-    justify-content: center;
-    form {
-        z-index: 1000;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        margin-top: 50px;
-        width: 50%;
-        label{
-            font-size: 25px;
-            text-align: center;
-            font-family: 'Satisfy', cursive;
-            color: white;
-        }
-        .erreur {
-            align-self: center;
-            color: red;
-            font-size: 30px;
-        }
-        input,
-        textarea {
-            color: rgb(217, 113, 54);
-            border-radius: 10px;
-            font-family: 'Alegreya', cursive;
-            font-size: 20px;
-            text-align: center;
-            width: 70%;
-            height: 50px;
-            margin-top: 20px;
-            align-self: center;
-            margin-bottom: 30px;
-            background-color: rgba(255, 255, 255, 0.699);
-            &:focus {
-                color: orangered;
-            }
-        }
-        input[type=submit] {
-            font-size: 15px;
-            height: 50px;
-            color: white;
-            align-self: center;
-            border: none;
-            outline: none;
-            background: transparent;
-            border: 1px solid rgb(255, 255, 255);
-            transition: transform 0.25s ease-in-out;
-            width: 30%;
-            &:hover {
-                color: rgb(238, 53, 7);
-                transform: scaleX(1.2);
-                border: 1px solid rgb(238, 53, 7);
-            }
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    .date {
+        font-family: 'Satisfy', cursive;
+        font-size: 30px;
+        align-content: flex-start;
+        img {
+            margin-right: 50px;
+            width: 60px;
         }
     }
+    .comment {
+        background-color: rgba(255, 255, 255, 0.466);
+        border-radius: 15px;
+        min-height: 150px;
+        width: 50%;
+        border: 1px solid white;
+        font-size: 25px;
+        font-family: 'Satisfy', cursive;
+        color: rgb(217, 113, 54);
+    }
 }
+
+// .edit {
+//     width: 100%;
+//     min-height: 600px;
+//     display: flex;
+//     justify-content: center;
+//     form {
+//         z-index: 1000;
+//         display: flex;
+//         flex-direction: column;
+//         flex-wrap: wrap;
+//         margin-top: 50px;
+//         width: 50%;
+//         label{
+//             font-size: 25px;
+//             text-align: center;
+//             font-family: 'Satisfy', cursive;
+//             color: white;
+//         }
+//         .erreur {
+//             align-self: center;
+//             color: red;
+//             font-size: 30px;
+//         }
+//         input,
+//         textarea {
+//             color: rgb(217, 113, 54);
+//             border-radius: 10px;
+//             font-family: 'Alegreya', cursive;
+//             font-size: 20px;
+//             text-align: center;
+//             width: 70%;
+//             height: 50px;
+//             margin-top: 20px;
+//             align-self: center;
+//             margin-bottom: 30px;
+//             background-color: rgba(255, 255, 255, 0.699);
+//             &:focus {
+//                 color: orangered;
+//             }
+//         }
+//         input[type=submit] {
+//             font-size: 15px;
+//             height: 50px;
+//             color: white;
+//             align-self: center;
+//             border: none;
+//             outline: none;
+//             background: transparent;
+//             border: 1px solid rgb(255, 255, 255);
+//             transition: transform 0.25s ease-in-out;
+//             width: 30%;
+//             &:hover {
+//                 color: rgb(238, 53, 7);
+//                 transform: scaleX(1.2);
+//                 border: 1px solid rgb(238, 53, 7);
+//             }
+//         }
+//     }
+// }

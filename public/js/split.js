@@ -14,6 +14,7 @@ $(document).ready(function(){
         $('.about').toggleClass('hide');
         $('.about').removeClass('splitOn');
         $('.blog').toggleClass('splitOn');
+        
     });
 });
 

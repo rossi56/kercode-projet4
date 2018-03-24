@@ -62,34 +62,34 @@ table {
 }
 
 .container {
-  position: relative;
-  background-color: #5a5151;
+  background-image: url("../img/blog-background1.jpg");
+  background-attachment: fixed;
+  background-size: cover;
   width: 100%;
-  min-height: 500px;
+  min-height: 900px;
   margin: auto;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
+.container h3 {
+  text-align: center;
+  width: 100%;
+  margin-top: 150px;
+  color: white;
+  font-family: 'Cookie', cursive;
+  font-size: 55px;
+  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
+  z-index: 1200;
+}
+
 .container p {
   text-align: center;
-  color: orangered;
+  color: #e48765;
   font-size: 35px;
   margin-top: 55px;
   width: 100%;
-}
-
-.container .bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-image: url("../img/blog-background1.jpg");
-  width: 100%;
-  height: 100%;
-  opacity: .4;
-  z-index: 2;
-  background-attachment: fixed;
 }
 
 .container article {
@@ -153,7 +153,7 @@ table {
 }
 
 .container article figure figcaption h3 {
-  margin-top: -120px;
+  margin-top: -10px;
   width: 100%;
   font-size: 40px;
   color: white;
@@ -253,15 +253,11 @@ table {
 }
 
 .portrait {
-  width: 20%;
+  width: 10%;
   position: absolute;
-  right: 0;
+  right: 15px;
   top: 150px;
   border-radius: 50%;
-}
-
-.bg1 {
-  background-image: url("../img/blog-background1.png");
 }
 
 .admin {
@@ -272,8 +268,96 @@ table {
   align-items: center;
 }
 
-.admin .admin-post {
-  font-size: 40px;
+.admin .erreur {
+  align-self: center;
+  color: red;
+  font-size: 30px;
+}
+
+.admin .envoi {
+  text-align: center;
+}
+
+.admin .envoi h2 {
+  font-size: 25px;
+  color: #10f010;
+}
+
+.admin .envoi .fa-check-circle {
+  margin-top: 20px;
+  color: #10f010;
+  font-size: 30px;
+}
+
+.admin .comments a {
+  font-family: 'Satisfy', cursive;
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 50px;
+  margin-top: 25px;
+  border: 1px solid white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  transition: transform 0.25s ease-in-out;
+}
+
+.admin .comments a:hover {
+  transform: scaleX(1.1);
+  border: 1px solid rgba(217, 114, 54, 0.808);
+  color: rgba(217, 114, 54, 0.877);
+}
+
+.admin .comments p:nth-child(1) {
+  font-size: 20px;
+  color: white;
+  font-family: 'Life', cursive;
+}
+
+.admin .comments p:nth-child(2) {
+  background-color: rgba(255, 255, 255, 0.699);
+  border-radius: 15px;
+  font-size: 20px;
+  min-height: 100px;
+  border: 1px solid white;
+}
+
+.admin .comments ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.admin .comments ul li {
+  color: white;
+  font-family: 'Satisfy', cursive;
+  font-size: 30px;
+}
+
+.admin .comments ul li img {
+  width: 80px;
+  opacity: 0.7;
+  margin-bottom: 30px;
+}
+
+.admin .comments ul li a {
+  font-family: 'Satisfy', cursive;
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 50px;
+  margin-top: 25px;
+  border: 1px solid white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  transition: transform 0.25s ease-in-out;
+}
+
+.admin .comments ul li a:hover {
+  transform: scaleX(1.1);
+  border: 1px solid rgba(217, 114, 54, 0.808);
+  color: rgba(217, 114, 54, 0.877);
 }
 
 .admin form {
@@ -352,36 +436,28 @@ table {
   top: 80%;
 }
 
-.lien-admin {
-  display: block;
-  font-size: 20px;
-  font-family: 'Life', cursive;
-  color: white;
-  z-index: 2000;
-  font-weight: bold;
-}
-
 .posts {
-  text-align: center;
   margin-top: 15%;
+  width: 100%;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
 }
 
-.posts h2 {
-  z-index: 5000;
+.posts h3 {
   color: white;
   font-family: 'Cookie', cursive;
   font-size: 85px;
   height: 80px;
   width: 100%;
+  margin-bottom: 50px;
   text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
 }
 
 .posts table {
-  position: absolute;
-  z-index: 1000;
-  width: 30%;
-  left: 35%;
-  top: 40%;
+  align-self: center;
+  z-index: 2000;
+  width: 50%;
   border-radius: 5px;
   background: white;
 }
@@ -425,7 +501,7 @@ table {
 .articles h3 {
   color: white;
   font-family: 'Cookie', cursive;
-  font-size: 75px;
+  font-size: 55px;
   text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
   z-index: 1200;
   z-index: 1200;
@@ -469,147 +545,38 @@ table {
   color: #D97136;
 }
 
-.edit {
-  width: 100%;
-  min-height: 600px;
-  display: flex;
-  justify-content: center;
-}
-
-.edit form {
-  z-index: 1000;
+.commentaires {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  margin-top: 50px;
-  width: 50%;
+  align-items: center;
+  width: 100%;
 }
 
-.edit form label {
-  font-size: 25px;
-  text-align: center;
+.commentaires .date {
   font-family: 'Satisfy', cursive;
-  color: white;
-}
-
-.edit form .erreur {
-  align-self: center;
-  color: red;
   font-size: 30px;
+  align-content: flex-start;
 }
 
-.edit form input,
-.edit form textarea {
+.commentaires .date img {
+  margin-right: 50px;
+  width: 60px;
+}
+
+.commentaires .comment {
+  background-color: rgba(255, 255, 255, 0.466);
+  border-radius: 15px;
+  min-height: 150px;
+  width: 50%;
+  border: 1px solid white;
+  font-size: 25px;
+  font-family: 'Satisfy', cursive;
   color: #d97136;
-  border-radius: 10px;
-  font-family: 'Alegreya', cursive;
-  font-size: 20px;
-  text-align: center;
-  width: 70%;
-  height: 50px;
-  margin-top: 20px;
-  align-self: center;
-  margin-bottom: 30px;
-  background-color: rgba(255, 255, 255, 0.699);
 }
 
-.edit form input:focus,
-.edit form textarea:focus {
-  color: orangered;
-}
-
-.edit form input[type=submit] {
-  font-size: 15px;
-  height: 50px;
-  color: white;
-  align-self: center;
-  border: none;
-  outline: none;
-  background: transparent;
-  border: 1px solid white;
-  transition: transform 0.25s ease-in-out;
-  width: 30%;
-}
-
-.edit form input[type=submit]:hover {
-  color: #ee3507;
-  transform: scaleX(1.2);
-  border: 1px solid #ee3507;
-}
-
-.mail {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
-.mail form {
-  z-index: 1000;
-  align-self: center;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 500px;
+.formulaire {
+  align-content: space-around;
   margin-top: 250px;
-  width: 50%;
-}
-
-.mail form .erreur {
-  align-self: center;
-  color: red;
-  font-size: 30px;
-}
-
-.mail form input,
-.mail form textarea {
-  border-radius: 10px;
-  font-family: 'Alegreya', cursive;
-  font-size: 20px;
-  text-align: center;
-  width: 70%;
-  height: 50px;
-  margin-top: 20px;
-  align-self: center;
-}
-
-.mail form input:focus,
-.mail form textarea:focus {
-  color: orangered;
-}
-
-.mail form input[type=submit] {
-  font-size: 15px;
-  height: 50px;
-  color: white;
-  align-self: center;
-  border: none;
-  outline: none;
-  background: transparent;
-  border: 1px solid white;
-  transition: transform 0.25s ease-in-out;
-  width: 30%;
-}
-
-.mail form input[type=submit]:hover {
-  color: #ee3507;
-  transform: scaleX(1.2);
-  border: 1px solid #ee3507;
-}
-
-h3 {
-  color: white;
-  font-size: 75px;
-  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
-  left: 50%;
-  top: 150px;
-  transform: translateX(-50%);
-  position: absolute;
-  z-index: 1000;
-}
-
-.connexion {
   width: 100%;
   height: 100%;
   display: flex;
@@ -617,111 +584,59 @@ h3 {
   flex-wrap: wrap;
 }
 
-.connexion h3 {
-  margin-top: -120px;
-  color: white;
-  font-family: 'Cookie', cursive;
-  font-size: 75px;
-  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
-  z-index: 1200;
-}
-
-.connexion form {
-  position: absolute;
-  z-index: 1000;
-  top: 200px;
-  align-self: center;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 500px;
-  width: 50%;
-}
-
-.connexion form .erreur {
-  align-self: center;
-  color: red;
-  font-size: 30px;
-}
-
-.connexion form input {
-  border-radius: 10px;
-  font-family: 'Alegreya', cursive;
-  font-size: 20px;
+.formulaire h3 {
   text-align: center;
-  width: 70%;
-  height: 50px;
-  margin-top: 20px;
-  align-self: center;
-}
-
-.connexion form input:focus {
-  color: orangered;
-}
-
-.connexion form input[type=submit] {
-  font-size: 15px;
-  color: white;
-  align-self: center;
-  border: none;
-  outline: none;
-  background: transparent;
-  border: 1px solid white;
-  padding: 15px 35px;
-  width: 50%;
-  transition: transform 0.35s ease-in-out;
-}
-
-.connexion form input[type=submit]:hover:hover {
-  color: #ee3507;
-  transform: scaleX(1.2);
-  border: 1px solid #ee3507;
-}
-
-.inscription {
-  margin-top: 50px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
-.inscription h3 {
+  width: 80%;
   margin-top: -120px;
   color: white;
   font-family: 'Cookie', cursive;
-  font-size: 75px;
+  font-size: 55px;
   text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
   z-index: 1200;
 }
 
-.inscription h4 {
-  margin-top: 120px;
-  color: white;
-  font-size: 35px;
-  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
-  z-index: 1000;
-}
-
-.inscription form {
+.formulaire form {
   z-index: 1000;
   margin-top: 100px;
   align-self: center;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 500px;
+  min-height: 600px;
   width: 50%;
 }
 
-.inscription form .erreur {
+.formulaire form label {
+  margin-top: 25px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.726);
+  font-size: 25px;
+  font-family: 'Life', cursive;
+}
+
+.formulaire form .erreur {
   align-self: center;
   color: red;
   font-size: 30px;
 }
 
-.inscription form input {
+.formulaire form .envoi {
+  text-align: center;
+}
+
+.formulaire form .envoi h2 {
+  font-size: 25px;
+  color: #10f010;
+}
+
+.formulaire form .envoi .fa-check-circle {
+  margin-top: 20px;
+  color: #10f010;
+  font-size: 30px;
+}
+
+.formulaire form input,
+.formulaire form textarea {
   border-radius: 10px;
   font-family: 'Alegreya', cursive;
   font-size: 20px;
@@ -732,11 +647,12 @@ h3 {
   align-self: center;
 }
 
-.inscription form input:focus {
+.formulaire form input:focus,
+.formulaire form textarea:focus {
   color: orangered;
 }
 
-.inscription form input[type=submit] {
+.formulaire form input[type=submit] {
   font-size: 15px;
   color: white;
   align-self: center;
@@ -747,12 +663,14 @@ h3 {
   padding: 15px 35px;
   width: 50%;
   transition: transform 0.35s ease-in-out;
+  margin-top: 50px;
+  margin-bottom: 150px;
 }
 
-.inscription form input[type=submit]:hover:hover {
-  color: #ee3507;
+.formulaire form input[type=submit]:hover {
+  color: #D97136;
   transform: scaleX(1.2);
-  border: 1px solid #ee3507;
+  border: 1px solid #fc7528;
 }
 
 .article {
@@ -804,44 +722,6 @@ h3 {
   width: 100%;
 }
 
-.comments ul {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 30%;
-}
-
-.comments ul li {
-  color: white;
-  font-family: 'Satisfy', cursive;
-  font-size: 20px;
-}
-
-.comments ul li img {
-  width: 60px;
-  opacity: 0.7;
-  margin-bottom: 30px;
-}
-
-.comments ul li a {
-  font-family: 'Satisfy', cursive;
-  display: block;
-  color: white;
-  text-decoration: none;
-  margin-bottom: 50px;
-  margin-top: 25px;
-  border: 1px solid white;
-  padding: 15px 25px;
-  border-radius: 10px;
-  transition: transform 0.25s ease-in-out;
-}
-
-.comments ul li a:hover {
-  transform: scaleX(1.2);
-  border: 1px solid rgba(217, 114, 54, 0.808);
-  color: rgba(217, 114, 54, 0.877);
-}
-
 .comments h2 {
   font-size: 55px;
 }
@@ -850,39 +730,10 @@ h3 {
   margin-top: 35%;
   color: white;
   font-family: 'Cookie', cursive;
-  font-size: 75px;
+  font-size: 55px;
   text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
   z-index: 1200;
   font-size: 35px;
-}
-
-.comments .commentaires {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.comments .commentaires .date {
-  font-family: 'Satisfy', cursive;
-  font-size: 30px;
-  align-content: flex-start;
-}
-
-.comments .commentaires .date img {
-  margin-right: 50px;
-  width: 60px;
-}
-
-.comments .commentaires .comment {
-  background-color: rgba(255, 255, 255, 0.466);
-  border-radius: 15px;
-  min-height: 150px;
-  width: 50%;
-  border: 1px solid white;
-  font-size: 25px;
-  font-family: 'Satisfy', cursive;
-  color: #d97136;
 }
 
 .comments .message-erreur {
@@ -901,6 +752,7 @@ h3 {
 }
 
 .comments form input {
+  border-radius: 15px;
   align-self: center;
   height: 50px;
   color: white;
@@ -1172,7 +1024,7 @@ header nav {
   justify-content: space-around;
   z-index: 999;
   height: 70px;
-  background-color: rgba(217, 114, 54, 0.336);
+  background-color: rgba(255, 166, 0, 0.171);
   width: 100%;
 }
 
@@ -1498,7 +1350,7 @@ main #split .blog #punaise2 {
   position: absolute;
   width: 5%;
   left: 15%;
-  top: 5%;
+  top: 7%;
 }
 
 main #split .blog figure {
@@ -1571,6 +1423,7 @@ main #split .blog .enter {
 
 main #split .blog .enter:hover {
   padding: 15px 55px;
+  color: #0aeebc;
   border: 1px solid #0aeebc;
 }
 
@@ -1619,7 +1472,7 @@ main #split .about #punaise {
   position: absolute;
   width: 5%;
   left: 58%;
-  top: 5%;
+  top: 7%;
 }
 
 main #split .about figure {
@@ -1673,18 +1526,23 @@ main #split .about .text span {
   transform: translateX(50%);
 }
 
+.hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
 footer {
   box-shadow: 0 -23px 60px 8px rgba(0, 0, 0, 0.788);
   z-index: 200;
   width: 100%;
   position: relative;
+  background-color: black;
   background-image: url("../img/enveloppe.png");
   background-size: cover;
   display: flex;
   flex-direction: column;
   height: 300px;
   border-top: 1px solid orange;
-  opacity: 1;
 }
 
 footer #adress {

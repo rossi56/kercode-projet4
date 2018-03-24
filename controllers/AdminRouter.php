@@ -26,11 +26,15 @@ class AdminRouter
             {
                 if ($_GET['action'] == 'admin') 
                 {
+                    if(isset($_GET['id']))
+                    {
+                        $this->ctrlAdmin->deleteMember($_GET['id']);
+                        $this->ctrlAdmin->deleteComments($_GET['id']);
+                    }
+                   
                     $this->ctrlAdmin->members();
-                    $this->ctrlAdmin->eraseMembers();
-                                    
-                    
                 }
+              
                 if ($_GET['action'] == 'publication') 
                 {
                     if(!empty($_POST))
@@ -38,24 +42,30 @@ class AdminRouter
                         $this->ctrlAdmin->publier($_FILES['file'], $_FILES['file2'], $_POST['contenu'], $_POST['titre']); 
                         require ('views/publicationView.php');   
                     }
-                    require ('views/publicationView.php'); 
-                                         
+                    require ('views/publicationView.php');                          
                 }
                 elseif ($_GET['action'] == 'edition') 
                 {
-                      $this->ctrlAdmin->anciens();
+                    $posts = $this->ctrlAdmin->anciens();
+                      
                       require ('views/oldView.php');         
                 }
                 elseif ($_GET['action'] == 'modifier')
                 {
-                    $this->ctrlAdmin->delete();
-                    $this->ctrlAdmin->editer();
+                    $posts = $this->ctrlAdmin->post($_GET['id']);
                     require ('views/modifView.php');
+                }
+                elseif ($_GET['action'] == 'supprimer')
+                {
+                     $this->ctrlAdmin->deletePost($_GET['id']);
+                    header ('Location: admin.php?action=edition');
                 }
                 elseif ($_GET['action'] == 'deconnexion') 
                 {
                     $this->ctrlAdmin->deconnexion();
                 }
+                
+
             }
             else 
             {

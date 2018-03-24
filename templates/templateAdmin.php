@@ -13,11 +13,13 @@
         <header>
             <h1><?= $titleHeader ?></h1>
         <nav>
+            <a href='home.php'>Accueil</a>
+            <a href="admin.php?action=admin">Administration</a>
             <a href="admin.php?action=publication">Nouveau post</a>
             <a href="admin.php?action=edition">Anciens posts</a>
             <a href="admin.php?action=deconnexion">Déconnexion</a>
         </nav>
-        <img class="pref-img" src="public/img/admin.png" alt="Préface">
+        <img class="pref-img" src="<?= $image ?>" alt="Préface">
         <img class="portrait" src="public/img/portrait.png" alt="portrait">
         <div class="pattern"></div>
         <div class="burger">

@@ -26,7 +26,7 @@ main {
                 position: absolute;
                 width: 5%;
                 left: 15%;
-                top: 5%;
+                top: 7%;
             }
             figure{
                 opacity: .6;
@@ -87,6 +87,7 @@ main {
             }
             .enter:hover {
                 padding: 15px 55px;
+                color: rgb(10, 238, 188);
                 border: 1px solid rgb(10, 238, 188);
             }
            
@@ -126,7 +127,7 @@ main {
                 position: absolute;
                 width: 5%;
                 left: 58%;
-                top: 5%;
+                top: 7%;
             }
             figure{
                 opacity: .6;
@@ -168,8 +169,13 @@ main {
 
 .about.splitOn {
     transform: translateX(-50%);
+    
 }
 
 .blog.splitOn {
     transform: translateX(50%);
+}
+.hide{
+    visibility: hidden;
+    opacity: 0;
 }

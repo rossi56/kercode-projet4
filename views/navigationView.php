@@ -4,7 +4,7 @@
 <?php
     if(isset($_SESSION["membre"])) :
 ?>
-    <a href="index.php?action=compte">Mon Profil</a>
+    <a href="index.php?action=compte&id=">Mon Profil</a>
     <a href="index.php?action=deconnexion">Deconnexion</a>
 <?php
     else :

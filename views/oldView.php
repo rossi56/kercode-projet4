@@ -1,11 +1,11 @@
 <?php
 $title = "Administration";
-$titleHeader = "Edition des anciens posts";
-$image = "../public/img/admin.png"
+$titleHeader = "Edition des anciens Chapitres";
+$image = "public/img/edition.png"
 ?>
 <?php ob_start(); ?>
         <section class="posts">
-        <h2>Anciens posts !</h2>
+        <h3>Les anciens chapitres !</h3>
             <table>
         <?php
             foreach($posts as $post) :

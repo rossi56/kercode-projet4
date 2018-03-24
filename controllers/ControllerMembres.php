@@ -10,8 +10,12 @@ class ControllerMembres
 {
     private $compte;
     private $commentaires;
-    private $user;
+    public static $erreurs = [];
+    private $membres;
+    private static $user;
+    private $userManager;
     private $mail;
+    private $pseudo;
     private $password;
 
 
@@ -19,9 +23,11 @@ class ControllerMembres
     {
         $this->compte= new MembresManager;
         $this->commentaires = new CommentsManager;
-        $this->user = new MembresManager;
+        $this->userManager = new MembresManager;
         $this->mail = new MembresManager;
         $this->password = new MembresManager;
+        $this->pseudo = new MembresManager;
+        $this->membres = new MembresManager;
     }
     
     /**
@@ -36,8 +42,36 @@ class ControllerMembres
      */
     public function inscrire($pseudo, $email, $emailconf, $password, $passwordconf)
     {      
-        $membres = $this->membres->inscription($pseudo, $email, $emailconf, $password, $passwordconf);
-        require('views/connexionView.php');
+       
+
+        $validation = true;
+
+        if(empty($pseudo) || empty($email) || empty($emailconf) || empty($password) || empty($passwordconf)){
+            $validation = false;
+            array_push(self::$erreurs,"<i class='fas fa-exclamation-triangle'></i> <br>Tous les champs sont obligatoires !" );
+        }
+
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $validation = false;
+            array_push(self::$erreurs, "<i class='fas fa-exclamation-triangle'></i> <br>L'adresse e-mail n'est pas valide !");
+        }
+        elseif ($emailconf != $email) {
+            $validation = false;
+            array_push(self::$erreurs,  "<i class='fas fa-exclamation-triangle'></i> <br>L'adresse e-mail de confirmation est incorrecte !");
+        }
+        if($passwordconf != $password) {
+            $validation = false;
+            array_push(self::$erreurs,  "<i class='fas fa-exclamation-triangle'></i> <br>Le mot de passe de confirmation est incorrect !");
+        }
+        if($validation) {
+            $membres = $this->membres->inscription($pseudo, $email, $emailconf, $password, $passwordconf);
+            array_push(self::$erreurs, '<h2>Votre Message a bien été envoyé !</h2>
+            <i class="far fa-check-circle"></i>
+             ');
+        // require('views/connexionView.php');
+        }
+
+        require('views/inscriptionView.php');
     }
 
     /**
@@ -48,16 +82,22 @@ class ControllerMembres
      */
     public function connect($pseudo)
     {
-        $connect = $this->compte->connexion($pseudo);
-        $erreur = "Les identifiants sont erronés !";
+        $compte = $this->compte->connexion($pseudo);
+        array_push(self::$erreurs,"<i class='fas fa-exclamation-triangle'></i> <br> Les identifiants sont erronés !" );
 
-        if(password_verify($_POST['password'], $connect["password"])){
-            $_SESSION["membre"] = $connect["id"];
+        if(password_verify($_POST['password'], $compte["password"]))
+        {
+            $_SESSION["membre"] = $compte["id"];
             header("Location: index.php?action=compte");
-         }else
-            return $erreur;
-        require('views/connexionView.php');
+        }
     }
+
+    public static function getErreur()
+    {
+        return self::$erreurs;
+    }
+
+        
 
     /**
      * Fonction de déconnexion
@@ -86,33 +126,50 @@ class ControllerMembres
         require('views/compteView.php');
     }
 
-    public function update()
+    
+    /**
+     * Edition du profil membre
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function update($id)
     {
-        $user = $this->user->updateUser();
-        if(isset($_POST['newPseudo']) AND !empty($_POST['newPseudo']) AND $_POST['newPseudo'] != $user['pseudo'])
-        {   
-            $user = $this->user->newPseudo();
-            require ('views/editProfilView.php');
-        }
-        if(isset($_POST['newMail']) AND !empty($_POST['newMail']) AND $_POST['newMail'] != $user['Mail'])
-        {  
-            $mail = $this->user->newMail();
-            require ('views/editProfilView.php');
-        }
-
-        if(isset($_POST['newPassword']) AND !empty($_POST['newPassword']) AND isset($_POST['newPasswordConf']) AND !empty($_POST['newPasswordConf']))
-        {
-            $password = sha1($_POST['newPassword']);
-            $passwordconf = sha1($_POST['newPasswordConf']);
-            if($password == $passwordconf)
-            {
-                $user = $this->user->newPassword();
+            self::$user = $this->userManager->selectUser($id);
+      
+            if(isset($_POST['newPseudo']) AND !empty($_POST['newPseudo']) AND $_POST['newPseudo'] != self::$user['pseudo'])
+            {   
+                $pseudo = $this->pseudo->newPseudo($id, $newPseudo);
                 require ('views/editProfilView.php');
             }
-            else
-            {
-               $erreur =  'Vos 2 mots de passe sont différents';
+            if(isset($_POST['newMail']) AND !empty($_POST['newMail']) AND $_POST['newMail'] != self::$user['Mail'])
+            {  
+                $mail = $this->mail->newMail($id, $newMail);
+                require ('views/editProfilView.php');
             }
-        }   
+    
+            if(isset($_POST['newPassword']) AND !empty($_POST['newPassword']) AND isset($_POST['newPasswordConf']) AND !empty($_POST['newPasswordConf']))
+            {
+                $password = sha1($_POST['newPassword']);
+                $passwordconf = sha1($_POST['newPasswordConf']);
+                if($password == $passwordconf)
+                {
+                    $password = $this->password->newPassword($id, $_POST['newPassword']);
+                    require ('views/editProfilView.php');
+                }
+                else
+                {
+                  array_push(self::$erreurs, 'Vos 2 mots de passe sont différents');
+                }
+            
+        }
+        
+    }
+
+    public static function getUser()
+    {
+       
+        return self::$user;
+        
     }
 }

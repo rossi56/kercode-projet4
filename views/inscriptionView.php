@@ -5,29 +5,26 @@ $image = "public/img/book.png"
 ?>
 <?php ob_start(); ?>
 
-    <div class="inscription">
-    <h3>Inscrivez-vous !</h3>
-                    <h4>Ne rater pas les derniers articles !</h4>
+    <div class="formulaire">
+    <h3>Inscrivez-vous ! <br> Ne rater pas les derniers Chapitres !</h3>
     
         <form method="post" action="index.php?action=inscription">
 <?php
+    $erreurs = ControllerMembres::getErreur() ;
     if(isset($erreurs)) :
     if($erreurs) :
 // BOUCLE POUR L'AFFICHAGE DES MESSAGES D'ERREURS
     foreach($erreurs as $erreur)  :   
 ?>
 <!-- affichage de ce message en cas d'erreur -->
-    <div class="message erreur">
+    <div class="message erreur envoi">
         <?= $erreur ?>
     </div>
 <?php
     endforeach;
     else :
 ?>
-<!-- affichage de ce message s'il n'y a pas d'erreur -->
-    <div id="envoi">
-        <h2>Votre inscription a bien été prise en compte !</h2>
-            <i class="far fa-check-circle"></i>
+    <i class="far fa-check-circle"></i>
     </div>
 <?php
     endif;
