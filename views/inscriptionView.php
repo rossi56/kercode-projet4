@@ -1,7 +1,8 @@
 <?php
 $title = "Inscription";
-$titleHeader = "Inscription";
-$image = "public/img/book.png"
+$titleHeader = "";
+$image = "";
+$video = "public/video/inscription4.mp4"
 ?>
 <?php ob_start(); ?>
 
@@ -24,8 +25,7 @@ $image = "public/img/book.png"
     endforeach;
     else :
 ?>
-    <i class="far fa-check-circle"></i>
-    </div>
+   
 <?php
     endif;
     endif;
@@ -36,9 +36,11 @@ $image = "public/img/book.png"
                                 "]) ?>">
             <input type="email" name="emailconf" placeholder="Confirmez votre e-mail *" value="<?php if(isset($_POST[" emailconf
                                 "])) echo ($_POST["emailconf "]) ?>">
+                <label>Le mot de passe doit contenir au moins 1 chiffre, 1 lettre en minuscule et 1 lettre en majuscule</label>
             <input type="password" name="password" placeholder="Mot de Passe *">
             <input type="password" name="passwordconf" placeholder="Vérification du mot de passe *">
             <input class="btn-submit" type="submit" value="S'inscrire">
         </form>
+
 <?php $content = ob_get_clean(); ?>
 <?php require('templates/template.php'); ?>

@@ -18,11 +18,11 @@ class ControllerChapitre
     
     public function __construct() 
     {
-      $this->article = new ArticlesManager();
-      $this->commentaire = new CommentsManager();
-      $this->nb_commentaires = new CommentsManager();
-      $this->comment = new ArticlesManager();
-      $this->search = new ArticlesManager();
+      $this->article = new ArticlesManager;
+      $this->commentaire = new CommentsManager;
+      $this->nb_commentaires = new CommentsManager;
+      $this->comment = new ArticlesManager;
+      $this->search = new ArticlesManager;
     }
 
     /**
@@ -39,6 +39,8 @@ class ControllerChapitre
       require ('views/chapitreView.php');
     }
 
+   
+
     /**
      * Fonction pour poster des commentaires
      *
@@ -53,6 +55,21 @@ class ControllerChapitre
         header("Location: index.php?action=article&id=" . $id_article);
     }
 
+
+    public function reportComment($id, $id_article)
+    {
+      $commentaire = $this->comment->reportComments($id, $id_article);
+      header("Location: index.php?action=article&id=" . $id_article);
+    }
+
+
+
+    /**
+     * Fonction recherche barre de recherche
+     *
+     * @param [type] $query
+     * @return void
+     */
     public function search($query)
     {
         $search = $this->search->recherche($query);

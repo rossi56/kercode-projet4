@@ -53,7 +53,11 @@ class MembresManager extends Model
 
        
     }
-
+    /**
+     * Génération des erreurs
+     *
+     * @return void
+     */
     public static function getErreur()
     {
         return self::$erreurs;
@@ -113,7 +117,12 @@ class MembresManager extends Model
     }
 
 
-
+    /**
+     * Sélection d'un membre pour éditer un profil
+     *
+     * @param [type] $id
+     * @return void
+     */
     public function selectUser($id)
     {
         $bdd = $this->getBdd();
@@ -123,6 +132,14 @@ class MembresManager extends Model
         return $user;
     }
 
+
+    /**
+     * Remplacement du pseudo du profil membre
+     *
+     * @param [type] $id
+     * @param [type] $newPseudo
+     * @return void
+     */
     public function newPseudo($id, $newPseudo)
     {
         $bdd = $this->getBdd();
@@ -132,7 +149,13 @@ class MembresManager extends Model
         header('Location: index.php?action=compte');
     }
 
-    
+    /**
+     * Remplacement du Mail du profil membre
+     *
+     * @param [type] $id
+     * @param [type] $newMail
+     * @return void
+     */
     public function newMail($id, $newMail)
     {
         $bdd = $this->getBdd();
@@ -142,6 +165,13 @@ class MembresManager extends Model
         header('Location: index.php?action=compte');
     }
 
+/**
+ * Remplacement du Mot de passe du profil membre
+ *
+ * @param [type] $id
+ * @param [type] $newMdp
+ * @return void
+ */
     public function newMdp($id, $newMdp)
     {
         $bdd = $this->getBdd();
@@ -150,4 +180,17 @@ class MembresManager extends Model
         $insertMdp->execute(array($newMdp,$id));
         header('Location: index.php?action=compte');
     }
+
+    public function newAvatar($avatar, $id)
+    {
+        $bdd = $this->getBdd();
+        $insertAvatar = $bdd->prepare("UPDATE membres SET avatar = :avatar WHERE id = :id");
+        $insertAvatar->execute(array(
+            'avatar' => $avatar,
+            'id' => $id
+
+        ));
+    }
+
+
 }

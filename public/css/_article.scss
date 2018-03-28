@@ -1,94 +1,96 @@
-.article {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    img {
+.chapitre {
+    width: 100%;
+    .article {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        img {
+            width: 40%;
+            transform: rotate(5deg);
+        }
+        h2 {
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+            @include h3;
+            font-size: 75px;
+        }
+        p {
+            margin-left: 5%;
+            color: white;
+            font-size: 22px;
+            margin-top: 100px;
+        }
+    }
+    .bg1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url('../img/blog-background1.png');
         width: 100%;
-        align-self: center;
-        transform: rotate(5deg);
+        height: 100%;
+        opacity: .4;
+        z-index: 2;
     }
-    h2 {
-        margin-top: 50px;
-        color: white;
-        font-size: 75px;
-        text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%), 4px 4px 0 hsl(22, 68%, 53%), 5px 5px 0 hsl(22, 68%, 53%), 6px 6px 0 hsl(22, 68%, 53%), 7px 7px 0 hsl(22, 68%, 53%);
-    }
-    p {
-        text-align: center;
-        color: white;
-        font-size: 22px;
-        margin-top: 100px;
-    }
-}
-
-.bg1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: url('../img/blog-background1.png');
-    width: 100%;
-    height: 100%;
-    opacity: .4;
-    z-index: 2;
-}
-
-.comments {
-    margin-top: 175px;
-    z-index: 1500;
-    margin-bottom: 200px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    width: 100%;
-  
-    h2 {
-        font-size: 55px;
-    }
-    h3 {
-        margin-top: 35%;
-        @include h3;
-        font-size: 35px;
-    }
-   
-    .message-erreur {
-        margin-bottom: 25px;
-        font-size: 35px;
-        color: orangered;
-    }
-    form {
-        margin-top: 170px;
+    .comments {
+        margin-top: 175px;
+        z-index: 1500;
+        margin-bottom: 200px;
+        height: auto;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        align-self: center;
-        width: 70%;
-        input {
-            border-radius: 15px;
-            align-self: center;
-            height: 50px;
-            color: white;
-            width: 40%;
-            border: none;
-            outline: none;
-            background: transparent;
-            border: 1px solid white;
-            transition: transform 0.35s ease-in-out;
-            margin-top: 25px;
-            &:hover {
-                border: 1px solid orangered;
-                transform: scaleX(1.2);
-                color: orangered;
-            }
+        align-items: center;
+        width: 100%;
+        h2 {
+            @include h3;
+            font-size: 55px;
         }
-        #commentaire {
-            border-radius: 10px;
-            text-align: center;
-            font-family: 'Alegreya', cursive;
-            font-size: 20px;
-            &:focus {
-                color: orangered;
+        h3 {
+            margin-top: 35%;
+            @include h3;
+            font-size: 35px;
+        }
+        .message-erreur {
+            margin-bottom: 25px;
+            font-size: 35px;
+            color: orangered;
+        }
+        form {
+            margin-top: 170px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-self: center;
+            width: 70%;
+            input {
+                border-radius: 15px;
+                align-self: center;
+                height: 50px;
+                color: white;
+                width: 40%;
+                border: none;
+                outline: none;
+                background: transparent;
+                border: 1px solid white;
+                transition: transform 0.35s ease-in-out;
+                margin-top: 25px;
+                &:hover {
+                    border: 1px solid orangered;
+                    transform: scaleX(1.2);
+                    color: orangered;
+                }
+            }
+            #commentaire {
+                border-radius: 10px;
+                text-align: center;
+                font-family: 'Alegreya', cursive;
+                font-size: 20px;
+                &:focus {
+                    color: orangered;
+                }
             }
         }
     }

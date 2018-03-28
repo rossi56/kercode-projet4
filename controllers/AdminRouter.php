@@ -39,7 +39,7 @@ class AdminRouter
                 {
                     if(!empty($_POST))
                     {
-                        $this->ctrlAdmin->publier($_FILES['file'], $_FILES['file2'], $_POST['contenu'], $_POST['titre']); 
+                        $this->ctrlAdmin->publier(($_FILES['file']["name"]), ($_FILES['file2']["name"]), $_POST['contenu'], $_POST['titre']); 
                         require ('views/publicationView.php');   
                     }
                     require ('views/publicationView.php');                          
@@ -53,8 +53,16 @@ class AdminRouter
                 elseif ($_GET['action'] == 'modifier')
                 {
                     $posts = $this->ctrlAdmin->post($_GET['id']);
+                    if(!empty($_POST['titre']) && !empty($_POST['contenu']) && !empty($_FILES['file']["name"]) && !empty($_FILES['file2']["name"]))
+                    {
+                        $posts = $this->ctrlAdmin->editer($_GET['id'],$_POST['titre'],$_POST['contenu'],$_FILES['file']["name"], $_FILES['file2']["name"]);
+                        
+                       
+                    }
                     require ('views/modifView.php');
                 }
+                
+              
                 elseif ($_GET['action'] == 'supprimer')
                 {
                      $this->ctrlAdmin->deletePost($_GET['id']);
@@ -63,6 +71,14 @@ class AdminRouter
                 elseif ($_GET['action'] == 'deconnexion') 
                 {
                     $this->ctrlAdmin->deconnexion();
+                }
+                elseif ($_GET['action'] == 'deleteComment') 
+                {
+                    $this->ctrlAdmin->deleteReport();
+                }
+                elseif ($_GET['action'] == 'valider') 
+                {
+                    $this->ctrlAdmin->validate();
                 }
                 
 

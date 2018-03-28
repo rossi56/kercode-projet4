@@ -1,7 +1,8 @@
 <?php
 $title = "Administration";
-$titleHeader = "Publier un nouveau Chapitre";
-$image = "public/img/publication.png"
+$titleHeader = "";
+$image = "";
+$video = 'public/video/new.mp4';
 ?>
 
 <?php ob_start(); ?>

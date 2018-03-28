@@ -1,7 +1,7 @@
 <?php
 $title = "Billet simple pour l'Alaska";
-$titleHeader = "Contact";
-$video = "public/video/aircraft.mp4";
+$titleHeader = "";
+$video = "public/video/contact.mp4";
 $image = ''
 ?>
 

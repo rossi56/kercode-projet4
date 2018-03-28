@@ -13,17 +13,17 @@
             <header>
                 <h1><?= $titleHeader ?></h1>
                 <p>"Le projet un peu fou d'un écrivain voyageur"</p>
-                <form method="post" action="index.php?action=query">
-                    <input class="search" type="search" name="query" placeholder="Recherche.." value="<?php if(isset($_POST["query"])) echo $_POST["query"]//laisser champs de recherche rempli ?>">
-                </form>
+                
                 <p id="by">
                     <span> By</span> Jean Forteroche</p>
                 <?php
                     include 'views/navigationView.php';
                 ?>
+                 
                 <video id="video" autoplay loop src="<?= $video  ?>"></video>
                 <img class="pref-img" src= "<?= $image?>"></img>
                 <div class="pattern"></div>
+                <!-- <video id="video2" autoplay loop src="<?= $video2  ?>"></video> -->
                 <button id="pause">
                     <i class="far fa-pause-circle fa-3x"></i>
                 </button>

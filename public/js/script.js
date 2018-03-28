@@ -25,16 +25,15 @@ pause.addEventListener('click', function(){
     }
 });
 
-/*-------------------Affichage Message validation de formulaire */
-// var input = $('input');
-// $(document).ready(function(){
-//     $('.envoi').hide();
-//     $('.btn-submit').click(function(){
-//       if(!empty('input')){
-//         $('.envoi').show();
-//       }
-        
-//         });
-        
-//     })
+
+
+
+/*------------------SCROLLTOP-------------------------- */
+       
+$(function() { $(".btn-submit").on('click', function() { $("HTML, BODY").animate({ scrollTop: 0 }, 1000); }); }); 
+
+
+    
+
+
 

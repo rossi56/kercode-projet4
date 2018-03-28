@@ -7,7 +7,7 @@ abstract class Model
     private static $_bdd;
 
     /**
-     * Insstanciation de la connexion à la base de données
+     * Instanciation de la connexion à la base de données
      *
      * @return void
      */

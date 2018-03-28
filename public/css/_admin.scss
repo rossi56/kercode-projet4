@@ -1,17 +1,25 @@
 .portrait {
-    width: 10%;
-    position: absolute;
-    right: 15px;
-    top: 150px;
+    margin-top: 50px;
+    width: 30%;
     border-radius: 50%;
 }
 
 .admin {
-    z-index: 1000;
+    z-index: 10;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    video {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+        position: absolute;
+        z-index: 1;
+        opacity: .8;
+    }
     .erreur {
         align-self: center;
         color: red;
@@ -30,7 +38,11 @@
         }
     }
     .comments {
-        a{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        a {
+            text-align: center;
             font-family: 'Satisfy', cursive;
             display: block;
             color: white;
@@ -40,19 +52,18 @@
             border: 1px solid white;
             padding: 15px 25px;
             border-radius: 10px;
-            transition: transform 0.25s ease-in-out;
+            width: 80%;
             &:hover {
-                transform: scaleX(1.1);
                 border: 1px solid rgba(217, 114, 54, 0.808);
                 color: rgba(217, 114, 54, 0.877)
+            }
         }
-    }
-        p:nth-child(1) {
+        .date {
             font-size: 20px;
             color: white;
             font-family: 'Life', cursive;
         }
-        p:nth-child(2) {
+        .comment {
             background-color: rgba(255, 255, 255, 0.699);
             border-radius: 15px;
             font-size: 20px;
@@ -98,6 +109,7 @@
         flex-direction: column;
         flex-wrap: wrap;
         width: 60%;
+        z-index: 10;
         .insert-pres {
             top: 17%;
             left: 30%;

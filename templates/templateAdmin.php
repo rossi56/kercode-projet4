@@ -18,9 +18,13 @@
             <a href="admin.php?action=publication">Nouveau post</a>
             <a href="admin.php?action=edition">Anciens posts</a>
             <a href="admin.php?action=deconnexion">Déconnexion</a>
+        <form method="post" action="index.php?action=query">
+            <input class="search" type="search" name="query" placeholder="Recherche.." value="<?php if(isset($_POST[" query
+                "])) echo $_POST["query "]//laisser champs de recherche rempli ?>">
+        </form>
         </nav>
-        <img class="pref-img" src="<?= $image ?>" alt="Préface">
-        <img class="portrait" src="public/img/portrait.png" alt="portrait">
+        <video id="video" autoplay loop src="<?= $video  ?>"></video>
+       
         <div class="pattern"></div>
         <div class="burger">
             <svg width="100px" height="100px">
@@ -31,8 +35,9 @@
         </div>
         <div class="mask"></div>
             </header>
-
+            
             <section class="container">
+            <img class="portrait" src="public/img/portrait.png" alt="portrait">
               <?= $content ?>
             <div class="bg"></div>
             </section>
@@ -58,6 +63,7 @@
             <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
             <script src="public/js/tinymce/tiny_mce.js"></script>
             <script src="public/js/tiny.js"></script>
+            <script src="public/js/script.js"></script>
         </body>
    </html>
     </body>

@@ -40,9 +40,9 @@ main {
                 }
             }
            
-            h2 {
+            h1 {
                 position: absolute;
-                left: 70%;
+                left: 55%;
                 top: 20%;
                 font-size: 45px;
                 color: white;
@@ -64,31 +64,16 @@ main {
                     font-size: 20px;
                 }
                 span {
-                    color: rgb(10, 238, 188);
+                    color: #f6a207;
                     display: block;
                     margin-top: 35px;
                 }
             }
             .enter {
-                position: absolute;
-                z-index: 1000;
-                border: none;
-                color: white;
-                background-color: transparent;
-                border: 1px solid white;
-                padding: 15px 35px;
-                cursor: pointer;
-                transition: 0.25s ease-in-out;
-                top: 50%;
-                left: 25%;
-                font-family: 'Cookie', cursive;
-                font-size: 35px;
-                transform: translate(-50%,50%);
+                @include button;
             }
             .enter:hover {
-                padding: 15px 55px;
-                color: rgb(10, 238, 188);
-                border: 1px solid rgb(10, 238, 188);
+                @include buttonHover;
             }
            
         }
@@ -114,7 +99,7 @@ main {
             }
             h3 {
                 position: absolute;
-                color:#D97136;
+                color:#f6a207;
                 font-size: 25px;
                 left: 20%;
                 top: 45%;

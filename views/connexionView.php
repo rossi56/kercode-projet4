@@ -1,7 +1,8 @@
 <?php 
 $title = "Billet simple pour l'Alaska";
-$titleHeader = "Connexion";
-$image = "public/img/connexion.png"
+$titleHeader = "";
+$image = "";
+$video = "public/video/connexion.mp4"
 ?>
 
 <?php ob_start(); ?>

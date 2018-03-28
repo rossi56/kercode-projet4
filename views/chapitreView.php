@@ -1,28 +1,29 @@
 <?php
 $title = "Les Chapitres"; 
-$titleHeader = "Bonne lecture";
-$video = '';
-$image = 'public/img/book2.png'
+$titleHeader = "";
+$video = 'public/video/roman.mp4';
+$image = ''
 ?>
 
 
 <?php ob_start(); ?>
-
+<section class="chapitre">
     <article class="article">
         <h2><?= $article["titre"] ?></h2>
             <p class="date">Posté le <time datetime="<?= $article["publication"] ?> "><?= $article["publication"] ?></time> </p>
-                <img src="public/img/<?= $article["imageArt"] ?>" alt="<?= $article["imageArt"] ?>">
+                <img class="chapitre" src="public/img/<?= $article["imageArt"] ?>" alt="<?= $article["imageArt"] ?>">
             <p><?= $article["contenu"] ?></p>
     </article>
     
 <section class="comments">
-    <h3><?= $nb_commentaires ?> commentaire(s)</h3>
+    <h2><?= $nb_commentaires ?> commentaire(s)</h2>
 <?php
     foreach($commentaires as $commentaire) :
 ?>
     <article class="commentaires">
-            <p class="date"><img src="public/img/<?= $commentaire["avatar"] ?>" alt="Avatar">Posté par <?= $commentaire["pseudo"] ?> le <time datetime="<?= $commentaire["publication"] ?>" ><?= $commentaire["publication"] ?></time>  </p>    
+            <p class="date"><img src="public/img/avatars/<?= $commentaire["avatar"] ?>" alt="Avatar">Posté par <?= $commentaire["pseudo"] ?> le <time datetime="<?= $commentaire["publication"] ?>" ><?= $commentaire["publication"] ?></time>  </p>    
             <p class="comment">"<?= $commentaire["commentaire"] ?>"</p>
+            <a href="index.php?action=signaler&id=<?= $commentaire['id'] ?>&id_article=<?= $commentaire['id_article'] ?>">Signaler le commentaire</a>
     </article>
 
 <?php
@@ -57,6 +58,7 @@ $image = 'public/img/book2.png'
     endif;
 ?>  
 </section> 
+</section>
 
 <?php $content = ob_get_clean(); ?>
 <?php require('templates/template.php'); ?>

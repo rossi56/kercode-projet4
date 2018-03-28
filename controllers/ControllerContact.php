@@ -65,8 +65,6 @@ class ControllerContact
             $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
     
             mail($to, $sujet, $message, $headers);
-           
-            // self::resetErreur();
 
             //Destruction des champs après envoi du formulaire, éviter qu'il soit envoyé plusieurs fois
             unset($_POST["nom"]);
@@ -79,14 +77,14 @@ class ControllerContact
         require('views/contactView.php');
     }
 
+    /**
+     * Fonction de récupération des erreurs de formulaires
+     *
+     * @return void
+     */
     public static function getErreur()
     {
         return self::$erreurs;
-    }
-
-    public static function resetErreur()
-    {
-        self::$erreurs = [];
     }
 }
 

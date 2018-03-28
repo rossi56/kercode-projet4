@@ -15,6 +15,8 @@ class ControllerAdmin
     private $membres;
     private $erase;
     private static $erreurs = [];
+    private static $chapter;
+    private $reports;
 
     public function __construct()
     {
@@ -24,6 +26,7 @@ class ControllerAdmin
         $this->commentaires = new CommentsManager;
         $this->membres = new MembresManager;
         $this->erase = new AdminManager;
+        $this->reports = new CommentsManager;
 
     }
     
@@ -36,7 +39,7 @@ class ControllerAdmin
      * @param [type] $titre
      * @return void
      */
-    public function publier($image2, $image, $contenu, $titre)
+    public function publier($image, $image2, $contenu, $titre)
     {
         $posts = $this->posts->poster($image2, $image, $contenu, $titre);
        
@@ -60,15 +63,16 @@ class ControllerAdmin
 
         }
         if($validation) 
-        array_push(self::$erreurs, '<h2>Votre chapitre a bien été publié !</h2>
+        {
+            array_push(self::$erreurs, '<h2>Votre chapitre a bien été publié !</h2>
             <i class="far fa-check-circle"></i>
              ');
-        { //Récupération de l'image
+            //Récupération de l'image
             $image = basename($_FILES["file"]["name"]);
             $image2 = basename($_FILES["file2"]["name"]);//récupération du nom de l'image et pas du chemin complet avec la fonction basename
             //enregistrement définitif du fichier
-            move_uploaded_file($_FILES["file"]["tmp_name"], '../public/img/' . $image);
-            move_uploaded_file($_FILES["file2"]["tmp_name"], '../public/img/' . $image2);
+            move_uploaded_file($_FILES["file"]["tmp_name"], 'public/img/' . $image);
+            move_uploaded_file($_FILES["file2"]["tmp_name"], 'public/img/' . $image2);
 
            
             
@@ -89,8 +93,21 @@ class ControllerAdmin
     {
         $commentaires = $this->commentaires->lastComments();
         $membres = $this->membres->lastMembers();
+        $reports = $this->commentaires->getReports();
         
+            
         require ('views/adminView.php');
+    }
+
+    public function deleteReport()
+    {
+        $reports = $this->commentaires->deleteReports();
+    }
+
+    public function validate()
+    {
+        $reports = $this->commentaires->valideReports();
+        header ('Location: admin.php?action=admin');
     }
 
 
@@ -109,11 +126,12 @@ class ControllerAdmin
      *
      * @return void
      */
-    public function editer($titre, $contenu, $extrait, $id)
-    {
-        $posts = $this->posts->modifier($titre, $contenu, $extrait, $id);
-        require ('views/modifView.php');
+    public function editer($id, $titre, $contenu, $image, $image2)
+    { 
+        $posts = $this->posts->modifier($id, $titre, $contenu, $image, $image2);
+        return $posts;
     }
+
 
     
     /**
@@ -128,6 +146,13 @@ class ControllerAdmin
       
     }
 
+
+    /**
+     * Fonction modif d'un article
+     *
+     * @param [type] $id
+     * @return void
+     */
     public function post($id)
     {
         $posts = $this->posts->post($id);
@@ -146,6 +171,12 @@ class ControllerAdmin
         
     }
 
+
+
+    public function getReport()
+    {
+
+    }
      
     /**
      * Fonction de déconnexion

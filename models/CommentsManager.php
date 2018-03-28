@@ -59,6 +59,8 @@ class CommentsManager extends Model
           return $commentaires;
     }
 
+  
+
 
     /**
      * Affichage des 5 derniers commentaires
@@ -73,5 +75,22 @@ class CommentsManager extends Model
         $last = $last->fetchAll();
 
         return $last;
+    }
+
+    public function getReports()
+    {
+        $bdd = $this->getBdd();
+        
+        $report = $bdd->query("SELECT * FROM commentaires WHERE report != 0 ");
+       
+        return $report;
+    }
+
+    public function valideReports()
+    {
+        $bdd = $this->getBdd();
+        
+        $report = $bdd->prepare("UPDATE commentaires SET report = 0 WHERE id = ?");
+        $report->execute([$_GET['id']]);
     }
 }

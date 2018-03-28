@@ -6,7 +6,7 @@
 php, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
+del, dfn, em, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
@@ -67,10 +67,13 @@ table {
   background-size: cover;
   width: 100%;
   min-height: 900px;
-  margin: auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
+}
+
+.container .recherche {
+  color: rgba(255, 0, 0, 0.726);
 }
 
 .container h3 {
@@ -80,8 +83,6 @@ table {
   color: white;
   font-family: 'Cookie', cursive;
   font-size: 55px;
-  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
-  z-index: 1200;
 }
 
 .container p {
@@ -120,6 +121,7 @@ table {
   position: relative;
   font-size: 0;
   width: 80%;
+  height: 300px;
   margin-bottom: 50px;
   margin-top: 50px;
   background: #f9cd5c;
@@ -174,7 +176,8 @@ table {
   color: #f84200;
 }
 
-.container article figure figcaption .extrait {
+.container article figure figcaption p {
+  margin-top: 20px;
   align-self: center;
   color: white;
   font-size: 16px;
@@ -184,7 +187,7 @@ table {
 }
 
 @media screen and (max-width: 22.5em) {
-  .container article figure figcaption .extrait {
+  .container article figure figcaption p {
     font-size: 14px;
   }
 }
@@ -253,19 +256,28 @@ table {
 }
 
 .portrait {
-  width: 10%;
-  position: absolute;
-  right: 15px;
-  top: 150px;
+  margin-top: 50px;
+  width: 30%;
   border-radius: 50%;
 }
 
 .admin {
-  z-index: 1000;
+  z-index: 10;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.admin video {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  z-index: 1;
+  opacity: .8;
 }
 
 .admin .erreur {
@@ -289,7 +301,14 @@ table {
   font-size: 30px;
 }
 
+.admin .comments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .admin .comments a {
+  text-align: center;
   font-family: 'Satisfy', cursive;
   display: block;
   color: white;
@@ -299,22 +318,21 @@ table {
   border: 1px solid white;
   padding: 15px 25px;
   border-radius: 10px;
-  transition: transform 0.25s ease-in-out;
+  width: 80%;
 }
 
 .admin .comments a:hover {
-  transform: scaleX(1.1);
   border: 1px solid rgba(217, 114, 54, 0.808);
   color: rgba(217, 114, 54, 0.877);
 }
 
-.admin .comments p:nth-child(1) {
+.admin .comments .date {
   font-size: 20px;
   color: white;
   font-family: 'Life', cursive;
 }
 
-.admin .comments p:nth-child(2) {
+.admin .comments .comment {
   background-color: rgba(255, 255, 255, 0.699);
   border-radius: 15px;
   font-size: 20px;
@@ -365,6 +383,7 @@ table {
   flex-direction: column;
   flex-wrap: wrap;
   width: 60%;
+  z-index: 10;
 }
 
 .admin form .insert-pres {
@@ -426,14 +445,6 @@ table {
   color: #ee3507;
   transform: scaleX(1.2);
   border: 1px solid #ee3507;
-}
-
-.confirm {
-  color: #08ff8c;
-  position: absolute;
-  font-size: 35px;
-  left: 15%;
-  top: 80%;
 }
 
 .posts {
@@ -502,8 +513,6 @@ table {
   color: white;
   font-family: 'Cookie', cursive;
   font-size: 55px;
-  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
-  z-index: 1200;
   z-index: 1200;
   text-align: center;
   color: white;
@@ -591,12 +600,11 @@ table {
   color: white;
   font-family: 'Cookie', cursive;
   font-size: 55px;
-  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
-  z-index: 1200;
+  z-index: 10;
 }
 
 .formulaire form {
-  z-index: 1000;
+  z-index: 10;
   margin-top: 100px;
   align-self: center;
   display: flex;
@@ -669,37 +677,44 @@ table {
 
 .formulaire form input[type=submit]:hover {
   color: #D97136;
-  transform: scaleX(1.2);
   border: 1px solid #fc7528;
 }
 
-.article {
+.chapitre {
+  width: 100%;
+}
+
+.chapitre .article {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  align-items: center;
+  width: 90%;
 }
 
-.article img {
-  width: 100%;
-  align-self: center;
+.chapitre .article img {
+  width: 40%;
   transform: rotate(5deg);
 }
 
-.article h2 {
+.chapitre .article h2 {
+  text-align: center;
   margin-top: 50px;
   color: white;
+  color: white;
+  font-family: 'Cookie', cursive;
+  font-size: 55px;
   font-size: 75px;
-  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
 }
 
-.article p {
-  text-align: center;
+.chapitre .article p {
+  margin-left: 5%;
   color: white;
   font-size: 22px;
   margin-top: 100px;
 }
 
-.bg1 {
+.chapitre .bg1 {
   position: absolute;
   top: 0;
   left: 0;
@@ -710,7 +725,7 @@ table {
   z-index: 2;
 }
 
-.comments {
+.chapitre .comments {
   margin-top: 175px;
   z-index: 1500;
   margin-bottom: 200px;
@@ -722,27 +737,28 @@ table {
   width: 100%;
 }
 
-.comments h2 {
+.chapitre .comments h2 {
+  color: white;
+  font-family: 'Cookie', cursive;
+  font-size: 55px;
   font-size: 55px;
 }
 
-.comments h3 {
+.chapitre .comments h3 {
   margin-top: 35%;
   color: white;
   font-family: 'Cookie', cursive;
   font-size: 55px;
-  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
-  z-index: 1200;
   font-size: 35px;
 }
 
-.comments .message-erreur {
+.chapitre .comments .message-erreur {
   margin-bottom: 25px;
   font-size: 35px;
   color: orangered;
 }
 
-.comments form {
+.chapitre .comments form {
   margin-top: 170px;
   display: flex;
   flex-direction: column;
@@ -751,7 +767,7 @@ table {
   width: 70%;
 }
 
-.comments form input {
+.chapitre .comments form input {
   border-radius: 15px;
   align-self: center;
   height: 50px;
@@ -765,20 +781,20 @@ table {
   margin-top: 25px;
 }
 
-.comments form input:hover {
+.chapitre .comments form input:hover {
   border: 1px solid orangered;
   transform: scaleX(1.2);
   color: orangered;
 }
 
-.comments form #commentaire {
+.chapitre .comments form #commentaire {
   border-radius: 10px;
   text-align: center;
   font-family: 'Alegreya', cursive;
   font-size: 20px;
 }
 
-.comments form #commentaire:focus {
+.chapitre .comments form #commentaire:focus {
   color: orangered;
 }
 
@@ -1019,13 +1035,13 @@ header .pop-connect .btn-submit:hover {
 }
 
 header nav {
-  position: absolute;
   display: flex;
-  justify-content: space-around;
-  z-index: 999;
+  position: absolute;
+  z-index: 100000;
   height: 70px;
-  background-color: rgba(255, 166, 0, 0.171);
+  background-color: rgba(109, 106, 101, 0.801);
   width: 100%;
+  position: fixed;
 }
 
 header nav a {
@@ -1036,12 +1052,12 @@ header nav a {
   color: white;
   text-decoration: none;
   font-size: 20px;
-  font-family: 'Life', cursive;
+  font-family: 'Life savers', cursive;
   transition: transform 0.5s ease-in-out, opacity 0.25s ease-in-out;
 }
 
 header nav a:hover {
-  color: #f09263;
+  color: #f6a207;
 }
 
 @media screen and (max-width: 48em) {
@@ -1069,7 +1085,7 @@ header video {
   min-height: 100%;
   position: absolute;
   z-index: 1;
-  opacity: 0.5;
+  opacity: .9;
 }
 
 header .pattern {
@@ -1080,6 +1096,7 @@ header .pattern {
   z-index: 1;
   top: 0;
   left: 0;
+  opacity: 0.3;
 }
 
 header #pause {
@@ -1090,7 +1107,7 @@ header #pause {
   outline: none;
   bottom: 15px;
   left: 15px;
-  color: rgba(255, 68, 0, 0.623);
+  color: #f6a207;
   cursor: pointer;
 }
 
@@ -1099,12 +1116,12 @@ header .search {
   position: absolute;
   display: block;
   top: 10%;
-  left: 75%;
+  left: 80%;
   color: white;
   width: 10px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  border: 2px solid orange;
+  border: 2px solid #f6a207;
   border-radius: 10px;
   font-size: 16px;
   background-color: rgba(255, 255, 255, 0.219);
@@ -1117,7 +1134,7 @@ header .search {
 }
 
 header .search:focus {
-  color: orangered;
+  color: #f6a207;
 }
 
 @media screen and (max-width: 48em) {
@@ -1128,7 +1145,7 @@ header .search:focus {
 }
 
 header .search:focus {
-  width: 20%;
+  width: 12%;
 }
 
 header h1 {
@@ -1141,7 +1158,6 @@ header h1 {
   font-size: 85px;
   height: 80px;
   width: 100%;
-  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
 }
 
 @media screen and (max-width: 48em) {
@@ -1154,7 +1170,7 @@ header h1 {
 header p {
   position: absolute;
   z-index: 200;
-  top: 65%;
+  top: 80%;
   left: 50%;
   color: white;
   font-family: 'Cookie', cursive;
@@ -1173,7 +1189,7 @@ header #by {
   height: 55px;
   font-size: 30px;
   width: 30%;
-  top: 80%;
+  top: 85%;
   left: 70%;
   font-family: 'Cookie', cursive;
 }
@@ -1366,9 +1382,9 @@ main #split .blog figure img {
   width: 100%;
 }
 
-main #split .blog h2 {
+main #split .blog h1 {
   position: absolute;
-  left: 70%;
+  left: 55%;
   top: 20%;
   font-size: 45px;
   color: white;
@@ -1376,7 +1392,7 @@ main #split .blog h2 {
 }
 
 @media screen and (max-width: 48em) {
-  main #split .blog h2 {
+  main #split .blog h1 {
     font-size: 25px;
   }
 }
@@ -1399,7 +1415,7 @@ main #split .blog p {
 }
 
 main #split .blog p span {
-  color: #0aeebc;
+  color: #f6a207;
   display: block;
   margin-top: 35px;
 }
@@ -1418,13 +1434,14 @@ main #split .blog .enter {
   left: 25%;
   font-family: 'Cookie', cursive;
   font-size: 35px;
+  border-radius: 15px;
   transform: translate(-50%, 50%);
 }
 
 main #split .blog .enter:hover {
   padding: 15px 55px;
-  color: #0aeebc;
-  border: 1px solid #0aeebc;
+  color: #f6a207;
+  border: 1px solid #f6a207;
 }
 
 main #split .about {
@@ -1455,7 +1472,7 @@ main #split .about h2 {
 
 main #split .about h3 {
   position: absolute;
-  color: #D97136;
+  color: #f6a207;
   font-size: 25px;
   left: 20%;
   top: 45%;
@@ -1537,7 +1554,7 @@ footer {
   width: 100%;
   position: relative;
   background-color: black;
-  background-image: url("../img/enveloppe.png");
+  background-image: url("../img/footer3.png");
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -1549,14 +1566,14 @@ footer #adress {
   z-index: 200;
   margin-top: 75px;
   align-self: center;
-  color: #D97136;
+  color: #f6a207;
   text-align: center;
   font-size: 25px;
   font-family: 'Satisfy', cursive;
 }
 
 footer #copy {
-  margin-top: 100px;
+  margin-top: 75px;
   z-index: 200;
   align-self: center;
   font-size: 16px;

@@ -1,7 +1,7 @@
 <?php
 $title = "Billet simple pour l'Alaska";
-$titleHeader = "Les Chapitres";
-$video = "public/video/lettres.mp4";
+$titleHeader = "";
+$video = "public/video/chapitre.mp4";
 $image = ''
 ?>
 
@@ -11,7 +11,7 @@ $image = ''
     if(count($articles) > 0) :
     if(isset($_POST["query"])) : //affichage du résultat de recherche s'il y a un résultat
 ?>
-    <p>Voici le résultat de votre recherche avec "<?= $_POST["query"] ?>"</p>
+    <p class="recherche">Voici le résultat de votre recherche avec "<?= $_POST["query"] ?>"</p>
 <?php
     endif;             
     foreach($articles as $article) ://boucle d'affichage des articles
@@ -40,7 +40,7 @@ $image = ''
     endforeach;
     else :
 ?>
-    <p>Aucun résultat pour votre recherche</p>
+    <p class="recherche">Aucun résultat pour votre recherche</p>
 <?php
     endif;
 ?>

@@ -16,7 +16,7 @@ class ArticlesManager extends Model
     {
         $bdd = $this->getBdd();
 
-        $articles = $bdd->query("SELECT id, titre, extrait, publication, img, imageArt FROM articles ORDER BY id DESC");
+        $articles = $bdd->query("SELECT id, titre, extrait,  DATE_FORMAT(publication, '%d/%m/%Y %Hh%imin') AS publication, img, imageArt FROM articles ORDER BY id DESC");
         $articles = $articles->fetchAll();
         return $articles;
     }
@@ -33,7 +33,7 @@ class ArticlesManager extends Model
         $bdd = $this->getBdd();
 
     /*Sécurisation id de l'url, faille de sécurité*/
-    $article = $bdd->prepare("SELECT id, titre, contenu, publication, img, imageArt FROM articles WHERE id = ?");
+    $article = $bdd->prepare("SELECT id, titre, contenu,  DATE_FORMAT(publication, '%d/%m/%Y %Hh%imin') AS publication, img, imageArt FROM articles WHERE id = ?");
     $article->execute([$id]);
     $article = $article->fetch();
 
@@ -41,6 +41,15 @@ class ArticlesManager extends Model
     header("Location: index.php");//redirection vers page d'accueil si la variable article est vide
     else
     return $article;
+    }
+
+
+    public function reportComments($id, $id_article)
+    {
+      $bdd =$this->getBdd();
+
+      $report = $bdd->prepare('UPDATE commentaires SET report = (report + 1) WHERE id = ?');
+      $report->execute([$id]);
     }
 
     /**

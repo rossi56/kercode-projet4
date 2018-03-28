@@ -64,6 +64,7 @@ class Router {
             {
                 extract($_POST);
                 $this->ctrlMembres->inscrire($pseudo, $email, $emailconf, $password, $passwordconf);  
+                $this->ctrlMembres->pseudoExist($pseudo);
             }      
         }
         elseif ($_GET['action'] == 'pageConnexion') 
@@ -108,8 +109,24 @@ class Router {
         }
         elseif ($_GET['action'] == 'editProfil')
         {
-            $this->ctrlMembres->update($_GET['id']);
-            require ('views/editProfilView.php');
+            
+            if(empty($_POST))
+            {
+                $this->ctrlMembres->update($_GET['id']);
+                require ('views/editProfilView.php');
+            }
+            else
+            {
+                $this->ctrlMembres->newAvatar($_FILES['avatar']['name'], $_GET['id']);
+                $this->ctrlMembres->compte($_SESSION['membre']);
+            }
+           
+          
+           
+        }
+        elseif ($_GET['action'] == 'signaler')
+        {
+            $this->ctrlChapitre->reportComment($_GET['id'], $_GET['id_article']);
         }
     }
         else
@@ -120,7 +137,7 @@ class Router {
 
         header ('Location: home.php');
       }
-  }
+    }
 }
 
  

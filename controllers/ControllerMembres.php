@@ -8,15 +8,16 @@ require_once ('models/CommentsManager.php');
  */
 class ControllerMembres
 {
+    public static $erreurs = [];
     private $compte;
     private $commentaires;
-    public static $erreurs = [];
     private $membres;
     private static $user;
     private $userManager;
     private $mail;
     private $pseudo;
     private $password;
+    private $avatar;
 
 
     public function __construct()
@@ -28,6 +29,7 @@ class ControllerMembres
         $this->password = new MembresManager;
         $this->pseudo = new MembresManager;
         $this->membres = new MembresManager;
+        $this->avatar = new MembresManager;
     }
     
     /**
@@ -46,33 +48,49 @@ class ControllerMembres
 
         $validation = true;
 
-        if(empty($pseudo) || empty($email) || empty($emailconf) || empty($password) || empty($passwordconf)){
+        if(empty($pseudo) || empty($email) || empty($emailconf) || empty($password) || empty($passwordconf))
+        {
             $validation = false;
             array_push(self::$erreurs,"<i class='fas fa-exclamation-triangle'></i> <br>Tous les champs sont obligatoires !" );
         }
+        if($this->pseudo->existe($pseudo))
+        {
+            $validation = false;
+            array_push(self::$erreurs,"<i class='fas fa-exclamation-triangle'></i> <br>Ce pseudo n'est pas disponible !" );
+        }
 
-        if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)) 
+        {
             $validation = false;
             array_push(self::$erreurs, "<i class='fas fa-exclamation-triangle'></i> <br>L'adresse e-mail n'est pas valide !");
         }
-        elseif ($emailconf != $email) {
+        elseif ($emailconf != $email) 
+        {
             $validation = false;
             array_push(self::$erreurs,  "<i class='fas fa-exclamation-triangle'></i> <br>L'adresse e-mail de confirmation est incorrecte !");
         }
-        if($passwordconf != $password) {
+        if(!preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{6,}$#', $password)) 
+        {
+            $validation = false;
+            array_push(self::$erreurs,  "<i class='fas fa-exclamation-triangle'></i> <br>Le mot de passe n'est pas valide !");
+        }
+        if($passwordconf != $password) 
+        {
             $validation = false;
             array_push(self::$erreurs,  "<i class='fas fa-exclamation-triangle'></i> <br>Le mot de passe de confirmation est incorrect !");
         }
-        if($validation) {
+        if($validation) 
+        {
             $membres = $this->membres->inscription($pseudo, $email, $emailconf, $password, $passwordconf);
-            array_push(self::$erreurs, '<h2>Votre Message a bien été envoyé !</h2>
+            array_push(self::$erreurs, '<h2>Votre inscription est validée !</h2>
             <i class="far fa-check-circle"></i>
              ');
-        // require('views/connexionView.php');
         }
 
         require('views/inscriptionView.php');
     }
+
+
 
     /**
      * Fonction de connexion
@@ -92,6 +110,16 @@ class ControllerMembres
         }
     }
 
+    public function pseudoExist($pseudo)
+    {
+        $pseudo = $this->pseudo->existe($pseudo);
+    }
+
+    /**
+     * Fonction de récupération des erreurs de formulaires
+     *
+     * @return void
+     */
     public static function getErreur()
     {
         return self::$erreurs;
@@ -162,10 +190,50 @@ class ControllerMembres
                   array_push(self::$erreurs, 'Vos 2 mots de passe sont différents');
                 }
             
-        }
-        
+            }
+       
     }
 
+
+    public function newAvatar($avatar, $id)
+    {
+        $avatar = $this->avatar->newAvatar($avatar, $id);
+        if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name']));
+    {
+        $extensionsValides = array('jpg', 'jpeg', 'gif', 'png');
+        if($_FILES['avatar']['size'] <= 2097152)
+        {
+            if(in_array(strtolower(substr(strrchr($_FILES['avatar']['name'], '.'), 1)), $extensionsValides))
+            {
+                $avatar = move_uploaded_file($_FILES['avatar']['tmp_name'],"public/avatar/");
+                if($avatar)
+                {
+                    array_push(self::$erreurs, "Votre avatar a bien été mis à jour !");
+                }
+                else
+                {
+                    array_push(self::$erreurs, "Une erreur s'est produite durant l'importation de l'avatar !");
+                }
+            }
+            else
+            {
+                array_push(self::$erreurs, 'Votre avatar doit être au format jpg, jpeg, gif ou png');
+            }
+        }
+        else
+        {
+            array_push(self::$erreurs, 'Votre avatar ne doit pas dépasser 2Mo');
+        }
+    }
+
+    }
+    
+
+    /**
+     * Récupération d'un membre pour édition du profil membre
+     *
+     * @return void
+     */
     public static function getUser()
     {
        

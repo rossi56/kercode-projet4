@@ -4,7 +4,7 @@ footer {
     width: 100%;
     position: relative;
     background-color: black;
-    background-image: url('../img/enveloppe.png');
+    background-image: url('../img/footer3.png');
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -14,13 +14,13 @@ footer {
         z-index: 200;
         margin-top: 75px;
         align-self: center;
-        color: #D97136;
+        color: #f6a207;
         text-align: center;
         font-size: 25px;
         font-family: 'Satisfy', cursive;
     }
     #copy {
-        margin-top: 100px;
+        margin-top: 75px;
         z-index: 200;
         align-self: center;
         font-size: 16px;

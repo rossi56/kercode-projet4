@@ -7,7 +7,7 @@ require_once ('models/Model.php');
 class AdminManager extends Model
 {
 
-    /**
+       /**
      * fonction publier un article (administrateur)
      *
      * @param [type] $image2
@@ -19,7 +19,6 @@ class AdminManager extends Model
     public function poster($image2, $image, $contenu, $titre)
     {
         $bdd =$this->getBdd();
-
         $poster = $bdd->prepare("INSERT INTO articles(titre, extrait, contenu, img, imageArt) VALUES(:titre, :extrait, :contenu, :img, :imageArt)");
             $poster->execute([
             "titre" => $titre,
@@ -29,7 +28,6 @@ class AdminManager extends Model
             "imageArt" => $image2
             ]);
         
-
     }
 
     
@@ -78,41 +76,32 @@ class AdminManager extends Model
         $bdd =$this->getBdd();
 
        
-        $post = $bdd->prepare("SELECT titre, contenu FROM articles WHERE id = ?");
+        $post = $bdd->prepare("SELECT * FROM articles WHERE id = ?");
         $post->execute([$id]);
         $post = $post->fetch();
 
         return $post;
     }
 
-    /**
+      /**
      * Fonction modification des articles
      *
      * @return void
      */
-    public function modifier($titre, $contenu, $extrait, $id)
+    public function modifier($id, $contenu, $titre, $image, $image2)
     {
         $bdd =$this->getBdd();
+       
         
-        $erreur = "";
-
-        extract($_POST);
-
-        $id = (int)$_GET["id"];
-
-        if(!empty($titre) AND !empty($contenu)) {
-        $modifier = $bdd->prepare("UPDATE articles SET titre = :titre, extrait = :extrait, contenu = :contenu WHERE id = :id");
+        $modifier = $bdd->prepare("UPDATE articles SET titre = :titre, extrait = :extrait, contenu = :contenu, img = :img, imageArt = :imageArt WHERE id = :id");
         $modifier->execute([
             "titre" => $titre,
             "extrait" => substr($contenu, 0, 200),//récupération de l'extrait de 200 caractères
             "contenu" => nl2br($contenu),
-            "id" => $id
-        ]);
-        }
-        else
-            $erreur .= "Les champs ne doivent pas être vides !";
-        
-        return $erreur;
+            "id" => $id,
+            "imageArt" => $image2,
+            "img" => $image
+        ]);    
     }
 
         /**

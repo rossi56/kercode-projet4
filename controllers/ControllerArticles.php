@@ -1,10 +1,13 @@
 <?php
 require_once ('models/ArticlesManager.php');
 
-
+/**
+ * Aff
+ */
 class ControllerArticles
 {
     private $article;
+    
    
 
     public function __construct()
@@ -24,17 +27,15 @@ class ControllerArticles
         require ('views/articlesView.php');
     }
 
-    /**
-     * Formatge de la date de publication des articles et des commentaires
-     *
-     * @return void
-     */
-   /**
-     * Formatage de la date
-     *
-     * @param [type] $publication
-     * @return void
-     */
+    /*Formatage de la date de publication*/
+    function formatage_date($publication){
+        $publication = explode(" ", $publication);
+        $date = explode("-", $publication[0]);
+        $heure = explode(":",$publication[1]);
+        $mois = ["", "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+        $resultat = $date[2] . ' ' . $mois[(int)$date[1]] . ' ' . $date[0] . ' à ' . $heure[0] . ' h ' . $heure [1];
+        return $resultat;
+    }
 
 
     /**

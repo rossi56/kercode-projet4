@@ -1,7 +1,8 @@
 <?php
 $title = "Mon profil";
-$titleHeader = "Bienvenue";
-$image = 'public/img/compte.png'
+$titleHeader = "";
+$image = '';
+$video = 'public/video/compte.mp4'
 ?>
 <?php
  ob_start();
@@ -9,7 +10,7 @@ $image = 'public/img/compte.png'
 
 <div class="articles">
     <h3>Profil de "<?= $compte["pseudo"] ?>"</h3>
-        <img class="avatar" src="public/img/<?= $compte["avatar"] ?>" alt="Avatar">
+        <img class="avatar" src="public/img/avatars/<?= $compte["avatar"] ?>" alt="Avatar">
             <p>Votre pseudo : <?= $compte["pseudo"] ?></p>
             <p>Votre adresse e-mail : <?= $compte["email"] ?></p>
             <p><a href="index.php?action=editProfil&id=<?= $_SESSION['membre'] ?>">Editer mon profil</a></p>

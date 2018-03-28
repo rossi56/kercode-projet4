@@ -4,10 +4,12 @@
     background-size: cover;
     width: 100%;
     min-height: 900px;
-    margin: auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
+    .recherche{
+        color: rgba(255, 0, 0, 0.726);
+    }
     h3{
         text-align: center;
         width: 100%;
@@ -42,6 +44,7 @@
             position: relative;
             font-size: 0;
             width: 80%;
+            height: 300px;
             margin-bottom: 50px;
             margin-top: 50px;
             @include deg;
@@ -78,7 +81,8 @@
                     left: 5%;
                     color: rgb(248, 66, 0);
                 }
-                .extrait {
+                p {
+                    margin-top: 20px;
                     align-self: center;
                     color: white;
                     font-size: 16px;

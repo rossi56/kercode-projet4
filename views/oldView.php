@@ -1,7 +1,8 @@
 <?php
 $title = "Administration";
-$titleHeader = "Edition des anciens Chapitres";
-$image = "public/img/edition.png"
+$titleHeader = "";
+$image = "";
+$video = "public/video/edition.mp4"
 ?>
 <?php ob_start(); ?>
         <section class="posts">

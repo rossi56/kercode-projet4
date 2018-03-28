@@ -27,14 +27,37 @@
     color: white;
     font-family: 'Cookie', cursive;
     font-size: 55px;
-    text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%), 4px 4px 0 hsl(22, 68%, 53%), 5px 5px 0 hsl(22, 68%, 53%), 6px 6px 0 hsl(22, 68%, 53%), 7px 7px 0 hsl(22, 68%, 53%);
-    z-index: 1200;
+   
 }
 
 //Titres h4 
 @mixin h4 {
     color: white;
     font-size: 35px;
-    text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%), 4px 4px 0 hsl(22, 68%, 53%), 5px 5px 0 hsl(22, 68%, 53%), 6px 6px 0 hsl(22, 68%, 53%), 7px 7px 0 hsl(22, 68%, 53%);
+  
+}
+
+
+
+@mixin button {
+    position: absolute;
     z-index: 1000;
+    border: none;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 15px 35px;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+    top: 50%;
+    left: 25%;
+    font-family: 'Cookie', cursive;
+    font-size: 35px;
+    border-radius: 15px;
+    transform: translate(-50%,50%);
+}
+@mixin buttonHover {
+    padding: 15px 55px;
+    color: #f6a207;
+    border: 1px solid #f6a207;
 }
