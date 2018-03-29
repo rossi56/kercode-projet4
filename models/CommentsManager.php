@@ -18,7 +18,7 @@ class CommentsManager extends Model
     $bdd = $this->getBdd();
         
       $id_article = (int)$_GET["id"];
-      $commentaires = $bdd->prepare("SELECT commentaires.*, membres.pseudo, membres.avatar FROM commentaires INNER JOIN membres ON commentaires.id_membre = membres.id AND commentaires.id_article = ?");
+      $commentaires = $bdd->prepare("SELECT commentaires.*, membres.pseudo, membres.avatar FROM commentaires INNER JOIN membres ON commentaires.id_membre = membres.id AND commentaires.id_article = ? ORDER BY id DESC");
       $commentaires->execute([$id_article]);
       $commentaires = $commentaires->fetchAll();
 
@@ -71,7 +71,7 @@ class CommentsManager extends Model
     {
         $bdd = $this->getBdd();
         
-        $last = $bdd->query("SELECT * FROM commentaires ORDER BY id DESC LIMIT 0,5");
+        $last = $bdd->query("SELECT  commentaires.commentaire, DATE_FORMAT (publication, '%d/%m/%Y ') AS publication, commentaires.id_membre, membres.pseudo, membres.avatar FROM commentaires INNER JOIN membres ON commentaires.id_membre = membres.id ORDER BY commentaires.id DESC limit 0,5");
         $last = $last->fetchAll();
 
         return $last;
@@ -81,7 +81,7 @@ class CommentsManager extends Model
     {
         $bdd = $this->getBdd();
         
-        $report = $bdd->query("SELECT * FROM commentaires WHERE report != 0 ");
+        $report = $bdd->query("SELECT commentaires.report, commentaires.commentaire, membres.pseudo, membres.avatar FROM commentaires INNER JOIN membres ON commentaires.id_membre = membres.id WHERE report != 0");
        
         return $report;
     }

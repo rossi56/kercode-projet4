@@ -9,7 +9,7 @@ $image = ''
 
     <div class="formulaire">     
         <h3>Contactez-moi ! <br> Je vous réponds rapidement  !</h3>             
-                <form method="post" action="index.php?action=contact">
+                <form class="form" method="post" action="index.php?action=contact">
 <?php
     $erreurs = ControllerContact::getErreur() ;
     if(isset($erreurs)) :
@@ -24,9 +24,6 @@ $image = ''
 <?php
     endforeach;
     else :
-?>
-
-<?php
     endif;
     endif;
 ?>
@@ -40,7 +37,7 @@ $image = ''
     if(isset($_POST["texte"])) echo $_POST["texte"]
 ?>
                     </textarea>
-                    <input class='btn-submit' type="submit" value="Envoyer">
+                    <input class='btn-submit' type="submit" value="Envoyer" >
                 </form>
     </div>
 

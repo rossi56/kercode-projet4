@@ -14,18 +14,19 @@ footer {
         z-index: 200;
         margin-top: 75px;
         align-self: center;
-        color: #f6a207;
+        color: $colorSite;
         text-align: center;
         font-size: 25px;
         font-family: 'Satisfy', cursive;
+        color: white;
     }
     #copy {
-        margin-top: 75px;
+        margin-top: 55px;
         z-index: 200;
         align-self: center;
-        font-size: 16px;
+        font-size: 20px;
         color: white;
-        text-shadow: 1px 1px 0 hsl(22, 68%, 53%), 2px 2px 0 hsl(22, 68%, 53%), 3px 3px 0 hsl(22, 68%, 53%);
+        text-shadow: 1px 1px 0 $colorSite, 2px 2px 0 $colorSite, 3px 3px 0 $colorSite;
     }
     #reseaux {
         top: 20px;

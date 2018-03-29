@@ -16,7 +16,7 @@ class ArticlesManager extends Model
     {
         $bdd = $this->getBdd();
 
-        $articles = $bdd->query("SELECT id, titre, extrait,  DATE_FORMAT(publication, '%d/%m/%Y %Hh%imin') AS publication, img, imageArt FROM articles ORDER BY id DESC");
+        $articles = $bdd->query("SELECT id, titre, extrait,  DATE_FORMAT(publication, '%d/%m/%Y ') AS publication, img, imageArt FROM articles ORDER BY id DESC");
         $articles = $articles->fetchAll();
         return $articles;
     }
@@ -33,7 +33,7 @@ class ArticlesManager extends Model
         $bdd = $this->getBdd();
 
     /*Sécurisation id de l'url, faille de sécurité*/
-    $article = $bdd->prepare("SELECT id, titre, contenu,  DATE_FORMAT(publication, '%d/%m/%Y %Hh%imin') AS publication, img, imageArt FROM articles WHERE id = ?");
+    $article = $bdd->prepare("SELECT id, titre, contenu,  DATE_FORMAT(publication, '%d/%m/%Y ') AS publication, img, imageArt FROM articles WHERE id = ?");
     $article->execute([$id]);
     $article = $article->fetch();
 

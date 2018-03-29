@@ -183,9 +183,7 @@ header {
         }
     }
     nav {
-      
         display: flex;
-        position: absolute;
         z-index: 100000;
         height: 70px;
         background-color: rgba(109, 106, 101, 0.801);
@@ -200,9 +198,9 @@ header {
             text-decoration: none;
             font-size: 20px;
             font-family: 'Life savers', cursive;
-            transition: transform 0.5s ease-in-out, opacity 0.25s ease-in-out;
+            transition: 0.25s ease-in-out;
             &:hover {
-                color: #f6a207;
+                color: $colorSite;
             }
             @media screen and (max-width: 48em) {
                 opacity: 0;
@@ -246,7 +244,7 @@ header {
         outline: none;
         bottom: 15px;
         left: 15px;
-        color: #f6a207;
+        color: $colorSite;
         cursor: pointer;
     }
     .search {
@@ -259,7 +257,7 @@ header {
         width: 10px;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
-        border: 2px solid #f6a207;
+        border: 2px solid $colorSite;
         border-radius: 10px;
         font-size: 16px;
         background-color: rgba(255, 255, 255, 0.219);
@@ -270,7 +268,7 @@ header {
         -webkit-transition: width 1s ease-in-out;
         transition: 1s ease-in-out width;
         &:focus {
-            color: #f6a207;
+            color: $colorSite;
         }
         @media screen and (max-width: 48em) {
             left: 60%;
@@ -319,7 +317,7 @@ header {
         left: 70%;
         font-family: 'Cookie', cursive;
         span {
-            color: rgb(247, 93, 10);
+            color: $colorSite;
             font-size: 45px;
             font-weight: bold;
             font-family: 'Londrina Outline', cursive;

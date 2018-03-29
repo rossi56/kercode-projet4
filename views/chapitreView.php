@@ -11,10 +11,38 @@ $image = ''
     <article class="article">
         <h2><?= $article["titre"] ?></h2>
             <p class="date">Posté le <time datetime="<?= $article["publication"] ?> "><?= $article["publication"] ?></time> </p>
-                <img class="chapitre" src="public/img/<?= $article["imageArt"] ?>" alt="<?= $article["imageArt"] ?>">
+                <img class="chapitre" src="public/img/article/<?= $article["imageArt"] ?>" alt="<?= $article["imageArt"] ?>">
             <p><?= $article["contenu"] ?></p>
     </article>
-    
+    <?php
+   ;
+    if(isset($_SESSION["membre"])) :
+?>
+
+    <form class="formulaire" method="post" action="index.php?action=commenter&id=<?= $_GET['id']; ?>">
+<?php
+    $erreurs = ControllerChapitre::getErreur() ;
+    if(isset($erreurs)) :
+    if($erreurs) :  
+        // BOUCLE POUR L'AFFICHAGE DES MESSAGES D'ERREURS
+    foreach($erreurs as $erreur)  : 
+?>
+<!-- affichage de ce message en cas d'erreur -->
+    <div class="message erreur envoi">
+        <?= $erreur ?>
+    </div>
+<?php
+   endforeach;
+    else :
+    endif;
+    endif;
+?>
+        <textarea name="commentaire" id="commentaire" cols="30" rows="10" placeholder="Laissez votre commentaire !"></textarea>
+        <input type="submit" value="Commenter">
+    </form>
+<?php
+    endif;
+?> 
 <section class="comments">
     <h2><?= $nb_commentaires ?> commentaire(s)</h2>
 <?php
@@ -28,35 +56,10 @@ $image = ''
 
 <?php
     endforeach;
-    if(isset($_SESSION["membre"])) :
+   
 ?>
-    <form method="post" action="index.php?action=commenter&amp;id=<?= $_GET['id']; ?>">
-<?php
-    if(isset($erreur)) :
-    if($erreur) :  
-?>
-<!-- affichage de ce message en cas d'erreur -->
-    <div class="message-erreur">
-        <?= $erreur ?>
-    </div>
-<?php
-    else :
-?>
-<!-- affichage de ce message s'il n'y a pas d'erreur -->
-    <div id="post">
-        <h2>Votre commentaire a bien été posté !</h2>
-            <i class="far fa-check-circle"></i>
-    </div>
-<?php
-    endif;
-    endif;
-?>
-        <textarea name="commentaire" id="commentaire" cols="30" rows="10" placeholder="Laissez votre commentaire !"></textarea>
-        <input type="submit" value="Commenter">
-    </form>
-<?php
-    endif;
-?>  
+
+ 
 </section> 
 </section>
 

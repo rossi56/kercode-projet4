@@ -72,10 +72,6 @@ table {
   flex-wrap: wrap;
 }
 
-.container .recherche {
-  color: rgba(255, 0, 0, 0.726);
-}
-
 .container h3 {
   text-align: center;
   width: 100%;
@@ -83,11 +79,12 @@ table {
   color: white;
   font-family: 'Cookie', cursive;
   font-size: 55px;
+  text-shadow: 1px 1px 0 #f6a207, 2px 2px 0 #f6a207, 3px 3px 0 #f6a207, 4px 4px 0 #f6a207, 5px 5px 0 #f6a207, 6px 6px 0 #f6a207, 7px 7px 0 #f6a207;
 }
 
 .container p {
   text-align: center;
-  color: #e48765;
+  color: #f6a207;
   font-size: 35px;
   margin-top: 55px;
   width: 100%;
@@ -255,10 +252,62 @@ table {
   transform: scale(1, 1);
 }
 
+.container .scrollTop {
+  border-radius: 15px;
+  cursor: pointer;
+  position: fixed;
+  z-index: 10000;
+  right: 5%;
+  bottom: 50px;
+  opacity: 0;
+  background-color: #f6a207;
+  padding: 20px;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.container .scrollTop .fa-angle-double-up {
+  font-size: 35px;
+  color: #fff;
+}
+
+.container .scrollTop .fa-angle-double-up:hover {
+  color: #f6a207;
+}
+
+.container .scrollTop:hover {
+  background-color: white;
+}
+
 .portrait {
   margin-top: 50px;
-  width: 30%;
+  width: 10%;
   border-radius: 50%;
+}
+
+.scrollTop {
+  border-radius: 15px;
+  cursor: pointer;
+  position: fixed;
+  z-index: 100000;
+  right: 5%;
+  bottom: 50px;
+  opacity: 0;
+  background-color: #f6a207;
+  padding: 20px;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.scrollTop .fa-angle-double-up {
+  font-size: 35px;
+  color: #fff;
+}
+
+.scrollTop .fa-angle-double-up:hover {
+  color: #f6a207;
+}
+
+.scrollTop:hover {
+  background-color: white;
 }
 
 .admin {
@@ -267,6 +316,24 @@ table {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.admin .signal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 1;
+}
+
+.admin .signal h2 {
+  font-size: 35px;
+  font-family: 'Satisfy', cursive;
+  color: red;
+}
+
+.admin .signal .fa-exclamation-triangle {
+  color: red;
+  font-size: 35px;
 }
 
 .admin video {
@@ -307,23 +374,47 @@ table {
   align-items: center;
 }
 
+.admin .comments .membre {
+  font-family: 'Satisfy', cursive;
+  color: #f65f07;
+}
+
+.admin .comments .report {
+  font-family: 'Satisfy', cursive;
+  color: #f65f07;
+}
+
+.admin .comments .gestion {
+  display: flex;
+}
+
+.admin .comments .gestion .delete {
+  font-size: 25px;
+  margin-right: 70px;
+}
+
+.admin .comments .gestion .valide {
+  font-size: 25px;
+}
+
 .admin .comments a {
   text-align: center;
   font-family: 'Satisfy', cursive;
+  font-size: 25px;
   display: block;
   color: white;
   text-decoration: none;
   margin-bottom: 50px;
   margin-top: 25px;
   border: 1px solid white;
-  padding: 15px 25px;
+  padding: 15px 35px;
   border-radius: 10px;
-  width: 80%;
+  transition: 0.25s ease-in-out;
 }
 
 .admin .comments a:hover {
-  border: 1px solid rgba(217, 114, 54, 0.808);
-  color: rgba(217, 114, 54, 0.877);
+  border: 1px solid #f6a207;
+  color: #f6a207;
 }
 
 .admin .comments .date {
@@ -336,46 +427,13 @@ table {
   background-color: rgba(255, 255, 255, 0.699);
   border-radius: 15px;
   font-size: 20px;
-  min-height: 100px;
+  min-height: 50px;
+  width: 70%;
   border: 1px solid white;
 }
 
-.admin .comments ul {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 80%;
-}
-
-.admin .comments ul li {
-  color: white;
-  font-family: 'Satisfy', cursive;
-  font-size: 30px;
-}
-
-.admin .comments ul li img {
+.admin .comments img {
   width: 80px;
-  opacity: 0.7;
-  margin-bottom: 30px;
-}
-
-.admin .comments ul li a {
-  font-family: 'Satisfy', cursive;
-  display: block;
-  color: white;
-  text-decoration: none;
-  margin-bottom: 50px;
-  margin-top: 25px;
-  border: 1px solid white;
-  padding: 15px 25px;
-  border-radius: 10px;
-  transition: transform 0.25s ease-in-out;
-}
-
-.admin .comments ul li a:hover {
-  transform: scaleX(1.1);
-  border: 1px solid rgba(217, 114, 54, 0.808);
-  color: rgba(217, 114, 54, 0.877);
 }
 
 .admin form {
@@ -420,7 +478,7 @@ table {
 
 .admin form input:focus,
 .admin form textarea:focus {
-  color: orangered;
+  color: #f6a207;
 }
 
 .admin form textarea {
@@ -442,9 +500,9 @@ table {
 }
 
 .admin form input[type=submit]:hover {
-  color: #ee3507;
+  color: #f6a207;
   transform: scaleX(1.2);
-  border: 1px solid #ee3507;
+  border: 1px solid #f6a207;
 }
 
 .posts {
@@ -462,7 +520,7 @@ table {
   height: 80px;
   width: 100%;
   margin-bottom: 50px;
-  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
+  text-shadow: 1px 1px 0 #f6a207, 2px 2px 0 #f6a207, 3px 3px 0 #f6a207, 4px 4px 0 #f6a207, 5px 5px 0 #f6a207, 6px 6px 0 #f6a207, 7px 7px 0 #f6a207;
 }
 
 .posts table {
@@ -513,14 +571,14 @@ table {
   color: white;
   font-family: 'Cookie', cursive;
   font-size: 55px;
-  z-index: 1200;
+  text-shadow: 1px 1px 0 #f6a207, 2px 2px 0 #f6a207, 3px 3px 0 #f6a207, 4px 4px 0 #f6a207, 5px 5px 0 #f6a207, 6px 6px 0 #f6a207, 7px 7px 0 #f6a207;
   text-align: center;
   color: white;
   font-family: 'Cookie', cursive;
   font-size: 65px;
   height: 80px;
   width: 100%;
-  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136, 4px 4px 0 #d97136, 5px 5px 0 #d97136, 6px 6px 0 #d97136, 7px 7px 0 #d97136;
+  text-shadow: 1px 1px 0 #f6a207, 2px 2px 0 #f6a207, 3px 3px 0 #f6a207, 4px 4px 0 #f6a207, 5px 5px 0 #f6a207, 6px 6px 0 #f6a207, 7px 7px 0 #f6a207;
 }
 
 .articles p {
@@ -533,14 +591,9 @@ table {
   align-self: center;
   height: 100px;
   width: 100px;
-  z-index: 1200;
 }
 
-.articles p {
-  z-index: 2000;
-}
-
-.articles p a {
+.articles a {
   font-family: 'Life', cursive;
   font-size: 20px;
   border-radius: 15px;
@@ -549,9 +602,9 @@ table {
   padding: 15px 20px;
 }
 
-.articles p a:hover {
-  border: 1px solid #D97136;
-  color: #D97136;
+.articles a:hover {
+  border: 1px solid #f6a207;
+  color: #f6a207;
 }
 
 .commentaires {
@@ -565,6 +618,8 @@ table {
   font-family: 'Satisfy', cursive;
   font-size: 30px;
   align-content: flex-start;
+  color: white;
+  margin-bottom: 100px;
 }
 
 .commentaires .date img {
@@ -580,7 +635,7 @@ table {
   border: 1px solid white;
   font-size: 25px;
   font-family: 'Satisfy', cursive;
-  color: #d97136;
+  color: white;
 }
 
 .formulaire {
@@ -600,6 +655,7 @@ table {
   color: white;
   font-family: 'Cookie', cursive;
   font-size: 55px;
+  text-shadow: 1px 1px 0 #f6a207, 2px 2px 0 #f6a207, 3px 3px 0 #f6a207, 4px 4px 0 #f6a207, 5px 5px 0 #f6a207, 6px 6px 0 #f6a207, 7px 7px 0 #f6a207;
   z-index: 10;
 }
 
@@ -657,10 +713,11 @@ table {
 
 .formulaire form input:focus,
 .formulaire form textarea:focus {
-  color: orangered;
+  color: #f6a207;
 }
 
 .formulaire form input[type=submit] {
+  cursor: pointer;
   font-size: 15px;
   color: white;
   align-self: center;
@@ -676,12 +733,55 @@ table {
 }
 
 .formulaire form input[type=submit]:hover {
-  color: #D97136;
-  border: 1px solid #fc7528;
+  color: #f6a207;
+  border: 1px solid #f6a207;
 }
 
 .chapitre {
   width: 100%;
+}
+
+.chapitre .formulaire {
+  align-content: space-around;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.chapitre .formulaire input {
+  border-radius: 15px;
+  align-self: center;
+  height: 50px;
+  color: white;
+  padding: 15px 35px;
+  border: none;
+  outline: none;
+  background: transparent;
+  border: 1px solid white;
+  transition: 0.25s ease-in-out;
+  margin-top: 25px;
+}
+
+.chapitre .formulaire input:hover {
+  padding: 15px 55px;
+  color: #f6a207;
+  border: 1px solid #f6a207;
+}
+
+.chapitre .formulaire textarea {
+  border-radius: 10px;
+  font-family: 'Alegreya', cursive;
+  font-size: 20px;
+  text-align: center;
+  width: 70%;
+  height: 250px;
+  margin-top: 20px;
+  align-self: center;
+}
+
+.chapitre .formulaire textarea:focus {
+  color: #f6a207;
 }
 
 .chapitre .article {
@@ -704,6 +804,7 @@ table {
   color: white;
   font-family: 'Cookie', cursive;
   font-size: 55px;
+  text-shadow: 1px 1px 0 #f6a207, 2px 2px 0 #f6a207, 3px 3px 0 #f6a207, 4px 4px 0 #f6a207, 5px 5px 0 #f6a207, 6px 6px 0 #f6a207, 7px 7px 0 #f6a207;
   font-size: 75px;
 }
 
@@ -737,11 +838,16 @@ table {
   width: 100%;
 }
 
+.chapitre .comments .date {
+  color: white;
+}
+
 .chapitre .comments h2 {
   color: white;
   font-family: 'Cookie', cursive;
   font-size: 55px;
-  font-size: 55px;
+  text-shadow: 1px 1px 0 #f6a207, 2px 2px 0 #f6a207, 3px 3px 0 #f6a207, 4px 4px 0 #f6a207, 5px 5px 0 #f6a207, 6px 6px 0 #f6a207, 7px 7px 0 #f6a207;
+  font-size: 65px;
 }
 
 .chapitre .comments h3 {
@@ -749,53 +855,45 @@ table {
   color: white;
   font-family: 'Cookie', cursive;
   font-size: 55px;
+  text-shadow: 1px 1px 0 #f6a207, 2px 2px 0 #f6a207, 3px 3px 0 #f6a207, 4px 4px 0 #f6a207, 5px 5px 0 #f6a207, 6px 6px 0 #f6a207, 7px 7px 0 #f6a207;
   font-size: 35px;
 }
 
 .chapitre .comments .message-erreur {
   margin-bottom: 25px;
   font-size: 35px;
-  color: orangered;
+  color: #f6a207;
 }
 
-.chapitre .comments form {
-  margin-top: 170px;
+.chapitre .comments .commentaires {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-self: center;
-  width: 70%;
-}
-
-.chapitre .comments form input {
-  border-radius: 15px;
-  align-self: center;
-  height: 50px;
-  color: white;
-  width: 40%;
-  border: none;
-  outline: none;
-  background: transparent;
-  border: 1px solid white;
-  transition: transform 0.35s ease-in-out;
-  margin-top: 25px;
-}
-
-.chapitre .comments form input:hover {
-  border: 1px solid orangered;
-  transform: scaleX(1.2);
-  color: orangered;
-}
-
-.chapitre .comments form #commentaire {
+  align-items: center;
+  width: 85%;
   border-radius: 10px;
   text-align: center;
   font-family: 'Alegreya', cursive;
   font-size: 20px;
 }
 
-.chapitre .comments form #commentaire:focus {
-  color: orangered;
+.chapitre .comments .commentaires a {
+  margin-top: 50px;
+  align-self: center;
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 15px 35px;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+  font-family: 'Cookie', cursive;
+  font-size: 25px;
+  border-radius: 15px;
+}
+
+.chapitre .comments .commentaires a:hover {
+  padding: 15px 55px;
+  color: #f6a207;
+  border: 1px solid #f6a207;
 }
 
 header {
@@ -1036,7 +1134,6 @@ header .pop-connect .btn-submit:hover {
 
 header nav {
   display: flex;
-  position: absolute;
   z-index: 100000;
   height: 70px;
   background-color: rgba(109, 106, 101, 0.801);
@@ -1053,7 +1150,7 @@ header nav a {
   text-decoration: none;
   font-size: 20px;
   font-family: 'Life savers', cursive;
-  transition: transform 0.5s ease-in-out, opacity 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
 header nav a:hover {
@@ -1195,7 +1292,7 @@ header #by {
 }
 
 header #by span {
-  color: #f75d0a;
+  color: #f6a207;
   font-size: 45px;
   font-weight: bold;
   font-family: 'Londrina Outline', cursive;
@@ -1570,15 +1667,16 @@ footer #adress {
   text-align: center;
   font-size: 25px;
   font-family: 'Satisfy', cursive;
+  color: white;
 }
 
 footer #copy {
-  margin-top: 75px;
+  margin-top: 55px;
   z-index: 200;
   align-self: center;
-  font-size: 16px;
+  font-size: 20px;
   color: white;
-  text-shadow: 1px 1px 0 #d97136, 2px 2px 0 #d97136, 3px 3px 0 #d97136;
+  text-shadow: 1px 1px 0 #f6a207, 2px 2px 0 #f6a207, 3px 3px 0 #f6a207;
 }
 
 footer #reseaux {

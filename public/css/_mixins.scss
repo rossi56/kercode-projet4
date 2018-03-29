@@ -27,17 +27,14 @@
     color: white;
     font-family: 'Cookie', cursive;
     font-size: 55px;
-   
+    text-shadow: 1px 1px 0 $colorSite, 2px 2px 0 $colorSite, 3px 3px 0 $colorSite, 4px 4px 0 $colorSite, 5px 5px 0 $colorSite, 6px 6px 0 $colorSite, 7px 7px 0 $colorSite;
 }
 
 //Titres h4 
 @mixin h4 {
     color: white;
     font-size: 35px;
-  
 }
-
-
 
 @mixin button {
     position: absolute;
@@ -54,10 +51,11 @@
     font-family: 'Cookie', cursive;
     font-size: 35px;
     border-radius: 15px;
-    transform: translate(-50%,50%);
+    transform: translate(-50%, 50%);
 }
+
 @mixin buttonHover {
     padding: 15px 55px;
-    color: #f6a207;
-    border: 1px solid #f6a207;
+    color: $colorSite;
+    border: 1px solid $colorSite;
 }

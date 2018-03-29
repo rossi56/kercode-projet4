@@ -84,6 +84,9 @@
                 </p>
 
             </article>
+            <div class="scrollTop">
+              <i class="fas fa-angle-double-up "></i>
+            </div>
         </section>
     </main>
     

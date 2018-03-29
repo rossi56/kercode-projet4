@@ -14,6 +14,7 @@ class ControllerChapitre
   private $nb_commentaires;
   private $comment;
   private $search;
+  public static $erreurs = [];
 
     
     public function __construct() 
@@ -51,8 +52,21 @@ class ControllerChapitre
      */
     public function postComment($id_membre, $id_article, $commentaire)
     {
-        $comment = $this->comment->commenter($id_membre, $id_article, $commentaire);
-        header("Location: index.php?action=article&id=" . $id_article);
+      $comment = $this->comment->commenter($id_membre, $id_article, $commentaire);
+
+      if(!empty($commentaire))
+      {
+        array_push(self::$erreurs, '<h2>Votre Message a bien été envoyé !</h2>
+        <i class="far fa-check-circle"></i>
+         ');
+       
+      }
+      else
+      {
+        array_push(self::$erreurs," <i class='fas fa-exclamation-triangle'></i> <br> Tous les champs sont obligatoires !" );
+       
+      }
+      header("Location: index.php?action=article&id=" . $id_article);
     }
 
 
@@ -75,4 +89,14 @@ class ControllerChapitre
         $search = $this->search->recherche($query);
         require('views/articlesView.php');
     } 
+
+       /**
+     * Fonction de récupération des erreurs de formulaires
+     *
+     * @return void
+     */
+    public static function getErreur()
+    {
+        return self::$erreurs;
+    }
 }

@@ -9,7 +9,7 @@ $video = "public/video/inscription4.mp4"
     <div class="formulaire">
     <h3>Inscrivez-vous ! <br> Ne rater pas les derniers Chapitres !</h3>
     
-        <form method="post" action="index.php?action=inscription">
+        <form class="form" method="post" action="index.php?action=inscription">
 <?php
     $erreurs = ControllerMembres::getErreur() ;
     if(isset($erreurs)) :

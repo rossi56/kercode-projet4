@@ -1,7 +1,30 @@
 .portrait {
     margin-top: 50px;
-    width: 30%;
+    width: 10%;
     border-radius: 50%;
+}
+
+.scrollTop {
+    border-radius: 15px;
+    cursor: pointer;
+    position: fixed;
+    z-index: 100000;
+    right: 5%;
+    bottom: 50px;
+    opacity: 0;
+    background-color: $colorSite;
+    padding: 20px;
+    transition: all 0.4s ease-in-out 0s;
+    .fa-angle-double-up {
+        font-size: 35px;
+        color: #fff;
+        &:hover {
+            color: $colorSite;
+        }
+    }
+    &:hover {
+        background-color: white;
+    }
 }
 
 .admin {
@@ -10,6 +33,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    .signal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 1;
+        h2 {
+            font-size: 35px;
+            font-family: 'Satisfy', cursive;
+            color: red;
+        }
+        .fa-exclamation-triangle {
+            color: red;
+            font-size: 35px;
+        }
+    }
     video {
         top: 50%;
         left: 50%;
@@ -41,21 +79,40 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        .membre {
+            font-family: 'Satisfy', cursive;
+            color: rgb(246, 95, 7);
+        }
+        .report {
+            font-family: 'Satisfy', cursive;
+            color: rgb(246, 95, 7);
+        }
+        .gestion {
+            display: flex;
+            .delete {
+                font-size: 25px;
+                margin-right: 70px;
+            }
+            .valide {
+                font-size: 25px;
+            }
+        }
         a {
             text-align: center;
             font-family: 'Satisfy', cursive;
+            font-size: 25px;
             display: block;
             color: white;
             text-decoration: none;
             margin-bottom: 50px;
             margin-top: 25px;
             border: 1px solid white;
-            padding: 15px 25px;
+            padding: 15px 35px;
             border-radius: 10px;
-            width: 80%;
+            transition: 0.25s ease-in-out;
             &:hover {
-                border: 1px solid rgba(217, 114, 54, 0.808);
-                color: rgba(217, 114, 54, 0.877)
+                border: 1px solid $colorSite;
+                color: $colorSite;
             }
         }
         .date {
@@ -67,42 +124,14 @@
             background-color: rgba(255, 255, 255, 0.699);
             border-radius: 15px;
             font-size: 20px;
-            min-height: 100px;
+            min-height: 50px;
+            width: 70%;
             border: 1px solid white;
         }
-        ul {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 80%;
-            li {
-                color: white;
-                font-family: 'Satisfy', cursive;
-                font-size: 30px;
-                img {
-                    width: 80px;
-                    opacity: 0.7;
-                    margin-bottom: 30px;
-                }
-                a {
-                    font-family: 'Satisfy', cursive;
-                    display: block;
-                    color: white;
-                    text-decoration: none;
-                    margin-bottom: 50px;
-                    margin-top: 25px;
-                    border: 1px solid white;
-                    padding: 15px 25px;
-                    border-radius: 10px;
-                    transition: transform 0.25s ease-in-out;
-                    &:hover {
-                        transform: scaleX(1.1);
-                        border: 1px solid rgba(217, 114, 54, 0.808);
-                        color: rgba(217, 114, 54, 0.877)
-                    }
-                }
-            }
+        img {
+            width: 80px;
         }
+       
     }
     form {
         display: flex;
@@ -137,7 +166,7 @@
             margin-top: 50px;
             align-self: center;
             &:focus {
-                color: orangered;
+                color: $colorSite;
             }
         }
         textarea {
@@ -156,10 +185,11 @@
             transition: transform 0.25s ease-in-out;
             width: 30%;
             &:hover {
-                color: rgb(238, 53, 7);
+                color: $colorSite;
                 transform: scaleX(1.2);
-                border: 1px solid rgb(238, 53, 7);
+                border: 1px solid $colorSite;
             }
         }
     }
 }
+

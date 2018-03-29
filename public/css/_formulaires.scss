@@ -57,10 +57,11 @@
             margin-top: 20px;
             align-self: center;
             &:focus {
-                color: orangered;
+                color: $colorSite;
             }
         }
         input[type=submit] {
+            cursor: pointer;
             font-size: 15px;
             color: white;
             align-self: center;
@@ -74,8 +75,8 @@
             margin-top: 50px;
             margin-bottom: 150px;
             &:hover {
-                color: #D97136;
-                border: 1px solid rgb(252, 117, 40);
+                color: $colorSite;
+                border: 1px solid $colorSite;
             }
         }
     }

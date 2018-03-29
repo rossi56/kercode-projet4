@@ -13,7 +13,7 @@
         <header>
             <h1><?= $titleHeader ?></h1>
         <nav>
-            <a href='home.php'>Accueil</a>
+            <a href="index.php?action=articles">Le roman</a>
             <a href="admin.php?action=admin">Administration</a>
             <a href="admin.php?action=publication">Nouveau post</a>
             <a href="admin.php?action=edition">Anciens posts</a>
@@ -24,7 +24,10 @@
         </form>
         </nav>
         <video id="video" autoplay loop src="<?= $video  ?>"></video>
-       
+        <button id="pause">
+                    <i class="far fa-pause-circle fa-3x"></i>
+                </button>
+                
         <div class="pattern"></div>
         <div class="burger">
             <svg width="100px" height="100px">
@@ -40,33 +43,12 @@
             <img class="portrait" src="public/img/portrait.png" alt="portrait">
               <?= $content ?>
             <div class="bg"></div>
+            <div class="scrollTop">
+              <i class="fas fa-angle-double-up "></i>
+            </div>
             </section>
 
-    </section>
-    <footer>
-        <div id="adress">
-            Jean Forteroche
-            <br>4050 University Lake Dr,Anchorage,
-            <br> AK 99508-4600 Etats Unis
-        </div>
-       
+<script src="public/js/tinymce/tiny_mce.js"></script>
+<script src="public/js/tiny.js"></script>
+<?php include 'views/footer.php' ?>
 
-        <div id="reseaux">
-            <img id="fb" src="public/img/facebook.png" alt="facebook">
-            <img src="public/img/twitter.png" alt="twitter" id="tw">
-        </div>
-        <p id="copy">Copyright Kercode 2018 - Site réalisé à des fins pédagogiques</p>
-    </footer>
-            </main>
-
-            <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-            <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-            <script src="public/js/tinymce/tiny_mce.js"></script>
-            <script src="public/js/tiny.js"></script>
-            <script src="public/js/script.js"></script>
-        </body>
-   </html>
-    </body>
-
-    </html>
-  

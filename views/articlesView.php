@@ -11,14 +11,14 @@ $image = ''
     if(count($articles) > 0) :
     if(isset($_POST["query"])) : //affichage du résultat de recherche s'il y a un résultat
 ?>
-    <p class="recherche">Voici le résultat de votre recherche avec "<?= $_POST["query"] ?>"</p>
+    <h3 class="recherche">Voici le résultat de votre recherche avec "<?= $_POST["query"] ?>"</h3>
 <?php
     endif;             
     foreach($articles as $article) ://boucle d'affichage des articles
 ?>
     <article>
         <figure>
-            <img src="public/img/<?= $article["img"]; ?>" alt="<?= $article["img"]; ?>">
+            <img src="public/img/presentation/<?= $article["img"]; ?>" alt="<?= $article["img"]; ?>">
                 <figcaption>
                     <h3>
                         <?= $article["titre"]; ?>

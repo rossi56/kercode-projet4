@@ -1,13 +1,12 @@
 
 <?php 
+$title = "Billet simple pour l'Alaska";
+$titleHeader = "";
+$image = "";
+$video = "public/video/profil.mp4";
 
-
-        $title = "Billet simple pour l'Alaska";
-        $titleHeader = "Edition du profil";
-        $image = "public/img/connexion.png";
-       
-        $user = ControllerMembres::getUser();
-         ob_start(); ?>
+$user = ControllerMembres::getUser();
+    ob_start(); ?>
 
             
             <div class="formulaire">

@@ -7,23 +7,20 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    .recherche{
-        color: rgba(255, 0, 0, 0.726);
-    }
-    h3{
+  
+    h3 {
         text-align: center;
         width: 100%;
         margin-top: 150px;
         @include h3;
     }
-    p{
+    p {
         text-align: center;
-        color: rgb(228, 135, 101);
+        color: $colorSite;
         font-size: 35px;
         margin-top: 55px;
         width: 100%;
     }
-  
     article {
         z-index: 10;
         margin-top: 25px;
@@ -31,10 +28,10 @@
         display: flex;
         justify-content: space-around;
         width: 40%;
-        @media screen and (max-width:48em){
+        @media screen and (max-width: 48em) {
             width: 60%;
         }
-        @media screen and (max-width:22.5em){
+        @media screen and (max-width:22.5em) {
             width: 95%;
         }
         figure {
@@ -70,8 +67,9 @@
                     font-size: 40px;
                     color: white;
                     align-self: auto;
-                    @media screen and (max-width:22.5em){
-                        font-size: 22px;;
+                    @media screen and (max-width: 22.5em) {
+                        font-size: 22px;
+                        ;
                     }
                 }
                 .date {
@@ -89,8 +87,9 @@
                     transform: translateY(50px);
                     opacity: 0;
                     transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
-                    @media screen and (max-width:22.5em){
-                        font-size: 14px;;
+                    @media screen and (max-width: 22.5em) {
+                        font-size: 14px;
+                        ;
                     }
                 }
             }
@@ -138,6 +137,28 @@
         figure:hover figcaption:before,
         figure:hover figcaption:after {
             transform: scale(1, 1);
+        }
+    }
+    .scrollTop {
+        border-radius: 15px;
+        cursor: pointer;
+        position: fixed;
+        z-index: 10000;
+        right: 5%;
+        bottom: 50px;
+        opacity: 0;
+        background-color: $colorSite;
+        padding: 20px;
+        transition: all 0.4s ease-in-out 0s;
+        .fa-angle-double-up {
+            font-size: 35px;
+            color: #fff;
+            &:hover {
+                color: $colorSite;
+            }
+        }
+        &:hover {
+            background-color: white;
         }
     }
 }

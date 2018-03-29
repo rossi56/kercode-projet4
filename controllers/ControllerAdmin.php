@@ -171,12 +171,6 @@ class ControllerAdmin
         
     }
 
-
-
-    public function getReport()
-    {
-
-    }
      
     /**
      * Fonction de déconnexion
