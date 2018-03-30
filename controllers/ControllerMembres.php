@@ -22,14 +22,8 @@ class ControllerMembres
 
     public function __construct()
     {
-        $this->compte= new MembresManager;
-        $this->commentaires = new CommentsManager;
-        $this->userManager = new MembresManager;
-        $this->mail = new MembresManager;
-        $this->password = new MembresManager;
-        $this->pseudo = new MembresManager;
-        $this->membres = new MembresManager;
-        $this->avatar = new MembresManager;
+        $this->membresManager= new MembresManager;
+        $this->commentsManager = new CommentsManager;
     }
     
     /**
@@ -81,7 +75,7 @@ class ControllerMembres
         }
         if($validation) 
         {
-            $membres = $this->membres->inscription($pseudo, $email, $emailconf, $password, $passwordconf);
+            $membres = $this->membresManager->inscription($pseudo, $email, $emailconf, $password, $passwordconf);
             array_push(self::$erreurs, '<h2>Votre inscription est validée !</h2>
             <i class="far fa-check-circle"></i>
              ');
@@ -100,7 +94,7 @@ class ControllerMembres
      */
     public function connect($pseudo)
     {
-        $compte = $this->compte->connexion($pseudo);
+        $compte = $this->membresManager->connexion($pseudo);
         array_push(self::$erreurs,"<i class='fas fa-exclamation-triangle'></i> <br> Les identifiants sont erronés !" );
 
         if(password_verify($_POST['password'], $compte["password"]))
@@ -112,7 +106,7 @@ class ControllerMembres
 
     public function pseudoExist($pseudo)
     {
-        $pseudo = $this->pseudo->existe($pseudo);
+        $pseudo = $this->membresManager->existe($pseudo);
     }
 
     /**
@@ -149,8 +143,8 @@ class ControllerMembres
      */
     public function compte($id)
     {
-        $commentaires = $this->commentaires->commentaires_user();
-        $compte =  $this->compte->infos($id);
+        $commentaires = $this->commentsManager->commentaires_user();
+        $compte =  $this->membresManager->infos($id);
         require('views/compteView.php');
     }
 
@@ -163,16 +157,16 @@ class ControllerMembres
      */
     public function update($id)
     {
-            self::$user = $this->userManager->selectUser($id);
+            self::$user = $this->membresManager->selectUser($id);
       
             if(isset($_POST['newPseudo']) AND !empty($_POST['newPseudo']) AND $_POST['newPseudo'] != self::$user['pseudo'])
             {   
-                $pseudo = $this->pseudo->newPseudo($id, $newPseudo);
+                $pseudo = $this->membresManager->newPseudo($id, $newPseudo);
                 require ('views/editProfilView.php');
             }
             if(isset($_POST['newMail']) AND !empty($_POST['newMail']) AND $_POST['newMail'] != self::$user['Mail'])
             {  
-                $mail = $this->mail->newMail($id, $newMail);
+                $mail = $this->membresManager->newMail($id, $newMail);
                 require ('views/editProfilView.php');
             }
     
@@ -182,7 +176,7 @@ class ControllerMembres
                 $passwordconf = sha1($_POST['newPasswordConf']);
                 if($password == $passwordconf)
                 {
-                    $password = $this->password->newPassword($id, $_POST['newPassword']);
+                    $password = $this->membresManager->newPassword($id, $_POST['newPassword']);
                     require ('views/editProfilView.php');
                 }
                 else
@@ -197,7 +191,7 @@ class ControllerMembres
 
     public function newAvatar($avatar, $id)
     {
-        $avatar = $this->avatar->newAvatar($avatar, $id);
+        $avatar = $this->membresManager->newAvatar($avatar, $id);
         if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name']));
     {
         $extensionsValides = array('jpg', 'jpeg', 'gif', 'png');

@@ -19,11 +19,8 @@ class ControllerChapitre
     
     public function __construct() 
     {
-      $this->article = new ArticlesManager;
-      $this->commentaire = new CommentsManager;
-      $this->nb_commentaires = new CommentsManager;
-      $this->comment = new ArticlesManager;
-      $this->search = new ArticlesManager;
+      $this->articleManager = new ArticlesManager;
+      $this->commentsManager = new CommentsManager;
     }
 
     /**
@@ -34,9 +31,14 @@ class ControllerChapitre
      */
     public function article($id) 
     {
-      $article = $this->article->getArticle($id);
-      $commentaires = $this->commentaire->getComments($id);
-      $nb_commentaires = $this->nb_commentaires->getnbComments($id);
+      $article = $this->articleManager->getArticle($id);
+      if(empty($article))
+      {
+        header("Location: index.php");//redirection vers page d'accueil si la variable article est vide
+      }
+      
+      $commentaires = $this->commentsManager->getComments($id);
+      $nb_commentaires = $this->commentsManager->getnbComments($id);
       require ('views/chapitreView.php');
     }
 
@@ -52,10 +54,12 @@ class ControllerChapitre
      */
     public function postComment($id_membre, $id_article, $commentaire)
     {
-      $comment = $this->comment->commenter($id_membre, $id_article, $commentaire);
+      
 
       if(!empty($commentaire))
       {
+       
+        $comment = $this->articleManager->commenter($id_membre, $id_article, $commentaire);
         array_push(self::$erreurs, '<h2>Votre Message a bien été envoyé !</h2>
         <i class="far fa-check-circle"></i>
          ');
@@ -63,6 +67,7 @@ class ControllerChapitre
       }
       else
       {
+        
         array_push(self::$erreurs," <i class='fas fa-exclamation-triangle'></i> <br> Tous les champs sont obligatoires !" );
        
       }
@@ -72,8 +77,9 @@ class ControllerChapitre
 
     public function reportComment($id, $id_article)
     {
-      $commentaire = $this->comment->reportComments($id, $id_article);
+      $commentaire = $this->articleManager->reportComment($id);
       header("Location: index.php?action=article&id=" . $id_article);
+     
     }
 
 
@@ -86,7 +92,7 @@ class ControllerChapitre
      */
     public function search($query)
     {
-        $search = $this->search->recherche($query);
+        $search = $this->articleManager->recherche($query);
         require('views/articlesView.php');
     } 
 

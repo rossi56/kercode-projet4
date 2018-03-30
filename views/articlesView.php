@@ -16,7 +16,7 @@ $image = ''
     endif;             
     foreach($articles as $article) ://boucle d'affichage des articles
 ?>
-    <article>
+    <article class="roman">
         <figure>
             <img src="public/img/presentation/<?= $article["img"]; ?>" alt="<?= $article["img"]; ?>">
                 <figcaption>

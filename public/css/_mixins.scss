@@ -28,6 +28,14 @@
     font-family: 'Cookie', cursive;
     font-size: 55px;
     text-shadow: 1px 1px 0 $colorSite, 2px 2px 0 $colorSite, 3px 3px 0 $colorSite, 4px 4px 0 $colorSite, 5px 5px 0 $colorSite, 6px 6px 0 $colorSite, 7px 7px 0 $colorSite;
+    @media screen and (max-width: 48em) {
+        width: 100%;
+        font-size: 35px;
+    }
+    @media screen and (max-width: 22.5em) {
+        width: 100%;
+        font-size: 25px;
+    }
 }
 
 //Titres h4 

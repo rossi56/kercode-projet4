@@ -33,7 +33,7 @@ $video = 'public/video/new.mp4';
         <input type="file" name="file2"> 
         <textarea class="publication" name="contenu" placeholder="Corps de l'article *"><?php if(isset($_POST["contenu"])) echo $_POST["contenu"] ?>
         </textarea>
-        <input type="submit" value="Publier !">
+        <input type="submit" value="Publier">
     </form>
     </div>
 <?php $content = ob_get_clean(); ?>

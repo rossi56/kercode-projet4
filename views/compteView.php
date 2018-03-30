@@ -11,8 +11,8 @@ $video = 'public/video/compte.mp4'
 <div class="articles">
     <h3>Profil de "<?= $compte["pseudo"] ?>"</h3>
         <img class="avatar" src="public/img/avatars/<?= $compte["avatar"] ?>" alt="Avatar">
-            <p>Votre pseudo : <?= $compte["pseudo"] ?></p>
-            <p>Votre adresse e-mail : <?= $compte["email"] ?></p>
+            <p> <span>Votre pseudo :</span> <?= $compte["pseudo"] ?></p>
+            <p> <span>Votre adresse e-mail :</span> <?= $compte["email"] ?></p>
             <p><a href="index.php?action=editProfil&id=<?= $_SESSION['membre'] ?>">Editer mon profil</a></p>
 </div> 
     <h3>Vos derniers commentaires</h3>     

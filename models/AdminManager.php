@@ -88,19 +88,17 @@ class AdminManager extends Model
      *
      * @return void
      */
-    public function modifier($id, $contenu, $titre, $image, $image2)
+    public function modifier($id, $titre, $contenu)
     {
         $bdd =$this->getBdd();
        
         
-        $modifier = $bdd->prepare("UPDATE articles SET titre = :titre, extrait = :extrait, contenu = :contenu, img = :img, imageArt = :imageArt WHERE id = :id");
+        $modifier = $bdd->prepare("UPDATE articles SET titre = :titre, extrait = :extrait, contenu = :contenu WHERE id = :id");
         $modifier->execute([
             "titre" => $titre,
             "extrait" => substr($contenu, 0, 200),//récupération de l'extrait de 200 caractères
             "contenu" => nl2br($contenu),
-            "id" => $id,
-            "imageArt" => $image2,
-            "img" => $image
+            "id" => $id
         ]);    
     }
 
@@ -127,12 +125,28 @@ class AdminManager extends Model
          * @param [type] $id
          * @return void
          */
-        public function eraseComments($id)
+        public function eraseComment($id)
         {
             $bdd = $this->getBdd();
 
             $req = $bdd->prepare('DELETE FROM commentaires WHERE id = ?');
             $req->execute([$id]);
+
+            return $req;
+        }
+
+        /**
+         * Supression d'un commentaire
+         *
+         * @param [type] $id
+         * @return void
+         */
+        public function eraseComments($idPost)
+        {
+            $bdd = $this->getBdd();
+
+            $req = $bdd->prepare('DELETE FROM commentaires WHERE id_article = ?');
+            $req->execute([$idPost]);
 
             return $req;
         }

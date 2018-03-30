@@ -29,7 +29,7 @@ class AdminRouter
                     if(isset($_GET['id']))
                     {
                         $this->ctrlAdmin->deleteMember($_GET['id']);
-                        $this->ctrlAdmin->deleteComments($_GET['id']);
+                        $this->ctrlAdmin->deleteComment($_GET['id']);
                     }
                    
                     $this->ctrlAdmin->members();
@@ -52,13 +52,13 @@ class AdminRouter
                 }
                 elseif ($_GET['action'] == 'modifier')
                 {
-                    $posts = $this->ctrlAdmin->post($_GET['id']);
-                    if(!empty($_POST['titre']) && !empty($_POST['contenu']) && !empty($_FILES['file']["name"]) && !empty($_FILES['file2']["name"]))
+                    // throw new Exception(var_dump($_POST) . '\n' .var_dump($_FILES) );
+                    if(!empty($_POST['titre']) && !empty($_POST['contenu']) )
                     {
-                        $posts = $this->ctrlAdmin->editer($_GET['id'],$_POST['titre'],$_POST['contenu'],$_FILES['file']["name"], $_FILES['file2']["name"]);
                         
-                       
+                        $posts = $this->ctrlAdmin->editer($_GET['id'],$_POST['titre'],$_POST['contenu']);
                     }
+                    $posts = $this->ctrlAdmin->post($_GET['id']);
                     require ('views/modifView.php');
                 }
                 
@@ -74,7 +74,10 @@ class AdminRouter
                 }
                 elseif ($_GET['action'] == 'deleteComment') 
                 {
-                    $this->ctrlAdmin->deleteReport();
+                   
+                        $this->ctrlAdmin->deleteComment($_GET['id']);
+                
+                    
                 }
                 elseif ($_GET['action'] == 'valider') 
                 {

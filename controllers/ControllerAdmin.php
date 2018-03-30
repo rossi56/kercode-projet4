@@ -8,7 +8,6 @@ require_once 'models/MembresManager.php';
  */
 class ControllerAdmin
 {
-    private $edit;
     private $delete;
     private $posts;
     private $commentaires;
@@ -20,13 +19,9 @@ class ControllerAdmin
 
     public function __construct()
     {
-        $this->edit = new AdminManager;
-        $this->delete = new AdminManager;
-        $this->posts = new AdminManager;
-        $this->commentaires = new CommentsManager;
-        $this->membres = new MembresManager;
-        $this->erase = new AdminManager;
-        $this->reports = new CommentsManager;
+        $this->adminManager = new AdminManager;
+        $this->commentsManager = new CommentsManager;
+        $this->membresManager = new MembresManager;
 
     }
     
@@ -41,7 +36,7 @@ class ControllerAdmin
      */
     public function publier($image, $image2, $contenu, $titre)
     {
-        $posts = $this->posts->poster($image2, $image, $contenu, $titre);
+        $posts = $this->adminManager->poster($image2, $image, $contenu, $titre);
        
         extract($_POST);
 
@@ -71,8 +66,8 @@ class ControllerAdmin
             $image = basename($_FILES["file"]["name"]);
             $image2 = basename($_FILES["file2"]["name"]);//récupération du nom de l'image et pas du chemin complet avec la fonction basename
             //enregistrement définitif du fichier
-            move_uploaded_file($_FILES["file"]["tmp_name"], 'public/img/' . $image);
-            move_uploaded_file($_FILES["file2"]["tmp_name"], 'public/img/' . $image2);
+            move_uploaded_file($_FILES["file"]["tmp_name"], 'public/img/article' . $image);
+            move_uploaded_file($_FILES["file2"]["tmp_name"], 'public/img/presentation' . $image2);
 
            
             
@@ -83,42 +78,64 @@ class ControllerAdmin
 
     }
 
-
+    /**
+     * Récupération du tableau d'erreur
+     *
+     * @return void
+     */
     public static function getErreur()
     {
         return self::$erreurs;
     }
-
+    /**
+     * Récupération des infos membres
+     *
+     * @return void
+     */
     public function members()
     {
-        $commentaires = $this->commentaires->lastComments();
-        $membres = $this->membres->lastMembers();
-        $reports = $this->commentaires->getReports();
+        $commentaires = $this->commentsManager->lastComments();
+        $membres = $this->membresManager->lastMembers();
+        $reports = $this->commentsManager->getReports();
         
             
         require ('views/adminView.php');
     }
 
-    public function deleteReport()
-    {
-        $reports = $this->commentaires->deleteReports();
-    }
-
+    
+    /**
+     * Validation des commenatires signalés
+     *
+     * @return void
+     */
     public function validate()
     {
-        $reports = $this->commentaires->valideReports();
+        $reports = $this->commentsManager->valideReports();
         header ('Location: admin.php?action=admin');
     }
 
-
+    /**
+     * Supression d'un membre
+     *
+     * @param [type] $id
+     * @return void
+     */
     public function deleteMember($id)
     {
-       $erase = $this->erase->eraseMember($id);                     
+       $erase = $this->adminManager->eraseMember($id);                     
     }
 
-    public function deleteComments($id)
+
+    /**
+     * Suppression d'un membre
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function deleteComment($id)
     {
-        $erase = $this->erase->eraseComments($id);
+        $erase = $this->adminManager->eraseComment($id);
+        header ('Location: admin.php?action=admin');
     }
 
     /**
@@ -126,9 +143,9 @@ class ControllerAdmin
      *
      * @return void
      */
-    public function editer($id, $titre, $contenu, $image, $image2)
+    public function editer($id, $titre, $contenu)
     { 
-        $posts = $this->posts->modifier($id, $titre, $contenu, $image, $image2);
+        $posts = $this->adminManager->modifier($id, $titre, $contenu);
         return $posts;
     }
 
@@ -141,7 +158,7 @@ class ControllerAdmin
      */
     public function anciens()
     {
-        $posts = $this->posts->oldPosts();
+        $posts = $this->adminManager->oldPosts();
         return $posts;
       
     }
@@ -155,20 +172,19 @@ class ControllerAdmin
      */
     public function post($id)
     {
-        $posts = $this->posts->post($id);
+        $posts = $this->adminManager->post($id);
         return $posts;
     }
 
     /**
-     * Fonction supression d'un chapitre
+     * Fonction supression d'un chapitre et de ses commentaires
      *
      * @return void
      */
     public function deletePost($id)
     {
-        
-        $delete = $this->delete->supprimer($id);
-        
+        $delete = $this->adminManager->eraseComments($id);
+        $delete = $this->adminManager->supprimer($id);    
     }
 
      
@@ -183,6 +199,6 @@ class ControllerAdmin
         $_SESSION = array();
         session_destroy();
         session_start();
-        header("Location: index.php");
+        header("Location: home.php");
     }
 }

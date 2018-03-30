@@ -37,14 +37,18 @@ class ArticlesManager extends Model
     $article->execute([$id]);
     $article = $article->fetch();
 
-    if(empty($article))
-    header("Location: index.php");//redirection vers page d'accueil si la variable article est vide
-    else
+    
+   
     return $article;
     }
 
-
-    public function reportComments($id, $id_article)
+    /**
+     * Signaler commentaire
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function reportComment($id)
     {
       $bdd =$this->getBdd();
 

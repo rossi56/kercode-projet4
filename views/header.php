@@ -5,6 +5,7 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <link rel="icon" type="image/png" href="public/img/favicon.png" />
             <link rel="stylesheet" href="public/css/main.css">
             <title><?= $title ?></title>
         </head>
@@ -23,7 +24,6 @@
                 <video id="video" autoplay loop src="<?= $video  ?>"></video>
                 <img class="pref-img" src= "<?= $image?>"></img>
                 <div class="pattern"></div>
-                <!-- <video id="video2" autoplay loop src="<?= $video2  ?>"></video> -->
                 <button id="pause">
                     <i class="far fa-pause-circle fa-3x"></i>
                 </button>

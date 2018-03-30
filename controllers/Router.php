@@ -47,11 +47,12 @@ class Router {
           }
           else 
           {
-              echo 'Page introuvable';
+              throw new Exception('Page introuvable');
           }
         }
         elseif ($_GET['action'] == 'commenter') 
         {
+         
             $this->ctrlChapitre->postComment( $_SESSION["membre"],$_GET['id'], $_POST['commentaire']);           
         }
         elseif ($_GET['action'] == 'inscription') 
@@ -128,9 +129,13 @@ class Router {
         {
             $this->ctrlChapitre->reportComment($_GET['id'], $_GET['id_article']);
         }
+        else
+        {
+            throw new Exception('Action inconnue');
+        }
     }
         else
-          throw new Exception("Identifiant non valide");        
+          throw new Exception("Aucune action");        
     }
       catch (Exception $e) 
       {

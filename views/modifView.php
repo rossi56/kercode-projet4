@@ -20,15 +20,9 @@ $video = "public/video/modif.mp4"
         endif;
     ?>
             <input type="text" name="titre" placeholder="Titre *" value="<?= $posts["titre"] ?>">
-                <h3>Insérer la photo de présentation</h3>
-            <input type="file" name="file">
-            <!-- <h3>Insérer la photo de l'article</h3>
-            <input type="file" name="file2">  -->
+              
             <textarea name="contenu" ><?= $posts["contenu"] ?></textarea>
-            <!-- <p class="modif-pres">Insérer la photo de présentation</p>
-                <input type="file" name="file">
-                <p class="modif-art">Insérer la photo de l'article</p>
-                <input type="file" name="file2"> -->
+           
             <input type="submit" value="Modifier">
         </form>
     </section>

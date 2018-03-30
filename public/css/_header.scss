@@ -17,7 +17,7 @@ header {
     } // ANIMATION MENU BURGER
     .burger {
         transform: translateY(-150px);
-        left: 15%;
+        left: 25%;
         opacity: 0;
         visibility: hidden;
         cursor: pointer;
@@ -61,8 +61,8 @@ header {
     .nav-mobil {
         z-index: 1000;
         height: 100%;
-        width: 40%;
-        background-color: rgba(255, 68, 0, 0.5);
+        width: 60%;
+        background-color: rgba(246, 162, 7, 0.658);
         visibility: visible;
         opacity: 1;
         padding-top: 45px;
@@ -96,92 +96,6 @@ header {
         background: rgba(0, 0, 0, 0.7);
         transition: opacity 0.5s ease-in-out;
     }
-    .pop-inscription,
-    .pop-connect {
-        border-radius: 15px;
-        box-shadow: 0 0 80px 5px black;
-        top: 0;
-        left: 25%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        visibility: hidden;
-        width: 50%;
-        height: 500px;
-        z-index: 1001;
-        position: absolute;
-        background-color: #D97136;
-        top: -300px;
-        animation: drop 1s ease-in-out forwards;
-        animation-play-state: paused;
-        @media screen and (max-width: 48em) {
-            left: 15%;
-            width: 70%;
-            height: 300px;
-            top: -400px;
-        }
-        h3 {
-            color: rgb(255, 255, 255);
-            font-size: 22px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            font-family: 'Alegreya', cursive;
-        }
-        .cross {
-            width: 40px;
-            height: 40px;
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            cursor: pointer;
-            transition: transform 0.5s ease-in-out;
-        }
-        .cross:hover {
-            transform: rotateZ(180deg);
-        }
-        h4 {
-            color: #ffffff;
-            margin-bottom: 15px;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            input {
-                text-align: center;
-                display: block;
-                margin-top: 10px;
-                width: 100%;
-                padding: 8px 14px;
-                line-height: 1.5;
-                color: rgba(116, 150, 165, 0.651);
-                border: 1px solid #ced4da;
-                border-radius: 4px;
-                transition: box-shadow 0.25s ease-in-out;
-                font-family: 'Cookie', cursive;
-                font-size: 25px;
-            }
-            input:focus {
-                outline: none;
-                box-shadow: 0 0 2px 2px $bg-color;
-            }
-        }
-        .btn-submit {
-            border: none;
-            color: white;
-            background-color: transparent;
-            border: 1px solid white;
-            padding: 15px 35px;
-            cursor: pointer;
-            transition: 0.25s ease-in-out;
-            top: 20%;
-            font-family: 'Cookie', cursive;
-            font-size: 35px;
-            margin-top: 50px;
-        }
-        .btn-submit:hover {
-            padding: 15px 55px;
-        }
-    }
     nav {
         display: flex;
         z-index: 100000;
@@ -189,6 +103,7 @@ header {
         background-color: rgba(109, 106, 101, 0.801);
         width: 100%;
         position: fixed;
+        outline: none;
         a {
             display: block;
             text-transform: uppercase;
@@ -225,7 +140,6 @@ header {
         z-index: 1;
         opacity: .9;
     }
-    
     .pattern {
         background-image: url("../img/pattern.png");
         height: 100%;
@@ -252,7 +166,7 @@ header {
         position: absolute;
         display: block;
         top: 10%;
-        left: 80%;
+        left: 87%;
         color: white;
         width: 10px;
         -webkit-box-sizing: border-box;
@@ -271,13 +185,11 @@ header {
             color: $colorSite;
         }
         @media screen and (max-width: 48em) {
-            left: 60%;
-            top: 10%;
+           display: none;
         }
     }
     .search:focus {
         width: 12%;
-
     }
     h1 {
         position: absolute;
@@ -289,7 +201,6 @@ header {
         font-size: 85px;
         height: 80px;
         width: 100%;
-      
         @media screen and (max-width: 48em) {
             left: 15%;
             font-size: 60px;
@@ -325,40 +236,7 @@ header {
     }
 }
 
-// ANIMATION MENU BURGER
-.burger {
-    transform: translateY(-150px);
-    left: 5%;
-    opacity: 0;
-    visibility: hidden;
-    cursor: pointer;
-    position: absolute;
-    z-index: 1000;
-    @media screen and (max-width: 48em) {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-    svg {
-        fill: transparent;
-        stroke: rgb(255, 255, 255);
-        stroke-width: 4px;
-        stroke-linecap: round;
-    }
-    .top {
-        stroke-dasharray: 40 250;
-        transition: 1s cubic-bezier(0.7, 0, 0.3, 1);
-    }
-    .middle {
-        stroke-dasharray: 40, 0;
-        stroke-dashoffset: 40;
-        transition: 1s cubic-bezier(0.7, 0, 0.3, 1);
-    }
-    .bottom {
-        stroke-dasharray: 40 310;
-        transition: 1s cubic-bezier(0.7, 0, 0.3, 1);
-    }
-}
+
 
 .active .top {
     stroke-dashoffset: -227;
@@ -376,7 +254,7 @@ header {
 .nav-mobil {
     z-index: 1000;
     height: 100%;
-    width: 40%;
+    width: 50%;
     background-color: rgba(255, 68, 0, 0.5);
     visibility: visible;
     opacity: 1;

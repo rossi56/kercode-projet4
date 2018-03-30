@@ -54,7 +54,7 @@ class ControllerContact
             $to = "rossi56@hotmail.fr";  
             $sujet = "Nouveau message de " . $nom . $prenom;
             $message = '
-            <h1>Nouveau messade de ' . $nom . $prenom . '</h1>
+            <h1>Nouveau message de ' . $nom . ' '. $prenom . '</h1>
             <h2>Adresse e-mail : ' . $email . '</h2>
             <p>' . nl2br($texte) . '</p>  
             ';

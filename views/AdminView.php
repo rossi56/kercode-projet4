@@ -12,30 +12,36 @@ $video = "public/video/admin.mp4"
  
    
 <?php
-    if(!empty($reports)) :
+  if($reports)  :
+      
 ?>
-         <div class="signal">
-            <h2>Les commentaires signalés !</h2>
+    <h3>Jean Forteroche</h3>
+        <img class='avatar' src="public/img/avatars/forteroche.png" alt="Jean Forteroche">
+        <div class="signal">
             <i class='fas fa-exclamation-triangle'></i>
-         </div>
+            <h2>Commentaires à modérer !</h2>
+            
+        </div>  
         
-       
+<?php
+    endif;
+?>
         <article class="comments">
 <?php
     foreach($reports as $report) :
 ?>
-
-    <p class='membre'> Membre : <?= $report['pseudo'] ?></p>
-    <p class='report'>Commentaire : <?= $report['commentaire'] ?> </p> 
+ 
+    <p class='membre'> <span> Membre : </span><?= $report['pseudo'] ?></p>
+    <p class='report'><span> Commentaire : </span><?= $report['commentaire'] ?> </p> 
     <div class="gestion">
-    <p class="delete"><a href="admin.php?action=deleteComment&id=<?= $report['commentaire'] ?>">Supprimer</a></p> 
-    <p class="valide"><a href="admin.php?action=valider&id=<?= $report['commentaire'] ?>">Valider</a>
+    <p class="delete"><a href="admin.php?action=deleteComment&id=<?= $report['id'] ?>">Supprimer</a></p> 
+    <p class="valide"><a href="admin.php?action=valider&id=<?= $report['id'] ?>">Valider</a>
     </p>
     </div>
 <?php
 
     endforeach;
-    endif;
+
 ?>
 </article>
     
@@ -44,9 +50,9 @@ $video = "public/video/admin.mp4"
     foreach($commentaires as $commentaire) :
 ?>
     <article class="comments">
-            <p class="date">Posté par le membre n°<?= $commentaire["id_membre"] ?>:  <?= $commentaire["pseudo"] ?> <br> <br> le <time datetime="<?= $commentaire["publication"] ?>" ><?= $commentaire["publication"] ?></time>     
+            <p class="date"> <span> Posté par le membre n°<?= $commentaire["id_membre"] ?> :</span>  <?= $commentaire["pseudo"] ?> <br> <br> le <time datetime="<?= $commentaire["publication"] ?>" ><?= $commentaire["publication"] ?></time>     
             <p class="comment">"<?= $commentaire["commentaire"] ?>"</p>
-            <a href="admin.php?action=admin&id=<?= $commentaire['commentaire'] ?>">Supprimer ce commentaire</a>
+            <a href="admin.php?action=admin&id=<?= $commentaire['id'] ?>">Supprimer ce commentaire</a>
     </article>
 
 <?php
@@ -59,8 +65,8 @@ $video = "public/video/admin.mp4"
 <?php
     foreach($membres as $membre) :
 ?>
-    <p><img src="public/img/avatars/<?= $membre['avatar'] ?>" alt=""></p>
-    <p class="date"> Membre n°<?= $membre['id'] ?> : <?= $membre['pseudo'] ?></p> 
+    <p><img class='avatar' src="public/img/avatars/<?= $membre['avatar'] ?>" alt=""></p>
+    <p class="date"><span> Membre n°<?= $commentaire["id_membre"] ?> :</span>  <?= $membre['pseudo'] ?></p> 
     <a href="admin.php?action=admin&id=<?= $membre['id'] ?>">Supprimer</a>
 
 <?php

@@ -6,7 +6,7 @@ $video = "public/video/edition.mp4"
 ?>
 <?php ob_start(); ?>
         <section class="posts">
-        <h3>Les anciens chapitres !</h3>
+        <h3>Les chapitres publiés !</h3>
             <table>
         <?php
             foreach($posts as $post) :
