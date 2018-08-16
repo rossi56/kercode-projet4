@@ -23,20 +23,19 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
-        <link rel="stylesheet" href="public/css/main.css">
         <title>Billet simple pour l'Alaska</title>
     </head>
 
     <body>
         <header>
-            <h1><?= $titleHeader ?></h1>
         <nav>
-            <a href="index.php?action=articles">Le roman</a>
-            <a href="admin.php?action=admin">Administration</a>
-            <a href="admin.php?action=publication">Nouveau chapitre</a>
-            <a href="admin.php?action=edition">Chapitres publiés</a>
-            <a href="admin.php?action=deconnexion">Déconnexion</a>
+            <a class="line" href="index.php?action=articles">Le roman</a>
+            <a class="line" href="admin.php?action=admin">Administration</a>
+            <a class="line" href="admin.php?action=publication">Nouveau chapitre</a>
+            <a class="line" href="admin.php?action=edition">Chapitres publiés</a>
+            <a class="line" href="admin.php?action=deconnexion">Déconnexion</a>
         </nav>
+        <img class="pref-img" src= "<?= $image?>">
         <video id="video" autoplay loop src="<?= $video  ?>"></video>
         <button id="pause">
                     <i class="far fa-pause-circle fa-3x"></i>

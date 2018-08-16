@@ -1,8 +1,6 @@
 <?php
 require_once ('models/MembresManager.php');
 require_once ('models/CommentsManager.php');
-
-
 /**
  * Contrôleur Membres
  */
@@ -19,7 +17,7 @@ class ControllerMembres
     private $password;
     private $avatar;
 
-
+    
     public function __construct()
     {
         $this->membresManager= new MembresManager;
@@ -39,20 +37,17 @@ class ControllerMembres
     public function inscrire($pseudo, $email, $emailconf, $password, $passwordconf)
     {      
        
-
         $validation = true;
-
         if(empty($pseudo) || empty($email) || empty($emailconf) || empty($password) || empty($passwordconf))
         {
             $validation = false;
             array_push(self::$erreurs,"<i class='fas fa-exclamation-triangle'></i> <br>Tous les champs sont obligatoires !" );
         }
-        if($this->pseudo->existe($pseudo))
+        if($this->membresManager->existe($pseudo))
         {
             $validation = false;
             array_push(self::$erreurs,"<i class='fas fa-exclamation-triangle'></i> <br>Ce pseudo n'est pas disponible !" );
         }
-
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)) 
         {
             $validation = false;
@@ -80,13 +75,11 @@ class ControllerMembres
             <i class="far fa-check-circle"></i>
              ');
         }
-
         require('views/inscriptionView.php');
     }
 
 
-
-    /**
+ /**
      * Fonction de connexion
      *
      * @param [type] $pseudo
@@ -95,19 +88,27 @@ class ControllerMembres
     public function connect($pseudo)
     {
         $compte = $this->membresManager->connexion($pseudo);
-        array_push(self::$erreurs,"<i class='fas fa-exclamation-triangle'></i> <br> Les identifiants sont erronés !" );
-
+       
         if(password_verify($_POST['password'], $compte["password"]))
         {
             $_SESSION["membre"] = $compte["id"];
             header("Location: index.php?action=compte");
         }
+        else
+        {
+        array_push(self::$erreurs,"<i class='fas fa-exclamation-triangle'></i> <br> Les identifiants sont erronés !" );
+        require('views/connexionView.php');
+        }
     }
+
+
 
     public function pseudoExist($pseudo)
     {
         $pseudo = $this->membresManager->existe($pseudo);
     }
+
+
 
     /**
      * Fonction de récupération des erreurs de formulaires
@@ -118,9 +119,7 @@ class ControllerMembres
     {
         return self::$erreurs;
     }
-
         
-
     /**
      * Fonction de déconnexion
      *
@@ -131,10 +130,9 @@ class ControllerMembres
         $_SESSION = array();
         session_destroy();
         session_start();
-        header("Location: home.php");
+        header("Location: index.php?action=pageConnexion");
     }
     
-
     /**
      * Fonction Espace Membre
      *
@@ -147,7 +145,6 @@ class ControllerMembres
         $compte =  $this->membresManager->infos($id);
         require('views/compteView.php');
     }
-
     
     /**
      * Edition du profil membre
@@ -158,6 +155,7 @@ class ControllerMembres
     public function update($id)
     {
             self::$user = $this->membresManager->selectUser($id);
+            require ('views/editProfilView.php');
       
             if(isset($_POST['newPseudo']) AND !empty($_POST['newPseudo']) AND $_POST['newPseudo'] != self::$user['pseudo'])
             {   
@@ -187,8 +185,6 @@ class ControllerMembres
             }
        
     }
-
-
     public function newAvatar($avatar, $id)
     {
         $avatar = $this->membresManager->newAvatar($avatar, $id);
@@ -219,10 +215,8 @@ class ControllerMembres
             array_push(self::$erreurs, 'Votre avatar ne doit pas dépasser 2Mo');
         }
     }
-
     }
     
-
     /**
      * Récupération d'un membre pour édition du profil membre
      *

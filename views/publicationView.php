@@ -1,14 +1,12 @@
 <?php
 $title = "Administration";
-$titleHeader = "";
-$image = "";
-$video = 'public/video/new.mp4';
+$image = "public/img/header/new.png";
+$video = 'public/video/new.mp4'
 ?>
-
-<?php ob_start(); ?>
+<?php ob_start() ?>
     <div class="admin">
         <h3>"Publication du chapitre"</h3>
-    <form method="post" action="" enctype="multipart/form-data">
+    <form class='formulaire' method="post" action="" enctype="multipart/form-data">
 <?php
     $erreurs = ControllerAdmin::getErreur();
     if(isset($erreurs)) :
@@ -27,9 +25,9 @@ $video = 'public/video/new.mp4';
     endif;
 ?>
         <input type="text" name="titre" placeholder="Titre de l'article *" value="<?php if(isset($_POST[" titre "])) echo $_POST["titre "] ?>">
-            <h3>Insérer la photo de présentation</h3>
+            <label>Insérer la photo de présentation</label>
         <input type="file" name="file">
-            <h3>Insérer la photo de l'article</h3>
+            <label>Insérer la photo de l'article</label>
         <input type="file" name="file2"> 
         <textarea class="publication" name="contenu" placeholder="Corps de l'article *"><?php if(isset($_POST["contenu"])) echo $_POST["contenu"] ?>
         </textarea>

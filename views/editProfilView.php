@@ -1,13 +1,9 @@
-
 <?php 
 $title = "Billet simple pour l'Alaska";
-$titleHeader = "";
-$image = "";
+$image = "public/img/header/profil-edit.png";
 $video = "public/video/profil.mp4";
-
-$user = ControllerMembres::getUser();
-    ob_start(); ?>
-
+$user = ControllerMembres::getUser()?>
+<?php ob_start() ?>
             
             <div class="formulaire">
                 <h3>Edition de mon profil</h3>

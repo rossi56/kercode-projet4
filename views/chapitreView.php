@@ -1,20 +1,16 @@
 <?php
-$title = "Les Chapitres"; 
-$titleHeader = "";
+$title = "Les Chapitres";
 $video = 'public/video/roman.mp4';
-$image = ''
+$image = "public/img/header/lecture.png";
 ?>
-
-
-<?php ob_start(); ?>
+ <?php ob_start() ?>
     <article class="article">
         <h2><?= $article["titre"] ?></h2>
-            <p class="date">Posté le <time datetime="<?= $article["publication"] ?> "><?= $article["publication"] ?></time> </p>
+            <p class="date">Chapitre publié le <time datetime="<?= $article["publication"] ?> "><?= $article["publication"] ?></time> </p>
                 <img class="chapitre" src="public/img/article/<?= $article["imageArt"] ?>" alt="<?= $article["imageArt"] ?>">
             <p><?= $article["contenu"] ?></p>
     </article>
-    <?php
-   ;
+<?php
     if(isset($_SESSION["membre"])) :
 ?>
 
@@ -40,6 +36,7 @@ $image = ''
         <textarea name="commentaire" id="commentaire" cols="30" rows="10" placeholder="Laissez votre commentaire !"></textarea>
         <input type="submit" value="Commenter">
     </form>
+    <a href="http://www.greta-bretagne-sud.fr/kercode-promo2">CLIC</a>
 <?php
     endif;
 ?> 

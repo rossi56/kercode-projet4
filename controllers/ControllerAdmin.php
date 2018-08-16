@@ -74,6 +74,7 @@ class ControllerAdmin
             unset($_POST["titre"]);
             unset($_POST["contenu"]);
         }
+        
         require ('views/publicationView.php');
 
     }
@@ -111,7 +112,7 @@ class ControllerAdmin
     public function validate()
     {
         $reports = $this->commentsManager->valideReports();
-        header ('Location: admin.php?action=admin');
+        header('Location: admin.php?action=admin');
     }
 
     /**
@@ -199,6 +200,6 @@ class ControllerAdmin
         $_SESSION = array();
         session_destroy();
         session_start();
-        header("Location: home.php");
+        header('Location: index.php?action=articles');
     }
 }

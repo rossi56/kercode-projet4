@@ -1,13 +1,20 @@
 .formulaire-chapter {
     z-index: 10;
     margin-top: 100px;
+    -ms-flex-item-align: center;
     align-self: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     min-height: 600px;
     width: 50%;
-    label{
+    label {
         margin-top: 25px;
         text-align: center;
         color: rgba(255, 255, 255, 0.726);
@@ -15,6 +22,7 @@
         font-family: 'Life', cursive;
     }
     .erreur {
+        -ms-flex-item-align: center;
         align-self: center;
         color: red;
         font-size: 30px;
@@ -40,7 +48,14 @@
         width: 70%;
         height: 150px;
         margin-top: 20px;
+        -ms-flex-item-align: center;
         align-self: center;
+        @media screen and (max-width: 48em) {
+            width: 100%;
+        }
+        @media screen and (max-width: 22.5em) {
+            width: 100%;
+        }
         &:focus {
             color: $colorSite;
         }
@@ -49,6 +64,7 @@
         cursor: pointer;
         font-size: 15px;
         color: white;
+        -ms-flex-item-align: center;
         align-self: center;
         border: none;
         outline: none;
@@ -56,25 +72,46 @@
         border: 1px solid rgb(255, 255, 255);
         padding: 15px 35px;
         width: 50%;
+        -webkit-transition: 0.25s ease-in-out;
         transition: 0.25s ease-in-out;
         margin-top: 50px;
         margin-bottom: 150px;
         height: 50px;
+        @media screen and (max-width: 48em) {
+            width: 100%;
+        }
+        @media screen and (max-width: 22.5em) {
+            width: 100%;
+        }
         &:hover {
             color: $colorSite;
             border: 1px solid $colorSite;
         }
     }
 }
+
 .article {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     width: 80%;
     img {
+        margin-top: 100px;
         width: 40%;
+        -webkit-transform: rotate(5deg);
         transform: rotate(5deg);
+        @media screen and (max-width: 48em) {
+            width: 100%;
+        }
     }
     h2 {
         text-align: center;
@@ -82,6 +119,9 @@
         color: white;
         @include h3;
         font-size: 75px;
+        @media screen and (max-width: 48em) {
+           font-size: 55px;
+        }
     }
     p {
         color: white;
@@ -106,17 +146,33 @@
     margin-top: 175px;
     margin-bottom: 200px;
     height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     width: 100%;
     .date {
         color: rgb(255, 255, 255);
+        @media screen and (max-width: 22.5em) {
+            font-size: 25px;
+        }
     }
     h2 {
+        text-align: center;
         @include h3;
-        font-size: 65px;
+        margin-top: 50px;
+        font-size: 55px;
+        @media screen and (max-width: 22.5em) {
+            font-size: 45px;
+        }
     }
     .erreur {
         margin-bottom: 25px;
@@ -124,8 +180,15 @@
         color: $colorSite;
     }
     .commentaires {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         width: 85%;
         border-radius: 10px;
@@ -134,12 +197,14 @@
         font-size: 20px;
         a {
             margin-top: 50px;
+            -ms-flex-item-align: center;
             align-self: center;
             color: white;
             background-color: transparent;
             border: 1px solid white;
             padding: 15px 35px;
             cursor: pointer;
+            -webkit-transition: 0.25s ease-in-out;
             transition: 0.25s ease-in-out;
             font-family: 'Cookie', cursive;
             font-size: 25px;

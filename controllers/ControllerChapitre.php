@@ -1,5 +1,4 @@
 <?php
-
 require_once 'models/ArticlesManager.php';
 require_once 'models/CommentsManager.php';
 
@@ -54,8 +53,6 @@ class ControllerChapitre
      */
     public function postComment($id_membre, $id_article, $commentaire)
     {
-      
-
       if(!empty($commentaire))
       {
        
@@ -71,10 +68,17 @@ class ControllerChapitre
         array_push(self::$erreurs," <i class='fas fa-exclamation-triangle'></i> <br> Tous les champs sont obligatoires !" );
        
       }
-      header("Location: index.php?action=article&id=" . $id_article);
+      header('Location: index.php?action=article&id=' . $id_article);
     }
 
 
+    /**
+     * Signalement d'un commentaire
+     *
+     * @param [type] $id
+     * @param [type] $id_article
+     * @return void
+     */
     public function reportComment($id, $id_article)
     {
       $commentaire = $this->articleManager->reportComment($id);
@@ -96,7 +100,7 @@ class ControllerChapitre
         require('views/articlesView.php');
     } 
 
-       /**
+      /**
      * Fonction de récupération des erreurs de formulaires
      *
      * @return void

@@ -1,6 +1,5 @@
+<?php session_start();
 
-<?php
-session_start();
 require_once 'controllers/ControllerArticles.php';
 require_once 'controllers/ControllerChapitre.php';
 require_once 'controllers/ControllerContact.php';
@@ -16,10 +15,10 @@ class Router {
 
   public function __construct() 
   {
-    $this->ctrlArticles = new ControllerArticles();
-    $this->ctrlChapitre = new ControllerChapitre();
-    $this->ctrlMembres =  new ControllerMembres();
-    $this->ctrlContact = new ControllerContact();
+    $this->ctrlArticles = new ControllerArticles;
+    $this->ctrlChapitre = new ControllerChapitre;
+    $this->ctrlMembres =  new ControllerMembres;
+    $this->ctrlContact = new ControllerContact;
   }
 
   /**
@@ -70,26 +69,24 @@ class Router {
         }
         elseif ($_GET['action'] == 'pageConnexion') 
         {
-            // new ControllerMembres;
-            require('views/connexionView.php');             
+            require ('views/connexionView.php');             
         }
 
         elseif ($_GET['action'] == 'connexion') 
         {
             $this->ctrlMembres->connect($_POST['pseudo']);
-            require ('views/connexionView.php');              
+                            
         }
 
         elseif ($_GET['action'] == 'deconnexion') 
         {
-            $this->ctrlMembres->deconnexion(); 
+            $this->ctrlMembres->deconnexion();
                     
         }
 
         elseif ($_GET['action'] == 'compte') 
         {
             $this->ctrlMembres->compte($_SESSION['membre']);
-                    
         }
 
         elseif ($_GET['action'] == 'contact') 
@@ -108,13 +105,14 @@ class Router {
         {
             $this->ctrlArticles->search(htmlentities($_POST["query"]));              
         }
+       
         elseif ($_GET['action'] == 'editProfil')
         {
             
             if(empty($_POST))
             {
                 $this->ctrlMembres->update($_GET['id']);
-                require ('views/editProfilView.php');
+               
             }
             else
             {

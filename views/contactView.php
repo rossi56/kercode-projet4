@@ -1,15 +1,11 @@
 <?php
 $title = "Billet simple pour l'Alaska";
-$titleHeader = "";
 $video = "public/video/contact.mp4";
-$image = ''
-?>
-
-<?php ob_start(); ?>
-
+$image = 'public/img/header/contact.png' ?>
+<?php ob_start() ?>
     <div class="formulaire">     
         <h3>Contactez-moi ! <br> Je vous réponds rapidement  !</h3>             
-                <form class="form" method="post" action="index.php?action=contact">
+                <form method="post" action="index.php?action=contact">
 <?php
     $erreurs = ControllerContact::getErreur() ;
     if(isset($erreurs)) :
@@ -32,7 +28,8 @@ $image = ''
                     <input type="text" name="nom" placeholder="Votre Nom *" value="<?php if(isset($_POST[" nom "])) echo $_POST["nom "] ?>">
                     <input type="email" name="email" placeholder="Votre e-mail *" value="<?php if(isset($_POST[" email "])) echo $_POST["email
                                         "] ?>">
-                    <textarea name="texte">
+                    <label for="texte">Sujet du message</label>
+                    <textarea name="texte" >
 <?php
     if(isset($_POST["texte"])) echo $_POST["texte"]
 ?>

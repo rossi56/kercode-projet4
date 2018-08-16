@@ -1,12 +1,9 @@
 <?php
 $title = "Billet simple pour l'Alaska";
-$titleHeader = "";
 $video = "public/video/chapitre.mp4";
-$image = ''
+$image = "public/img/header/chapitres.png";
 ?>
-
-
-<?php ob_start(); ?>
+<?php ob_start() ?>
 <?php
     if(count($articles) > 0) :
     if(isset($_POST["query"])) : //affichage du résultat de recherche s'il y a un résultat

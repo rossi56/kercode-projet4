@@ -1,13 +1,10 @@
 <?php
 $title = "Inscription";
-$titleHeader = "";
-$image = "";
-$video = "public/video/inscription4.mp4"
-?>
-<?php ob_start(); ?>
-
+$image = "public/img/header/inscription.png";
+$video = "public/video/inscription4.mp4"?>
+<?php ob_start() ?>
     <div class="formulaire">
-    <h3>Inscrivez-vous ! <br> Ne rater pas les derniers Chapitres !</h3>
+    <h3> Ne ratez pas les derniers Chapitres !</h3>
     
         <form class="form" method="post" action="index.php?action=inscription">
 <?php

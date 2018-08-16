@@ -6,7 +6,6 @@ require_once ('models/Model.php');
  */
 class MembresManager extends Model
 {
-    public static $erreurs = [];
 
     /**
      * Fonction pour vérifier si pseudo est disponible dans la base de données
@@ -43,7 +42,7 @@ class MembresManager extends Model
             "pseudo" => htmlentities($pseudo),
             "email" => htmlentities($email),
             "password" => password_hash($password, PASSWORD_DEFAULT),
-            "avatar" => "user.png"              
+            "avatar" => "user2.png"              
         ]);
         // array_push(self::$erreurs,  "Votre inscription a bien été prise en compte");
         unset($_POST["pseudo"]);
@@ -146,7 +145,7 @@ class MembresManager extends Model
         $newPseudo = htmlentities($_POST['newPseudo']);
         $insertPseudo = $bdd->prepare("UPDATE membres SET pseudo = ? WHERE id = ?");
         $insertPseudo->execute(array($newPseudo, $id));
-        header('Location: index.php?action=compte');
+        
     }
 
     /**
@@ -162,25 +161,60 @@ class MembresManager extends Model
         $newMail = htmlentities($_POST['newMail']);
         $insertMail = $bdd->prepare("UPDATE membres SET email = ? WHERE id = ?");
         $insertMail->execute(array($newMail, $id));
-        header('Location: index.php?action=compte');
     }
 
-/**
- * Remplacement du Mot de passe du profil membre
- *
- * @param [type] $id
- * @param [type] $newMdp
- * @return void
- */
+    /**
+     * Remplacement du Mot de passe du profil membre
+     *
+     * @param [type] $id
+     * @param [type] $newMdp
+     * @return void
+     */
     public function newMdp($id, $newMdp)
     {
         $bdd = $this->getBdd();
-        $newMdp = htmlentities($newMdp);
         $insertMdp = $bdd->prepare("UPDATE membres SET password = ? WHERE id = ?");
-        $insertMdp->execute(array($newMdp,$id));
-        header('Location: index.php?action=compte');
+        $insertMdp->execute([$newMdp,$id]);
     }
 
+    /**
+     * Remplacement de l'adresse de facturation
+     *
+     * @param [type] $id
+     * @param [type] $newAdress
+     * @return void
+     */
+    public function newAdressFacture($id, $newFacture)
+    {
+        $bdd = $this->getBdd();
+
+        $newFacture = htmlentities($newFacture);
+        $newFacture = $bdd->prepare("UPDATE membres SET adressFacture = ? WHERE id = ?");
+        $newFacture->execute(array($newFacture,$id));
+    }
+      /**
+     * Remplacement de l'adresse de livraison
+     *
+     * @param [type] $id
+     * @param [type] $newMdp
+     * @return void
+     */
+    public function newAdressLivraison($id, $newLivraison)
+    {
+        $bdd = $this->getBdd();
+
+        $newLivraison = htmlentities($newLivraison);
+        $newLivraison = $bdd->prepare("UPDATE membres SET adressLivraison = ? WHERE id = ?");
+        $newLivraison->execute(array($newLivraison,$id));
+    }
+
+    /**
+     * Remplacement de l'avatar
+     *
+     * @param [type] $avatar
+     * @param [type] $id
+     * @return void
+     */
     public function newAvatar($avatar, $id)
     {
         $bdd = $this->getBdd();

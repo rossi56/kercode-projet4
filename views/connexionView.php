@@ -1,15 +1,11 @@
 <?php 
 $title = "Billet simple pour l'Alaska";
-$titleHeader = "";
-$image = "";
-$video = "public/video/connexion.mp4"
-?>
-
-<?php ob_start(); ?>
-
+$image = "public/img/header/connexion.png";
+$video = "public/video/connexion.mp4" ?>
+<?php ob_start() ?>
     <div class="formulaire">
         <h3>Connectez-vous !</h3>
-            <form method="post" action="index.php?action=connexion">
+            <form method="post" action="index.php?action=connexion" >
 <?php
     $erreurs = ControllerMembres::getErreur();
     if($erreurs) :

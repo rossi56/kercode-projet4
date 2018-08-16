@@ -58,23 +58,3 @@ $(document).ready(function () {
 
 });
 
-/*----------------------------------AJAX------------------------------*/
-// $(document).ready(function () {
-//   $(".btn-submit").click(function () {
-//     $('.form').submit(function (e) {
-//       e.preventDefault();
-//       var formulaire = $(this);
-//       var post_url = formulaire.attr('contact');
-//       var post_data = formulaire.serialize();
-//       // On peut ajouter une image de chargement pour faire patienter l'internaute
-//       $('#loader3', formulaire).html('<img src=../../images/ajax-loader.gif />Please wait...');
-//       //Appel AJAX
-//       $.ajax({
-//         type: 'POST',
-//         url: post_url,
-//         data: post_data,
-        
-//       });
-//     });
-//   });
-// });

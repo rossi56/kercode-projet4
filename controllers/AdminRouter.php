@@ -7,6 +7,7 @@ require_once 'ControllerAdmin.php';
 class AdminRouter
 {
     private $ctrlAdmin;
+    private $posts;
     
     public function __construct()
     {
@@ -52,7 +53,6 @@ class AdminRouter
                 }
                 elseif ($_GET['action'] == 'modifier')
                 {
-                    // throw new Exception(var_dump($_POST) . '\n' .var_dump($_FILES) );
                     if(!empty($_POST['titre']) && !empty($_POST['contenu']) )
                     {
                         

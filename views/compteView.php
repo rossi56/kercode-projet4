@@ -1,13 +1,9 @@
 <?php
 $title = "Mon profil";
-$titleHeader = "";
-$image = '';
+$image = "public/img/header/compte.png";
 $video = 'public/video/compte.mp4'
 ?>
-<?php
- ob_start();
-?>
-
+<?php ob_start() ?>
 <div class="articles">
     <h3>Profil de "<?= $compte["pseudo"] ?>"</h3>
         <img class="avatar" src="public/img/avatars/<?= $compte["avatar"] ?>" alt="Avatar">

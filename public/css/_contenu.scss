@@ -1,17 +1,98 @@
 main {
-    background-image: url('../img/bg1.jpg');
+    background-image: url('../img/bg1.png');
     background-size: cover;
     background-attachment: fixed;
     width: 100%;
+    .mobile{
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        h1{
+            margin-top: 50px;
+            margin-bottom: 50px;
+            text-align: center;
+            @include h3;
+        }
+        p{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            margin-bottom: 50px;
+            text-align: center;
+            color: white;
+            font-family: 'Life Savers', cursive;
+            span{
+                color:$colorSite;
+                margin-top: 50px;
+            }
+            .btn-mobil{
+               
+                display: block;
+               margin-top: 50px;
+                color: white;
+                border: 1px solid white;
+                padding: 15px 35px;
+                cursor: pointer;
+                -webkit-transition: 0.25s ease-in-out;
+                transition: 0.25s ease-in-out;
+                font-family: 'Cookie', cursive;
+                font-size: 25px;
+                border-radius: 15px;
+                width: 20%;
+                &:hover{
+                    @include buttonHover;
+                }
+            }
+        }
+        
+        figure{
+            margin-bottom: 50px;
+            width: 100%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            img{
+                width: 40%;
+                opacity: .7;
+            }
+            
+        }
+        @media screen and (min-width: 48em) {
+            display: none;
+         }
+    }
     #split {
         min-height: 100vh;
         width: 100%;
         position: relative;
         overflow: hidden;
         @media screen and (max-width: 48em) {
-            display: flex;
-            height: 100%;
-            flex-wrap: wrap;
+            display: none;
+        }
+        @media screen and (max-width: 22.5em) {
+           display: none;
         }
         .blog {
             position: absolute;
@@ -21,7 +102,10 @@ main {
             width: 100%;
             height: 100%;
             cursor: pointer;
+            -webkit-transition: -webkit-transform 0.35s ease-in-out;
+            transition: -webkit-transform 0.35s ease-in-out;
             transition: transform 0.35s ease-in-out;
+            transition: transform 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
             #punaise2{
                 position: absolute;
                 width: 5%;
@@ -34,7 +118,8 @@ main {
                 position: absolute;
                 left: 17%;
                 top: 10%;
-                transform: rotate(5deg);
+                -webkit-transform: rotate(5deg);
+                        transform: rotate(5deg);
                 img{
                     width: 100%;
                 }
@@ -47,6 +132,10 @@ main {
                 font-size: 45px;
                 color: white;
                 font-family: 'Life Savers', cursive;
+                @media screen and (max-width: 62em) {
+                    font-size: 30px;
+                    text-align: center;
+                }
                 @media screen and (max-width: 48em) {
                     font-size: 25px;
                 }
@@ -85,7 +174,10 @@ main {
             position: absolute;
             height: 100%;
             cursor: pointer;
+            -webkit-transition: -webkit-transform 0.35s ease-in-out;
+            transition: -webkit-transform 0.35s ease-in-out;
             transition: transform 0.35s ease-in-out;
+            transition: transform 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
             h2 {
                 position: absolute;
                 left: 20%;
@@ -93,6 +185,10 @@ main {
                 font-size: 45px;
                 color: white;
                 font-family: 'Life Savers', cursive;
+                @media screen and (max-width: 62em) {
+                    font-size: 30px;
+                    text-align: center;
+                }
                 @media screen and (max-width: 48em) {
                     font-size: 25px;
                 }
@@ -112,7 +208,7 @@ main {
                 position: absolute;
                 width: 5%;
                 left: 58%;
-                top: 12%;
+                top: 7%;
             }
             figure{
                 opacity: .6;
@@ -120,7 +216,8 @@ main {
                 position: relative;
                 left: 60%;
                 top: 10%;
-                transform: rotate(5deg);
+                -webkit-transform: rotate(5deg);
+                        transform: rotate(5deg);
                
                 img{
                     width: 100%;
@@ -153,12 +250,14 @@ main {
 }
 
 .about.splitOn {
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
     
 }
 
 .blog.splitOn {
-    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
 }
 .hide{
     visibility: hidden;

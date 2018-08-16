@@ -1,11 +1,8 @@
-<?php 
+<?php session_start();
  $video = 'public/video/billet.mp4';
  $video2 = 'public/video/Jean.mp4';
  $title = "Billet simple pour l'Alaska";
- $titleHeader = "Billet simple pour l'Alaska";
- $image = '';
-
-
+ $image =  'public/img/header/titre.png';
  ?>
 <!DOCTYPE html>
     <html lang="fr">
@@ -35,19 +32,14 @@
             <title><?= $title ?></title>
         </head>
 
-        <body id="index">
+        <body>
             <header>
-                <!-- <h1><?= $titleHeader ?></h1> -->
                 <p>"Le projet un peu fou d'un écrivain voyageur"</p>
-               
-                <!-- <p id="by">
-                    <span> By</span> Jean Forteroche</p>-->
-                <?php 
-                    include 'views/navigationView.php';
-                ?>
-                 
+<?php 
+    include 'views/navigationView.php';
+?>
                 <video id="video" autoplay loop src="public/video/home.mp4"></video>
-                <img class="pref-img" src= "<?= $image?>"></img>
+                <img class="pref-img" src= "<?= $image?>">
                 <div class="pattern"></div>
 
                 <button id="pause">
@@ -64,6 +56,32 @@
                 <div class="mask"></div>
             </header>
     <main>
+        <section class="mobile">
+        <h1>Billet simple pour l'Alaska</h1>
+                <p>"Les plus belles histoires commencent
+                    <br> toujours par un naufrage"
+                    <br>
+                    <span>Jack London</span>
+                </p>
+               
+                <figure class="portrait">
+                    <img src="public/img/portrait.png" alt="Portrait">
+                </figure>
+                <p class="text">
+                    <strong>Jean Forteroche.....</strong>c'est moi! Aventurier avant de devenir écrivain, les grands espaces m'ont
+                    toujours inspirés.
+                    <br> L'aventure et l'écriture, deux mots qui résonnent à mon oreille. Leur murmure est une ode à l'escapade
+                    et à la flânerie.
+                    <br> Mon esprit vagabonde vers de nouveaux espaces que je vais vous faire découvrir par mes écrits.
+                    <br> Cette idée un peu folle, mais qui me ressemble tant; de vous faire découvrir les endroits vers lesquels
+                    mes rêves me portent; au travers de ce blog mis à jour au fur et à mesure de la rédaction de mon roman.
+                    <br> Je vous souhaite une lecture des plus distrayante. Je reste à votre disposition pour communiquer au
+                    travers de ce blog, alors n'hésitez pas.....
+                    <br>
+                    <span>Je vous attends!</span>
+                    <a class='btn-mobil' href="index.php?action=articles">Entrez</a>
+                </p>
+        </section>
         <section id='split'>
             <article class="blog">
                 <h1>Billet simple pour l'Alaska</h1>
@@ -100,10 +118,11 @@
                 </p>
 
             </article>
-            <div class="scrollTop">
+            
+        </section>
+        <div class="scrollTop">
               <i class="fas fa-angle-double-up "></i>
             </div>
-        </section>
     </main>
     
 <?php include 'views/footer.php' ?>

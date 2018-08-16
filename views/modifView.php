@@ -1,10 +1,9 @@
 <?php
 $title = "Administration";
-$titleHeader = "";
-$image = "";
+$image = "public/img/header/modif.png";
 $video = "public/video/modif.mp4"
 ?>
-<?php ob_start(); ?>
+<?php ob_start() ?>
         <section class="formulaire">
             <h3><?= $posts["titre"] ?></h3>   
         <form method="post" action="admin.php?action=modifier&id=<?= $posts["id"] ?>">

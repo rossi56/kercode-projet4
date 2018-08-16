@@ -1,12 +1,11 @@
 <?php
 $title = "Administration";
-$titleHeader = "";
-$image = "";
+$image = "public/img/header/edition.png";
 $video = "public/video/edition.mp4"
 ?>
-<?php ob_start(); ?>
+<?php ob_start() ?>
         <section class="posts">
-        <h3>Les chapitres publiés !</h3>
+        <h3>Gestion des chapitres publiés !</h3>
             <table>
         <?php
             foreach($posts as $post) :

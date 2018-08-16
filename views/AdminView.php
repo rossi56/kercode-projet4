@@ -1,11 +1,9 @@
 <?php
 $title = "Administration";
-$titleHeader = "";
-$video = "public/video/admin.mp4"
-?>
-
-<?php ob_start(); ?>
-
+$video = "public/video/admin.mp4";
+$image = "public/img/header/admin.png";
+ ?>
+<?php ob_start() ?>
 
 <section class="admin">
 
@@ -19,7 +17,7 @@ $video = "public/video/admin.mp4"
         <img class='avatar' src="public/img/avatars/forteroche.png" alt="Jean Forteroche">
         <div class="signal">
             <i class='fas fa-exclamation-triangle'></i>
-            <h2>Commentaires à modérer !</h2>
+            <h2>Commentaire(s) à modérer!</h2>
             
         </div>  
         
@@ -66,7 +64,7 @@ $video = "public/video/admin.mp4"
     foreach($membres as $membre) :
 ?>
     <p><img class='avatar' src="public/img/avatars/<?= $membre['avatar'] ?>" alt=""></p>
-    <p class="date"><span> Membre n°<?= $commentaire["id_membre"] ?> :</span>  <?= $membre['pseudo'] ?></p> 
+    <p class="date"><span> Membre n°<?= $membre["id"] ?> :</span>  <?= $membre['pseudo'] ?></p> 
     <a href="admin.php?action=admin&id=<?= $membre['id'] ?>">Supprimer</a>
 
 <?php
